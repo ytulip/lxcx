@@ -90,7 +90,7 @@ Page({
                 console.log(res);
                 if( res.data.status)
                 {
-                    wx.redirectTo(
+                    wx.navigateTo(
                         {
                             url: '/pages/health/index2'
                         }

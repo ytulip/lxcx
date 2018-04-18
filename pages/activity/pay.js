@@ -50,9 +50,9 @@ Page({
     pay:function () {
         var requestData = {};
         requestData.phone = this.data.immediatePhone;
-        requestData.deliver_type = this.data.index?2:1;
+        requestData.deliver_type = this.data.index?1:2;
 
-        if(requestData.deliver_type == 1) { //送货上门
+        if(requestData.deliver_type == 2) { //送货上门
             requestData.address = this.data.address;
             requestData.address_name = this.data.real_name;
             requestData.address_phone = this.data.phone;
@@ -81,8 +81,15 @@ Page({
                         'signType': jsonData.signType,
                         'paySign': jsonData.paySign,
                         'success':function(res){
+                            util.mAlert('支付成功');
+                            wx.redirectTo(
+                                {
+                                    url:'/pages/health/route'
+                                }
+                            );
                         },
                         'fail':function(res){
+                            util.mAlert('支付失败，请重新支付');
                         }
                     });
                 } else

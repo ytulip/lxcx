@@ -26,6 +26,13 @@ Page({
   },
   onLoad: function () {
       var that = this;
+
+      this.setData(
+          {
+              showConfirm:0
+          }
+      );
+
       wx.login({
           success: function (res) {
               if (res.code) {
@@ -61,14 +68,12 @@ Page({
 
                                   if( currentOrder.order_status == 1 )
                                   {
-                                      if(currentOrder.deliver_type == 1)
-                                      {
-                                          that.setData(
-                                              {
-                                                  showWait:1
-                                              }
-                                          );
-                                      }
+
+                                      that.setData(
+                                          {
+                                              showWait:1
+                                          }
+                                      );
                                   }
 
                                   if ( currentOrder.order_status == 2 || currentOrder.order_status == 3  || currentOrder.order_status == 4 )
@@ -138,9 +143,8 @@ Page({
                 openid: this.data.openid
             },
             success: function (requestRes) {
-                wx.switchTab({
-                    url: '/pages/logs/logs'
-                })
+                var page = getCurrentPages().pop();
+                page.onLoad();
             }
         })
     },
@@ -227,7 +231,7 @@ Page({
 
     fillHealth:function()
     {
-        wx.redirectTo({
+        wx.navigateTo({
             url: '/pages/health/index'
         })
     },

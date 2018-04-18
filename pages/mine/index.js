@@ -8,7 +8,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+      openid:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -30,11 +31,12 @@ Page({
                         },
                         success:function(requestRes)
                         {
-                            console.log(requestRes);
+                            // console.log(requestRes.data.user);
                             // requestRes.data
                             that.setData(
                                 {
-                                    openid:requestRes.data.data
+                                    openid:requestRes.data.data.openid,
+                                    userInfo:requestRes.data.data.user
                                 }
                             );
                         }

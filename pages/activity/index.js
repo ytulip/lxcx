@@ -13,7 +13,9 @@ Page({
         smsCode: "",
         openid: "",
         smsText:'获取验证码',
-        smsTextLock:0
+        smsTextLock:0,
+        real_name:"",
+        id_card:""
     },
 
 
@@ -78,20 +80,62 @@ Page({
         })
     },
 
+    bindIdcardInput:function(e)
+    {
+        this.setData({
+            id_card: e.detail.value
+        })
+    },
+
+    bindRealNameInput:function(e)
+    {
+        this.setData({
+            real_name: e.detail.value
+        })
+    },
+
 
     takePartIn: function () {
+
+        var that = this;
+
+        /**
+         * 判断手机号
+         */
+        if (!(/^1[3|4|5|8|7][0-9]\d{8}$/.test(this.data.phone))) {
+            console.log('请输入正确的手机号:' + this.data.phone);
+            util.mAlert('请输入正确的手机号');
+            return;
+        }
+
+        /**
+         * 判断身份证号
+         */
+        if (!(/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/.test(this.data.id_card))) {
+            util.mAlert('请输入正确的身份证号');
+            return;
+        }
+
+        /**
+         * 判断姓名
+         */
+        if(!this.data.real_name)
+        {
+            util.mAlert('姓名不能为空');
+            return;
+        }
+
         wx.request({
             url: util.serverHost + 'activity/take-part-in',
             method: 'post',
-            data: {phone: this.data.phone, register_sms_code: this.data.smsCode, openid: this.data.openid},
+            data: {phone: this.data.phone, register_sms_code: this.data.smsCode, openid: this.data.openid,id_card:this.data.id_card,real_name:this.data.real_name},
             success: function (res) {
                 // console.log(res);
 
                 console.log(res.data);
                 if (res.data.status) {
-                    //跳走到健康页面
                     wx.redirectTo({
-                        url: 'pages/activity/health'
+                        url: '/pages/activity/pay?openid=' + that.data.openid
                     })
                 } else {
                     wx.showToast({

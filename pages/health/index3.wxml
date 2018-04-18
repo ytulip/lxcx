@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="weui-cells weui-cells_after-title" style="padding:0 6px;margin-bottom:80px;">
+<view class="weui-cells weui-cells_after-title" style="padding:0 6px;padding-bottom:90px;">
 
 
     <view>饮食习惯</view>

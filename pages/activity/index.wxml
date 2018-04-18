@@ -5,7 +5,7 @@
                     <view class="weui-label">姓名</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="请输入姓名"/>
+                    <input class="weui-input" value="{{real_name}}" bindinput="bindRealNameInput" placeholder="请输入姓名"/>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input weui-cell_vcode">
@@ -24,8 +24,8 @@
                             <view class="weui-cell__hd">
                                 <view class="weui-label">验证码</view>
                             </view>
-                            <view class="weui-cell__bd" bindinput="bindSmsCode">
-                                <input class="weui-input" placeholder="请输入验证码" type="number" maxlength="6" />
+                            <view class="weui-cell__bd">
+                                <input class="weui-input" placeholder="请输入验证码" type="number" maxlength="6" bindinput="bindSmsCode"/>
                             </view>
                         </view>
 
@@ -35,7 +35,7 @@
                                                         <view class="weui-label">身份证号</view>
                                                     </view>
                                                     <view class="weui-cell__bd">
-                                                        <input type="idcard" class="weui-input" placeholder="请输入身份证号" />
+                                                        <input type="idcard" class="weui-input" placeholder="请输入身份证号" value="{{id_card}}" bindinput="bindIdcardInput"/>
                                                     </view>
                                                 </view>
 
