@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/health/route",
+    "pages/logs/logs",
+    "pages/health/index3",
+    "pages/health/index2",
+    "pages/health/index",
+    "pages/activity/index",
+    "pages/mine/index",
+    "pages/activity/pay"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "辣木膳",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "健康打卡"
+    },
+      {
+        "pagePath":"pages/mine/index",
+        "text":"我的"
+      }]
+  }
+}

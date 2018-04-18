@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<!--<web-view src="https://lamushan.com/user/essay?id=3"></web-view>-->
+<view  class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+    <view class="cus-row cus-row-v-m">
+        <view class="cus-row-col-6" style="display: inline-block;">
+            <text class="fs-24-fc-212229">￥</text><text class="fs-24-fc-212229" id="price_label">{{price}}</text>
+        </view>
+        <view class="cus-row-col-6" style="display: inline-block;">
+            <text class="btn-block1 m-t-20" bindtap="pay" style="margin-top: 0;font-size:12px;" >立即付款</text>
+        </view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">上级会员</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" type="number" bindinput="bindPhoneInput" maxlength="11" placeholder="请输入上级会员手机号"/>
+        </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">收货方式</view>
+        </view>
+        <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" style="line-height: 44px;">
+            <view class="picker">
+                {{array[index]}}
+            </view>
+            </picker>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input" wx:if="{{index == 1}}">
+        <view class="weui-cell__hd">
+            <view class="weui-label">自提地址</view>
+        </view>
+        <view class="weui-cell__bd">
+            <picker bindchange="bindSelfPickerChange" value="{{index}}" range="{{selfGetArray}}">
+                <text style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;">{{selfGetArray[selfGetIndex]}}</text>
+            </picker>
+        </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_input" wx:if="{{index == 0}}">
+        <view class="weui-cell__hd">
+            <view class="weui-label">收货地址</view>
+        </view>
+        <view class="weui-cell__bd">
+            <textarea style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;" bindinput="bindAddressInput"></textarea>
+        </view>
+    </view>
+
+
+</view>

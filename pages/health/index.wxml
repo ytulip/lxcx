@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">身高(cm)</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" value="{{tall}}" placeholder="请输入身高,必填" type="digit" bindinput="bindTallInput"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">血压</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" value="{{blood_press}}" bindinput="bindBloodPressInput" placeholder="请输入血压，必填"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">体重(kg)</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" value="{{weight}}" placeholder="请输入体重，必填" type="digit" bindinput="bindWeightInput"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">腰围(cm)</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" value="{{waistline}}" placeholder="请输入腰围，必填" type="digit" bindinput="bindWaistlineInput"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">血糖</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" value="{{blood_glucose}}" placeholder="请输入血糖，选填" bindinput="bindBloodGlucoseInput"/>
+        </view>
+    </view>
+
+    <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+        <button class="btn-block1 m-t-20" bindtap="nextStep" style="margin-top: 0;">下一步</button>
+    </view>
+</view>

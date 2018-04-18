@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入姓名"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入手机号" type="number" bindinput="bindPhoneInput" maxlength="11"/>
+                </view>
+                <view class="weui-cell__ft">
+                    <view class="weui-vcode-btn" bindtap="sendSms">{{smsText}}</view>
+                </view>
+            </view>
+
+             <view class="weui-cell weui-cell_input">
+                            <view class="weui-cell__hd">
+                                <view class="weui-label">验证码</view>
+                            </view>
+                            <view class="weui-cell__bd">
+                                <input class="weui-input" placeholder="请输入验证码" type="number" maxlength="6"  bindinput="bindSmsCode"/>
+                            </view>
+                        </view>
+
+
+                        <view class="weui-cell weui-cell_input">
+                                                    <view class="weui-cell__hd">
+                                                        <view class="weui-label">身份证号</view>
+                                                    </view>
+                                                    <view class="weui-cell__bd">
+                                                        <input type="idcard" class="weui-input" placeholder="请输入身份证号" />
+                                                    </view>
+                                                </view>
+
+
+        </view>
+
+
+         <view class="weui-btn-area">
+                                                                    <button class="weui-btn" type="primary" bindtap="takePartIn">下一步</button>
+                                                                </view>

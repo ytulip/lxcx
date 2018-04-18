@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="weui-cells weui-cells_after-title" style="padding:0 6px;margin-bottom:80px;">
+
+
+    <view>饮食习惯</view>
+    <checkbox-group bindchange="checkboxChange1">
+        <label class="checkbox" wx:for="{{items1}}" style="display: block;">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+    </checkbox-group>
+    <view>作息习惯</view>
+    <checkbox-group bindchange="checkboxChange2">
+        <label class="checkbox" wx:for="{{items2}}" style="display: block;">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+    </checkbox-group>
+    <view>行为习惯</view>
+    <checkbox-group bindchange="checkboxChange3">
+        <label class="checkbox" wx:for="{{items3}}" style="display: block;">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+    </checkbox-group>
+    <view>心理习惯</view>
+    <checkbox-group bindchange="checkboxChange4">
+        <label class="checkbox" wx:for="{{items4}}" style="display: block;">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+    </checkbox-group>
+
+    <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+        <button class="btn-block1 m-t-20" style="margin-top: 0;" bindtap="submitBtn">提交</button>
+    </view>
+</view>
