@@ -13,7 +13,8 @@ Page({
         smsCode: "",
         openid: "",
         smsText:'获取验证码',
-        healthTags:[]
+        healthTags:[],
+        healthTagsValue:[]
     },
 
 
@@ -32,10 +33,18 @@ Page({
                         success: function (requestRes) {
                             console.log(requestRes);
 
+                        var tagCount = requestRes.data.data.health_tags.length;
+                        var tagsValue = [];
+                        for(var i = 0;i < tagCount;i++)
+                        {
+                            tagsValue[i] = {name:requestRes.data.data.health_tags[i],color:'efefef'};
+                        }
+
                         that.setData(
                             {
                                 openid: requestRes.data.data.openid,
-                                healthTags:requestRes.data.data.health_tags
+                                healthTags:requestRes.data.data.health_tags,
+                                healthTagsValue:tagsValue
                             }
                     );
                 }
@@ -46,6 +55,70 @@ Page({
             }
         });
     },
+
+    chooseTag:function(e)
+    {
+        var index = e.currentTarget.dataset.index;
+        console.log(index);
+        console.log(this.data.healthTagsValue[index]);
+        if ( this.data.healthTagsValue[index].color == "efefef" )
+        {
+            this.data.healthTagsValue[index].color = "98CC3D";
+        } else
+        {
+            this.data.healthTagsValue[index].color = "efefef";
+        }
+
+        var tempArr = this.data.healthTagsValue;
+
+        this.setData({
+            healthTagsValue:tempArr
+        });
+
+        // this.data.healthTags = this.data.healthTags;
+
+    },
+
+    nextStep:function()
+    {
+        var length = this.data.healthTagsValue.length;
+        var tagArr = [];
+
+        for(var i=0;i < length;i++)
+        {
+            if( this.data.healthTagsValue[i].color == "98CC3D" )
+            {
+                tagArr.push(this.data.healthTagsValue[i].name);
+            }
+        }
+
+
+        var requestData = {step:2,data:tagArr};
+        wx.request({
+            url: util.serverHost + 'activity/save-health?openid=' + this.data.openid,
+            method:'post',
+            data:requestData,
+            success:function(res)
+            {
+                console.log(res);
+                if( res.data.status)
+                {
+                    wx.redirectTo(
+                        {
+                            url: '/pages/health/index3'
+                        }
+                    );
+                } else
+                {
+                    wx.showToast({
+                        title: res.data.desc,
+                        icon: "none",
+                        duration: 3000
+                    });
+                }
+            }
+        })
+    }
 });
 
 

@@ -1,13 +1,13 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/mine/index",
+    "pages/health/index2",
     "pages/health/route",
     "pages/logs/logs",
     "pages/health/index3",
-    "pages/health/index2",
     "pages/health/index",
     "pages/activity/index",
-    "pages/mine/index",
     "pages/activity/pay"
   ],
   "window":{

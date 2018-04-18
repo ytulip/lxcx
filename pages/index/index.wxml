@@ -2,7 +2,7 @@
 <view class="container">
 
   <view class="userinfo">
-      <button open-type="contact" bindtap="takePart">参加活动</button>
+      <button bindtap="takePart">参加活动</button>
   </view>
   <view class="usermotto">
   </view>

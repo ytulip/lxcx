@@ -14,6 +14,7 @@ Page({
       weight:'',
       waistline:'',
       blood_glucose:'',
+      openid:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -39,7 +40,7 @@ Page({
                             // requestRes.data
                             that.setData(
                                 {
-                                    openid:requestRes.data.data
+                                    openid:requestRes.data.data.openid
                                 }
                             );
                         }
@@ -77,9 +78,9 @@ Page({
         })
     },
 
-    submitBtn : function(){
+    nextStep : function(){
 
-        var requestData = {step:1,data:{tall:this.data.tall,blood_press:this.data.blood_press,weight:this.data.weight,waistline:this.data.waistline,blood_glucose:data.waistline.blood_glucose}};
+        var requestData = {step:1,data:{tall:this.data.tall,blood_press:this.data.blood_press,weight:this.data.weight,waistline:this.data.waistline,blood_glucose:this.data.blood_glucose}};
         wx.request({
             url: util.serverHost + 'activity/save-health?openid=' + this.data.openid,
             method:'post',
@@ -89,7 +90,11 @@ Page({
                 console.log(res);
                 if( res.data.status)
                 {
-
+                    wx.redirectTo(
+                        {
+                            url: '/pages/health/index2'
+                        }
+                    );
                 } else
                 {
                     wx.showToast({

@@ -42,6 +42,11 @@ Page({
                                         url: '/pages/activity/pay?openid=' + requestRes.data.data.openid
                                     })
                                 }
+                            } else
+                            {
+                                wx.redirectTo({
+                                    url: '/pages/activity/index'
+                                })
                             }
 
                             // requestRes.data

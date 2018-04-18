@@ -15,7 +15,17 @@ const formatNumber = n => {
 }
 
 var serverHost = 'https://lamushan.com/';
+var mAlert = function(msg)
+{
+    wx.showToast({
+        title: msg,
+        icon: "none",
+        duration: 3000
+    });
+}
 
 module.exports = {
-  formatTime: formatTime,serverHost
+  formatTime: formatTime,
+    serverHost:serverHost,
+    mAlert:mAlert
 }

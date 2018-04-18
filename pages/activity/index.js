@@ -12,7 +12,8 @@ Page({
         phone: "",
         smsCode: "",
         openid: "",
-        smsText:'获取验证码'
+        smsText:'获取验证码',
+        smsTextLock:0
     },
 
 
@@ -109,8 +110,22 @@ Page({
         //验证手机号是否格式有误
         if (!(/^1[3|4|5|8|7][0-9]\d{8}$/.test(this.data.phone))) {
             console.log('请输入正确的手机号:' + this.data.phone);
+            util.mAlert('请输入正确的手机号');
             return;
         }
+
+        if( this.data.smsTextLock )
+        {
+            return;
+        } else {
+            this.setData(
+                {
+                    smsTextLock:1
+                }
+            );
+        }
+
+
 
         //60秒倒计时
         (function(a){
@@ -124,6 +139,11 @@ Page({
                     a.setData({smsText:'获取验证码'});
                     // $(a).removeClass('get-code-lock');
                     // $(a).find('span').html('获取验证码');
+                    a.setData(
+                        {
+                            smsTextLock:0
+                        }
+                    );
                     return;
                 }
                 // $(a).find('span').html($(a).attr('data-second') + '秒');

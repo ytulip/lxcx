@@ -24,8 +24,8 @@
                             <view class="weui-cell__hd">
                                 <view class="weui-label">验证码</view>
                             </view>
-                            <view class="weui-cell__bd">
-                                <input class="weui-input" placeholder="请输入验证码" type="number" maxlength="6"  bindinput="bindSmsCode"/>
+                            <view class="weui-cell__bd" bindinput="bindSmsCode">
+                                <input class="weui-input" placeholder="请输入验证码" type="number" maxlength="6" />
                             </view>
                         </view>
 
