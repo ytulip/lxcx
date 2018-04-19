@@ -9,6 +9,7 @@ Page({
     showSignBtn:0,
     openid:'',
     showFillHealthInfo:0,
+      showFillHealthStatus:0,
     signTypeArray:['随餐','代餐','换食'],
     signTypeIndex:0,
     countArray:[1,2,3],
@@ -18,6 +19,7 @@ Page({
     imgPath2:"/images/add.png",
     imgPath2Save:"",
     imgPath3:"/images/add.png",
+    hasPay:0,
     imgPath3Save:"",
       water:"",
       weight:"",
@@ -64,26 +66,13 @@ Page({
                               {
                                   var currentOrder = requestRes.data.data.order;
 
+                                  that.setData(
+                                      {
+                                          hasPay:1,
+                                          showFillHealthStatus:requestRes.data.data.user.health_status
 
-
-                                  if( currentOrder.order_status == 1 )
-                                  {
-
-                                      that.setData(
-                                          {
-                                              showWait:1
-                                          }
-                                      );
-                                  }
-
-                                  if ( currentOrder.order_status == 2 || currentOrder.order_status == 3  || currentOrder.order_status == 4 )
-                                  {
-                                      that.setData(
-                                          {
-                                              showConfirm:1
-                                          }
-                                      );
-                                  }
+                                      }
+                                  );
                               }
                           }
                       }
@@ -97,6 +86,24 @@ Page({
   //执行打卡
     doSign:function()
     {
+
+        if( !this.data.imgPath1Save &&  !this.data.imgPath2Save && !this.data.imgPath3Save )
+        {
+            util.mAlert('至少上次一张图片');
+            return;
+        }
+
+        var number = 0;
+        number = this.data.imgPath1Save?(number + 1):number;
+        number = this.data.imgPath2Save?(number + 1):number;
+        number = this.data.imgPath3Save?(number + 1):number;
+
+        this.setData(
+            {
+                countIndex:number
+            }
+        );
+
         wx.request({
             url: util.serverHost + 'activity/do-sign',
             data: {
@@ -121,7 +128,7 @@ Page({
                     page.onLoad();
                 } else
                 {
-
+                    util.mAlert(requestRes.data.desc);
                 }
             }
         })

@@ -81,6 +81,32 @@ Page({
     nextStep : function(){
 
         var requestData = {step:1,data:{tall:this.data.tall,blood_press:this.data.blood_press,weight:this.data.weight,waistline:this.data.waistline,blood_glucose:this.data.blood_glucose}};
+
+        if(!requestData.data.tall)
+        {
+            util.mAlert('请输入身高');
+            return;
+        }
+
+        if(!requestData.data.blood_press)
+        {
+            util.mAlert('请输入血压');
+            return;
+        }
+
+        if(!requestData.data.weight)
+        {
+            util.mAlert('请输入体重');
+            return;
+        }
+
+        if(!requestData.data.waistline)
+        {
+            util.mAlert('请输入腰围');
+            return;
+        }
+
+
         wx.request({
             url: util.serverHost + 'activity/save-health?openid=' + this.data.openid,
             method:'post',
