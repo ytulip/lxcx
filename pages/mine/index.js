@@ -9,7 +9,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-      openid:''
+      openid:'',
+      signScore:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -25,7 +26,7 @@ Page({
                 if (res.code) {
                     //发起网络请求
                     wx.request({
-                        url: util.serverHost + 'passport/openid',
+                        url: util.serverHost + 'activity/user-info',
                         data: {
                             code: res.code
                         },
@@ -36,7 +37,8 @@ Page({
                             that.setData(
                                 {
                                     openid:requestRes.data.data.openid,
-                                    userInfo:requestRes.data.data.user
+                                    userInfo:requestRes.data.data.user,
+                                    signScore:requestRes.data.data.signScore
                                 }
                             );
                         }

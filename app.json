@@ -12,7 +12,8 @@
     "pages/mine/qrcode",
     "pages/logs/sign",
     "pages/mine/signrecord",
-    "pages/mine/pool"
+    "pages/mine/pool",
+    "pages/health/success"
   ],
   "window":{
     "backgroundTextStyle":"light",
