@@ -4,20 +4,21 @@ var util = require('../../utils/util.js')
 const app = getApp()
 
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-      openid:''
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function(options) {
+    data: {
+        motto: 'Hello World',
+        userInfo: {},
+        hasUserInfo: false,
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        openid:'',
+        image:""
+    },
+    //事件处理函数
+    bindViewTap: function() {
+        wx.navigateTo({
+            url: '../logs/logs'
+        })
+    },
+    onLoad: function(options) {
 
         var that = this;
         wx.login({
@@ -25,7 +26,7 @@ Page({
                 if (res.code) {
                     //发起网络请求
                     wx.request({
-                        url: util.serverHost + 'passport/openid',
+                        url: util.serverHost + 'activity/pool-info',
                         data: {
                             code: res.code
                         },
@@ -36,7 +37,8 @@ Page({
                             that.setData(
                                 {
                                     openid:requestRes.data.data.openid,
-                                    userInfo:requestRes.data.data.user
+                                    userInfo:requestRes.data.data.user,
+                                    image:requestRes.data.data.image
                                 }
                             );
                         }
@@ -71,14 +73,14 @@ Page({
         //     }
         // });
     },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
+    getUserInfo: function(e) {
+        console.log(e)
+        app.globalData.userInfo = e.detail.userInfo
+        this.setData({
+            userInfo: e.detail.userInfo,
+            hasUserInfo: true
+        })
+    },
     pay:function () {
         wx.request({
             url: util.serverHost + 'activity/activity-pay?openid=o0psn4ymkQ0ad5V4nvvs3PXRADD4',
@@ -126,5 +128,17 @@ Page({
             }
         })
     },
+    invitedMember:function()
+    {
+        if(  !this.data.userInfo || !this.data.userInfo.vip_level )
+        {
+            util.mAlert('权限不足');
+            // return;
+        }
+
+        wx.navigateTo({
+            url: '/pages/mine/qrcode?openid=' + this.data.openid
+        })
+    }
 
 })

@@ -88,11 +88,11 @@ Page({
             return;
         }
 
-        if(!requestData.data.blood_press)
-        {
-            util.mAlert('请输入血压');
-            return;
-        }
+        // if(!requestData.data.blood_press)
+        // {
+        //     util.mAlert('请输入血压');
+        //     return;
+        // }
 
         if(!requestData.data.weight)
         {
@@ -100,11 +100,11 @@ Page({
             return;
         }
 
-        if(!requestData.data.waistline)
-        {
-            util.mAlert('请输入腰围');
-            return;
-        }
+        // if(!requestData.data.waistline)
+        // {
+        //     util.mAlert('请输入腰围');
+        //     return;
+        // }
 
 
         wx.request({

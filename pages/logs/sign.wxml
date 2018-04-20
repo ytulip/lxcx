@@ -1,0 +1,107 @@
+<!--logs.wxml-->
+<view>
+        <view  wx:if="{{showSignBtn == 1 && showFillHealthInfo}}">
+
+
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">打卡类型</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindPickerChange" value="{{signTypeIndex}}" range="{{signTypeArray}}" style="line-height: 44px;">
+                            <view class="picker">
+                                {{signTypeArray[signTypeIndex]}}
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+
+                <!--<view class="weui-cell weui-cell_input">-->
+                <!--<view class="weui-cell__hd">-->
+                <!--<view class="weui-label">吃的数量</view>-->
+                <!--</view>-->
+                <!--<view class="weui-cell__bd">-->
+                <!--<picker bindchange="bindPickerChange" value="{{countIndex}}" range="{{countArray}}" style="line-height: 44px;">-->
+                <!--<view class="picker">-->
+                <!--{{countArray[countIndex]}}-->
+                <!--</view>-->
+                <!--</picker>-->
+                <!--</view>-->
+                <!--</view>-->
+
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">早餐照</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <image src="{{imgPath1}}" bindtap="uploadImage" data-id = "1" style="vertical-align: middle;width:46px; height: 46px;"></image>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">午餐照</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <image src="{{imgPath2}}" bindtap="uploadImage" style="vertical-align: middle;width:46px; height: 46px;" data-id="2"></image>
+                    </view>
+                </view>
+
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">晚餐照</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <image src="{{imgPath3}}" bindtap="uploadImage" style="vertical-align: middle;width:46px; height: 46px;" data-id="3"></image>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">排便次数</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" bindinput="bindWcCountInput" type="number" value="{{wcCount}}" placeholder=""/>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">身体基本情况</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <textarea style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;"  value="{{baseInfo}}" bindinput="bindBaseInfoInput"></textarea>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">喝水量(ml)</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" bindinput="bindWaterInput" value="{{water}}" type="number" placeholder=""/>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">体重(kg)</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="bindWeightInput" class="weui-input" value="{{weight}}" type="digit" placeholder=""/>
+                    </view>
+                </view>
+
+
+            </view>
+        </view>
+
+        <button class="weui-btn" type="primary" bindtap="doSign" wx:if="{{showSignBtn == 1 && showFillHealthInfo}}">开始打卡</button>
+
+        <button class="weui-btn" type="primary" wx:if="{{showSignBtn == 2}}" style="background-color: #808080;">今日已打卡</button>
+
+    </view>
+

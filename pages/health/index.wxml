@@ -14,7 +14,7 @@
             <view class="weui-label">血压</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" value="{{blood_press}}" bindinput="bindBloodPressInput" placeholder="请输入血压，必填"/>
+            <input class="weui-input" value="{{blood_press}}" bindinput="bindBloodPressInput" placeholder="请输入血压，选填"/>
         </view>
     </view>
 
@@ -32,7 +32,7 @@
             <view class="weui-label">腰围(cm)</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" value="{{waistline}}" placeholder="请输入腰围，必填" type="digit" bindinput="bindWaistlineInput"/>
+            <input class="weui-input" value="{{waistline}}" placeholder="请输入腰围，选填" type="digit" bindinput="bindWaistlineInput"/>
         </view>
     </view>
 

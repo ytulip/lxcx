@@ -70,7 +70,6 @@ Page({
                                       {
                                           hasPay:1,
                                           showFillHealthStatus:requestRes.data.data.user.health_status
-
                                       }
                                   );
                               }
@@ -86,52 +85,55 @@ Page({
   //执行打卡
     doSign:function()
     {
-
-        if( !this.data.imgPath1Save &&  !this.data.imgPath2Save && !this.data.imgPath3Save )
-        {
-            util.mAlert('至少上次一张图片');
-            return;
-        }
-
-        var number = 0;
-        number = this.data.imgPath1Save?(number + 1):number;
-        number = this.data.imgPath2Save?(number + 1):number;
-        number = this.data.imgPath3Save?(number + 1):number;
-
-        this.setData(
-            {
-                countIndex:number
-            }
-        );
-
-        wx.request({
-            url: util.serverHost + 'activity/do-sign',
-            data: {
-                openid: this.data.openid,
-                signTypeIndex:this.data.signTypeIndex,
-                countIndex:this.data.countIndex,
-                imgPath1Save:this.data.imgPath1Save,
-                imgPath2Save:this.data.imgPath2Save,
-                imgPath3Save:this.data.imgPath3Save,
-                water:this.data.water,
-                weight:this.data.weight,
-                baseInfo:this.data.baseInfo,
-                wcCount:this.data.wcCount
-            },
-            success: function (requestRes) {
-
-                console.log(requestRes);
-                if(requestRes.data.status)
-                {
-                    console.log(requestRes.data.status);
-                    var page = getCurrentPages().pop();
-                    page.onLoad();
-                } else
-                {
-                    util.mAlert(requestRes.data.desc);
-                }
-            }
+        wx.navigateTo({
+            url: '/pages/logs/sign'
         })
+        //
+        // if( !this.data.imgPath1Save &&  !this.data.imgPath2Save && !this.data.imgPath3Save )
+        // {
+        //     util.mAlert('至少上次一张图片');
+        //     return;
+        // }
+        //
+        // var number = 0;
+        // number = this.data.imgPath1Save?(number + 1):number;
+        // number = this.data.imgPath2Save?(number + 1):number;
+        // number = this.data.imgPath3Save?(number + 1):number;
+        //
+        // this.setData(
+        //     {
+        //         countIndex:number
+        //     }
+        // );
+        //
+        // wx.request({
+        //     url: util.serverHost + 'activity/do-sign',
+        //     data: {
+        //         openid: this.data.openid,
+        //         signTypeIndex:this.data.signTypeIndex,
+        //         countIndex:this.data.countIndex,
+        //         imgPath1Save:this.data.imgPath1Save,
+        //         imgPath2Save:this.data.imgPath2Save,
+        //         imgPath3Save:this.data.imgPath3Save,
+        //         water:this.data.water,
+        //         weight:this.data.weight,
+        //         baseInfo:this.data.baseInfo,
+        //         wcCount:this.data.wcCount
+        //     },
+        //     success: function (requestRes) {
+        //
+        //         console.log(requestRes);
+        //         if(requestRes.data.status)
+        //         {
+        //             console.log(requestRes.data.status);
+        //             var page = getCurrentPages().pop();
+        //             page.onLoad();
+        //         } else
+        //         {
+        //             util.mAlert(requestRes.data.desc);
+        //         }
+        //     }
+        // })
     },
 
     bindPickerChange: function(e) {
