@@ -18,17 +18,32 @@ Page({
         price:0,
         address:"",
         addressList:'',
-        immediatePhone:''
+        immediatePhone:'',
+        recommond_user:0
     },
 
     onLoad:function(options)
     {
+
+        // wx.setStorage({
+        //     key:"recommond_user",
+        //     success:function()
+        //     {
+        //         recommond_user
+        //     }
+        // })
+
         var that = this;
+
+
+        var recommondUser = wx.getStorageSync("recommond_user");
+
         this.setData(
-            {openid:options.openid}
+            {openid:options.openid,recommond_user:recommondUser}
         );
         wx.request({
             url: util.serverHost + 'activity/pay-info?openid=' + this.data.openid ,
+            data:{recommond_user:this.data.recommond_user},
             success:function(requestRes)
             {
                 console.log(requestRes);
@@ -40,7 +55,9 @@ Page({
                         price:requestRes.data.data.price,
                         real_name:requestRes.data.data.real_name,
                         phone:requestRes.data.data.phone,
-                        addressList:requestRes.data.data.addressList
+                        addressList:requestRes.data.data.addressList,
+                        immediatePhone:requestRes.data.data.recommondPhone,
+                        recommondPhone:requestRes.data.data.recommondPhone
                     }
                 );
             }

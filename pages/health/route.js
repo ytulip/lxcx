@@ -9,10 +9,23 @@ Page({
         phone: "",
         smsCode: "",
         openid: "",
-        smsText: '获取验证码'
+        smsText: '获取验证码',
     },
 
     onLoad: function (options) {
+
+
+
+        console.log(options.scene);
+        //存儲scene
+        if( options.scene )
+        {
+            wx.setStorageSync('recommond_user', options.scene);
+        } else
+        {
+            wx.setStorageSync('recommond_user', 0);
+        }
+
 
         var that = this;
         wx.login({

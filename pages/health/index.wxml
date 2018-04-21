@@ -45,6 +45,25 @@
         </view>
     </view>
 
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">正面照</view>
+        </view>
+        <view class="weui-cell__bd">
+            <image src="{{imgPath1}}" bindtap="uploadImage" data-id = "1" style="vertical-align: middle;width:40%; height: 46px;"></image>
+        </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">侧面照</view>
+        </view>
+        <view class="weui-cell__bd">
+            <image src="{{imgPath2}}" bindtap="uploadImage" data-id = "2" style="vertical-align: middle;width:40%; height: 46px;"></image>
+        </view>
+    </view>
+
     <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
         <button class="btn-block1 m-t-20" bindtap="nextStep" style="margin-top: 0;">下一步</button>
     </view>

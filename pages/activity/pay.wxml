@@ -16,7 +16,8 @@
             <view class="weui-label">上级会员</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" type="number" bindinput="bindPhoneInput" maxlength="11" placeholder="请输入上级会员手机号"/>
+            <input wx:if="{{!recommondPhone}}" class="weui-input" value="" type="number" bindinput="bindPhoneInput" maxlength="11" placeholder="请输入上级会员手机号"/>
+            <label style="line-height: 44px;" wx:if="{{recommondPhone}}">{{recommondPhone}}</label>
         </view>
     </view>
 
