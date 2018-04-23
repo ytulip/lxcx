@@ -17,18 +17,18 @@
                     </view>
                 </view>
 
-                <!--<view class="weui-cell weui-cell_input">-->
-                <!--<view class="weui-cell__hd">-->
-                <!--<view class="weui-label">吃的数量</view>-->
-                <!--</view>-->
-                <!--<view class="weui-cell__bd">-->
-                <!--<picker bindchange="bindPickerChange" value="{{countIndex}}" range="{{countArray}}" style="line-height: 44px;">-->
-                <!--<view class="picker">-->
-                <!--{{countArray[countIndex]}}-->
-                <!--</view>-->
-                <!--</picker>-->
-                <!--</view>-->
-                <!--</view>-->
+                <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                <view class="weui-label">吃的数量</view>
+                </view>
+                <view class="weui-cell__bd">
+                <picker bindchange="bindCountChange" value="{{countIndex}}" range="{{countArray}}" style="line-height: 44px;">
+                <view class="picker">
+                {{countArray[countIndex]}}
+                </view>
+                </picker>
+                </view>
+                </view>
 
 
                 <view class="weui-cell weui-cell_input">
@@ -70,7 +70,7 @@
 
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
-                        <view class="weui-label">身体基本情况</view>
+                        <view class="weui-label">食用感受</view>
                     </view>
                     <view class="weui-cell__bd">
                         <textarea style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;"  value="{{baseInfo}}" bindinput="bindBaseInfoInput"></textarea>

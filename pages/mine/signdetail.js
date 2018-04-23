@@ -10,13 +10,7 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         openid:'',
-        image:""
-    },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
-        })
+        signList:[]
     },
     onLoad: function(options) {
 
@@ -26,7 +20,7 @@ Page({
                 if (res.code) {
                     //发起网络请求
                     wx.request({
-                        url: util.serverHost + 'activity/q-r-info',
+                        url: util.serverHost + '/activity/sign-list',
                         data: {
                             code: res.code
                         },
@@ -38,7 +32,7 @@ Page({
                                 {
                                     openid:requestRes.data.data.openid,
                                     userInfo:requestRes.data.data.user,
-                                    image:requestRes.data.data.image
+                                    signList:requestRes.data.data.signRecord
                                 }
                             );
                         }
@@ -128,26 +122,5 @@ Page({
             }
         })
     },
-    invitedMember:function()
-    {
-        if(  !this.data.userInfo || !this.data.userInfo.vip_level )
-        {
-            util.mAlert('权限不足');
-            // return;
-        }
-
-        wx.navigateTo({
-            url: '/pages/mine/qrcode?openid=' + this.data.openid
-        })
-    },
-
-    onShareAppMessage:function()
-    {
-        return {
-            title:'辣木膳活动',
-            desc:'最大力度的优惠活动',
-            path:'/pages/health/route?scene=' + this.data.userInfo.id
-        }
-    }
 
 })

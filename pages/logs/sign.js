@@ -12,7 +12,7 @@ Page({
         showFillHealthStatus:0,
         signTypeArray:['随餐','代餐','换食'],
         signTypeIndex:0,
-        countArray:[1,2,3],
+        countArray:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
         countIndex:0,
         imgPath1:"/images/add.png",
         imgPath1Save:"",
@@ -86,22 +86,39 @@ Page({
     doSign:function()
     {
 
+
+
         if( !this.data.imgPath1Save &&  !this.data.imgPath2Save && !this.data.imgPath3Save )
         {
             util.mAlert('至少上次一张图片');
             return;
         }
 
-        var number = 0;
-        number = this.data.imgPath1Save?(number + 1):number;
-        number = this.data.imgPath2Save?(number + 1):number;
-        number = this.data.imgPath3Save?(number + 1):number;
+        if(!this.data.wcCount)
+        {
+            util.mAlert('排便次数不能为空');
+            return;
+        }
 
-        this.setData(
-            {
-                countIndex:number
-            }
-        );
+        if(!this.data.baseInfo)
+        {
+            util.mAlert('食用感受不能为空');
+            return;
+        }
+
+        if(!this.data.water)
+        {
+            util.mAlert('喝水量不能为空');
+            return;
+        }
+
+        if(!this.data.weight)
+        {
+            util.mAlert('体重不能为空');
+            return;
+        }
+
+
 
         wx.request({
             url: util.serverHost + 'activity/do-sign',
@@ -148,19 +165,11 @@ Page({
         })
     },
 
-    confirmDeliver:function()
+    bindCountChange:function(e)
     {
-        //确认收货
-        wx.request({
-            url: util.serverHost + 'activity/confirm-deliver',
-            data: {
-                openid: this.data.openid
-            },
-            success: function (requestRes) {
-                var page = getCurrentPages().pop();
-                page.onLoad();
-            }
-        })
+      this.setData(
+          {countIndex:e.detail.value}
+      )
     },
 
     uploadImage:function(e)
@@ -240,13 +249,6 @@ Page({
     {
         this.setData({
             baseInfo: e.detail.value
-        })
-    },
-
-    fillHealth:function()
-    {
-        wx.navigateTo({
-            url: '/pages/health/index'
         })
     },
 

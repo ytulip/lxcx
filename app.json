@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/mine/qrcode",
     "pages/index/index",
     "pages/mine/index",
     "pages/health/index2",
@@ -9,11 +10,10 @@
     "pages/health/index",
     "pages/activity/index",
     "pages/activity/pay",
-    "pages/mine/qrcode",
-    "pages/logs/sign",
     "pages/mine/signrecord",
     "pages/mine/pool",
-    "pages/health/success"
+    "pages/health/success",
+    "pages/logs/sign"
   ],
   "window":{
     "backgroundTextStyle":"light",
