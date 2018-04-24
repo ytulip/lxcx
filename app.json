@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/mine/qrcode",
     "pages/index/index",
+    "pages/mine/qrcode",
     "pages/mine/index",
     "pages/health/index2",
     "pages/health/route",
