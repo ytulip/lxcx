@@ -10,7 +10,9 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         openid:'',
-        signList:[]
+        signList:[],
+        signProv:'',
+        imageHost:'',
     },
     onLoad: function(options) {
 
@@ -20,7 +22,7 @@ Page({
                 if (res.code) {
                     //发起网络请求
                     wx.request({
-                        url: util.serverHost + '/activity/sign-list',
+                        url: util.serverHost + 'activity/sign-detail?id=' + options.id,
                         data: {
                             code: res.code
                         },
@@ -28,11 +30,15 @@ Page({
                         {
                             // console.log(requestRes.data.user);
                             // requestRes.data
+                            console.log(requestRes.data.data.sign_prov);
                             that.setData(
                                 {
-                                    openid:requestRes.data.data.openid,
-                                    userInfo:requestRes.data.data.user,
-                                    signList:requestRes.data.data.signRecord
+
+                                    signProv:JSON.parse(requestRes.data.data.sign_prov),
+                                    // openid:requestRes.data.data.openid,
+                                    // userInfo:requestRes.data.data.user,
+                                    // signList:requestRes.data.data.signRecord
+                                    imageHost:util.imageHost
                                 }
                             );
                         }

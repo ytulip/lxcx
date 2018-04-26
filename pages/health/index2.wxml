@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="weui-cells weui-cells_after-title" style="padding:0 6px;margin-bottom:80px;">
 
+    <view style="font-size:14px;padding: 12px;">辣木膳健康自测表，为了更好的服务您，请认真勾选符合自身情况的选项。</view>
     <view wx:for="{{healthTagsValue}}" style="width:33.33%;display:inline-block;padding:0 6px;box-sizing:border-box;padding-top:6px;">
         <view style="line-height:40px;background-color:#{{item.color}};border-radius:4px;text-align:center;font-size:12px;" data-index="{{index}}" bindtap="chooseTag" class="cus-tag">{{item.name}}</view>
     </view>

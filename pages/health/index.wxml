@@ -11,15 +11,6 @@
 
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-            <view class="weui-label">血压</view>
-        </view>
-        <view class="weui-cell__bd">
-            <input class="weui-input" value="{{blood_press}}" bindinput="bindBloodPressInput" placeholder="请输入血压，选填"/>
-        </view>
-    </view>
-
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
             <view class="weui-label">体重(kg)</view>
         </view>
         <view class="weui-cell__bd">
@@ -38,6 +29,16 @@
 
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
+            <view class="weui-label">血压</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" value="{{blood_press}}" bindinput="bindBloodPressInput" placeholder="请输入血压，选填"/>
+        </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
             <view class="weui-label">血糖</view>
         </view>
         <view class="weui-cell__bd">
@@ -47,7 +48,7 @@
 
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-            <view class="weui-label">正面照</view>
+            <view class="weui-label">您的正面照（食用前）</view>
         </view>
         <view class="weui-cell__bd">
             <image src="{{imgPath1}}" bindtap="uploadImage" data-id = "1" style="vertical-align: middle;width:40%; height: 46px;"></image>
@@ -57,7 +58,7 @@
 
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-            <view class="weui-label">侧面照</view>
+            <view class="weui-label">您的侧面照（食用前）</view>
         </view>
         <view class="weui-cell__bd">
             <image src="{{imgPath2}}" bindtap="uploadImage" data-id = "2" style="vertical-align: middle;width:40%; height: 46px;"></image>

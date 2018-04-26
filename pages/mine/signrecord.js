@@ -123,4 +123,14 @@ Page({
         })
     },
 
+    goDetail:function(e)
+    {
+        var index = e.currentTarget.dataset.id;
+        wx.navigateTo(
+            {
+                url:'/pages/mine/signdetail?id=' + index
+            }
+        );
+    }
+
 })

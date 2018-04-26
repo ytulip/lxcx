@@ -1,6 +1,95 @@
-<view class="weui-cells weui-cells_after-title" style="margin-top:20px;">
-    <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{signList}}" >
-        <view class="weui-cell__bd">{{item.date}}</view>
-        <view class="weui-cell__ft">{{item.sign_status?'已打卡':'未打卡'}}</view>
+<!--logs.wxml-->
+<view>
+    <view >
+
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">打卡类型</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view style="line-height: 48px;">{{signProv.signTypeIndex==0?'随餐':''}}{{signProv.signTypeIndex==1?'代餐':''}}{{signProv.signTypeIndex==2?'换食':''}}</view>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">吃的数量</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view style="line-height: 48px;">{{signProv.countIndex}}</view>
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">早餐照</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <image src="{{ imageHost + signProv.imgPath1Save}}" style="width: 100%" mode="widthFix"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">午餐照</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <image src="{{ imageHost + signProv.imgPath2Save}}" style="width: 100%" mode="widthFix"/>
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">晚餐照</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <image src="{{ imageHost + signProv.imgPath3Save}}" style="width: 100%" mode="widthFix"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">排便次数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view style="line-height: 48px;">{{signProv.wcCount}}</view>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">食用感受</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{signProv.baseInfo}}</view>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">喝水量(ml)</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view style="line-height: 48px;">{{signProv.water}}</view>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">体重(kg)</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view style="line-height: 48px;">{{signProv.weight}}</view>
+                </view>
+            </view>
+
+
+        </view>
     </view>
+
 </view>
+

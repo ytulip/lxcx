@@ -15,6 +15,7 @@ const formatNumber = n => {
 }
 
 var serverHost = 'https://lamushan.com/';
+var imageHost = 'https://lamushan.com';
 var mAlert = function(msg)
 {
     wx.showToast({
@@ -27,5 +28,6 @@ var mAlert = function(msg)
 module.exports = {
   formatTime: formatTime,
     serverHost:serverHost,
+    imageHost:imageHost,
     mAlert:mAlert
 }

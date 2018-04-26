@@ -67,7 +67,9 @@ Page({
     pay:function () {
         var requestData = {};
         requestData.phone = this.data.immediatePhone;
-        requestData.deliver_type = this.data.index?1:2;
+        console.log(this.data.index);
+        requestData.deliver_type = (this.data.index == '0')?2:1;
+        console.log(requestData.deliver_type);
 
         if(requestData.deliver_type == 2) { //送货上门
             requestData.address = this.data.address;

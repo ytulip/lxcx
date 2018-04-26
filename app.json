@@ -1,19 +1,20 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/mine/signrecord",
+    "pages/health/index2",
     "pages/mine/qrcode",
     "pages/mine/index",
-    "pages/health/index2",
     "pages/health/route",
     "pages/logs/logs",
     "pages/health/index3",
     "pages/health/index",
     "pages/activity/index",
     "pages/activity/pay",
-    "pages/mine/signrecord",
     "pages/mine/pool",
     "pages/health/success",
-    "pages/logs/sign"
+    "pages/logs/sign",
+    "pages/mine/signdetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

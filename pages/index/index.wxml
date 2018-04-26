@@ -2,11 +2,11 @@
 <view class="">
 
   <view style="width: 100%;position: relative;">
-      <image src="/images/home.png" style="width: 100%;" mode="widthFix">
+      <image src="/images/health3.png" style="width: 100%;" mode="widthFix">
 
       </image>
       <view style="position: absolute;bottom: 4%;left:0;right: 0;text-align: center;">
-          <button bindtap="takePart" style="background: #FFFFFF;border: 1px solid #FFFFFF;width: 72%;color:#02BDBF;border-radius: 16px;">参加活动</button>
+          <button bindtap="takePart" style="background: #FFFFFF;border: 1px solid #FFFFFF;width: 72%;color:#1DB536;border-radius: 16px;">参加活动</button>
       </view>
   </view>
 </view>
