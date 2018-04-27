@@ -138,6 +138,15 @@ Page({
                         url: '/pages/activity/pay?openid=' + that.data.openid
                     })
                 } else {
+
+                    if( res.data.flag == 1)
+                    {
+                        wx.switchTab({
+                            url: '/pages/logs/logs'
+                        })
+                        return;
+                    }
+
                     wx.showToast({
                         title: res.data.desc,
                         icon: "none",

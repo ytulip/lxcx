@@ -12,7 +12,7 @@ Page({
         showFillHealthStatus:0,
         signTypeArray:['随餐','代餐','换食'],
         signTypeIndex:0,
-        countArray:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+        countArray:[1,2,3,4,5],
         countIndex:0,
         imgPath1:"/images/add.png",
         imgPath1Save:"",

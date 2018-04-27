@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="page">
     <!--主体-->
+    <view>{{util.auth.isLogin}}</view>
     <view class="page__bd" style="padding: 14px;">
         <view style="width: 100%;border-radius: 8px;box-shadow: 3px;border:1px solid #ececec;">
             <view style="padding:34px;">

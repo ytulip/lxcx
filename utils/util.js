@@ -25,9 +25,94 @@ var mAlert = function(msg)
     });
 }
 
+
+function User(){
+    this.isLogin = '123243432432432';
+}
+
+User.prototype.vaildUser = function()
+{
+    this.isLogin = false;
+    // this.openid = '';
+    //是否是有效用户
+}
+
+User.prototype.getOpenid = function()
+{
+    var openid = wx.getStorageSync("user_openid");
+    if( openid )
+    {
+        return openid;
+    }else{
+        return false;
+    }
+}
+
+User.prototype.setUserData = function(date)
+{
+    wx.setStorageSync('user_info', 3);
+    this.isLogin = true;
+}
+
+User.prototype.tryGetUserInfo = function()
+{
+    var userInfo = wx.getStorageSync("user_info");
+    if( userInfo )
+    {
+        this.isLogin = true;
+        return;
+    }
+
+    var that = this;
+
+    wx.login({
+        success: function(res) {
+            if (res.code) {
+                //发起网络请求
+                wx.request({
+                    url: util.serverHost + 'activity/user-info',
+                    data: {
+                        code: res.code
+                    },
+                    success:function(requestRes)
+                    {
+                        // console.log(requestRes.data.user);
+                        // requestRes.data
+                        // that.setData(
+                        //     {
+                        //         openid:requestRes.data.data.openid,
+                        //         userInfo:requestRes.data.data.user,
+                        //         signScore:requestRes.data.data.signScore
+                        //     }
+                        // );
+                        // that.openid
+                        if ( requestRes.data.data.user ) {
+                            that.setUserData(requestRes.data.data.user);
+                        }
+                    }
+                })
+            } else {
+                console.log('登录失败！' + res.errMsg)
+            }
+        }
+    });
+}
+
+
+User.prototype.isLogin = function()
+{
+    var userInfo = wx.getStorageSync("user_openid");
+}
+
+
+
+var auth = new User();
+
+
 module.exports = {
   formatTime: formatTime,
     serverHost:serverHost,
     imageHost:imageHost,
-    mAlert:mAlert
+    mAlert:mAlert,
+    auth:auth
 }
