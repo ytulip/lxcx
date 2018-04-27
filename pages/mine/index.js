@@ -8,6 +8,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
+    userStatus:0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
       openid:'',
       signScore:'',
@@ -16,14 +17,39 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../logs/logs',
     })
   },
   onLoad: function(options) {
 
-        this.setData({util:util});
-        var that = this;
-        util.auth.tryGetUserInfo();
+
+     var openid = util.auth.getOpenid();
+     var that  = this;
+
+
+      wx.request({
+          url: util.serverHost + 'activity/user-info-new',
+          data: {
+              openid:openid
+          },
+          success:function(requestRes)
+          {
+              // console.log(requestRes.data.user);
+              // requestRes.data
+              that.setData(
+                  {
+                      userInfo:requestRes.data.data.user,
+                      signScore:requestRes.data.data.signScore
+                  }
+              );
+          }
+      })
+
+
+
+        // this.setData({util:util});
+        // var that = this;
+        // util.auth.tryGetUserInfo();
         // console.log(util.auth.isLogin);
         // wx.login({
         //     success: function(res) {

@@ -14,7 +14,8 @@
     "pages/mine/pool",
     "pages/health/success",
     "pages/logs/sign",
-    "pages/mine/signdetail"
+    "pages/mine/signdetail",
+    "pages/mine/openid"
   ],
   "window":{
     "backgroundTextStyle":"light",

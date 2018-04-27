@@ -43,15 +43,24 @@ User.prototype.getOpenid = function()
     if( openid )
     {
         return openid;
-    }else{
-        return false;
     }
+
+    //去获取openid
+    wx.redirectTo({
+        url: '/pages/mine/openid?redirectUrl=' + encodeURIComponent('/pages/mine/index')
+    })
+
 }
 
 User.prototype.setUserData = function(date)
 {
-    wx.setStorageSync('user_info', 3);
+    wx.setStorageSync('user_openid', 3);
     this.isLogin = true;
+}
+
+User.prototype.setOpenid = function($openid)
+{
+    wx.setStorageSync('user_openid', $openid);
 }
 
 User.prototype.tryGetUserInfo = function()
