@@ -19,8 +19,23 @@ Page({
         address:"",
         addressList:'',
         immediatePhone:'',
-        recommond_user:0
+        recommond_user:0,
+        items1: [
+            {name: '1', value: '《关于线下驿站1880元免费赠送活动细则》'},
+        ],
+        itemsArray1:[],
+
     },
+
+
+    checkboxChange1: function(e) {
+        console.log('checkbox发生change事件，携带value值为：', e.detail.value);
+        this.setData(
+            {itemsArray1:e.detail.value}
+        );
+    },
+
+
 
     onLoad:function(options)
     {
@@ -65,6 +80,14 @@ Page({
     },
 
     pay:function () {
+        console.log(this.data.itemsArray1);
+
+        if ( !this.data.itemsArray1.length )
+        {
+            util.mAlert('请勾选活动细则');
+            return;
+        }
+
         var requestData = {};
         requestData.phone = this.data.immediatePhone;
         console.log(this.data.index);
@@ -144,6 +167,14 @@ Page({
     bindPhoneInput: function(e){
         this.setData({
             immediatePhone: e.detail.value
+        })
+    },
+
+    bindPreview:function()
+    {
+        wx.previewImage({
+            current: util.imageHost + '/pdf/activity.jpg', // 当前显示图片的http链接
+            urls: [util.imageHost + '/pdf/activity.jpg'] // 需要预览的图片http链接列表
         })
     }
 })

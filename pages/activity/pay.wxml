@@ -55,6 +55,12 @@
             <textarea style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;" bindinput="bindAddressInput"></textarea>
         </view>
     </view>
+</view>
 
-
+<view style="margin-top: 12px;padding: 0 12px;">
+    <checkbox-group bindchange="checkboxChange1">
+    <label class="checkbox" wx:for="{{items1}}" style="display: block;">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/> <label bindtap="bindPreview">{{item.value}}</label>
+    </label>
+    </checkbox-group>
 </view>
