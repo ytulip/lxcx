@@ -126,7 +126,7 @@ Page({
     },
     takePart:function()
     {
-        wx.redirectTo({
+        wx.navigateTo({
             url: '/pages/health/route'
         })
     }
