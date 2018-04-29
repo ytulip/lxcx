@@ -48,7 +48,12 @@ Page({
                                 {
                                     console.log(456);
                                     wx.switchTab({
-                                        url: '/pages/logs/logs'
+                                        url: '/pages/logs/logs',
+                                        success: function (e) {
+                                            var page = getCurrentPages().pop();
+                                            if (page == undefined || page == null) return;
+                                            page.onLoad();
+                                        }
                                     })
                                 } else {
                                     wx.redirectTo({

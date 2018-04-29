@@ -1,0 +1,6 @@
+<view class="weui-cells weui-cells_after-title" style="margin-top:20px;">
+    <navigator  class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{userList}}" data-id="{{item.id}}" open-type="navigate" url="/pages/mine/signrecord?id={{item.user_id}}">
+        <view class="weui-cell__bd">{{item.real_name}}</view>
+        <view class="weui-cell__ft">{{item.order_created}}</view>
+    </navigator>
+</view>

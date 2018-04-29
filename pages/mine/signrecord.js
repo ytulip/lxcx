@@ -22,7 +22,8 @@ Page({
                     wx.request({
                         url: util.serverHost + '/activity/sign-list',
                         data: {
-                            code: res.code
+                            code: res.code,
+                            id:options.id
                         },
                         success:function(requestRes)
                         {

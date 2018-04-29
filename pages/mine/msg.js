@@ -8,69 +8,72 @@ Page({
         motto: 'Hello World',
         userInfo: {},
         hasUserInfo: false,
+        userStatus:0,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         openid:'',
-        signList:[],
-        signProv:'',
-        imageHost:'',
-        signData:{}
+        signScore:'',
+        util:''
+    },
+    //事件处理函数
+    bindViewTap: function() {
+        wx.navigateTo({
+            url: '../logs/logs',
+        })
     },
     onLoad: function(options) {
 
-        var that = this;
-        wx.login({
-            success: function(res) {
-                if (res.code) {
-                    //发起网络请求
-                    wx.request({
-                        url: util.serverHost + 'activity/sign-detail?id=' + options.id,
-                        data: {
-                            code: res.code
-                        },
-                        success:function(requestRes)
-                        {
-                            // console.log(requestRes.data.user);
-                            // requestRes.data
-                            console.log(requestRes.data.data.sign_prov);
-                            that.setData(
-                                {
 
-                                    signProv:JSON.parse(requestRes.data.data.sign_prov),
-                                    signData:requestRes.data.data,
-                                    // openid:requestRes.data.data.openid,
-                                    // userInfo:requestRes.data.data.user,
-                                    // signList:requestRes.data.data.signRecord
-                                    imageHost:util.imageHost
-                                }
-                            );
-                        }
-                    })
-                } else {
-                    console.log('登录失败！' + res.errMsg)
-                }
+        var openid = util.auth.getOpenid();
+        var that  = this;
+
+
+        wx.request({
+            url: util.serverHost + 'activity/user-info-new',
+            data: {
+                openid:openid
+            },
+            success:function(requestRes)
+            {
+                // console.log(requestRes.data.user);
+                // requestRes.data
+                that.setData(
+                    {
+                        userInfo:requestRes.data.data.user
+                    }
+                );
             }
-        });
+        })
 
 
-        // Do some initialize when page load.
-        // wx.request({
-        //     url: util.serverHost + 'activity/take-part-in',
-        //     method:'post',
-        //     data: {},
-        //     success: function(res){
-        //         // console.log(res);
-        //
-        //         console.log(res.data);
-        //         if( res.data.status )
-        //         {
-        //
-        //         } else
-        //         {
-        //             wx.showToast({
-        //                 title:res.data.desc,
-        //                 icon:"none",
-        //                 duration:3000
-        //             });
+
+        // this.setData({util:util});
+        // var that = this;
+        // util.auth.tryGetUserInfo();
+        // console.log(util.auth.isLogin);
+        // wx.login({
+        //     success: function(res) {
+        //         if (res.code) {
+        //             //发起网络请求
+        //             wx.request({
+        //                 url: util.serverHost + 'activity/user-info',
+        //                 data: {
+        //                     code: res.code
+        //                 },
+        //                 success:function(requestRes)
+        //                 {
+        //                     // console.log(requestRes.data.user);
+        //                     // requestRes.data
+        //                     that.setData(
+        //                         {
+        //                             openid:requestRes.data.data.openid,
+        //                             userInfo:requestRes.data.data.user,
+        //                             signScore:requestRes.data.data.signScore
+        //                         }
+        //                     );
+        //                 }
+        //             })
+        //         } else {
+        //             console.log('登录失败！' + res.errMsg)
         //         }
         //     }
         // });
@@ -130,5 +133,15 @@ Page({
             }
         })
     },
+
+
+    goBind:function()
+    {
+        wx.navigateTo(
+            {
+                url:'/pages/mine/bind'
+            }
+        );
+    }
 
 })

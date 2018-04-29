@@ -135,4 +135,14 @@ Page({
         })
     },
 
+
+    goBind:function()
+    {
+        wx.navigateTo(
+            {
+                url:'/pages/mine/bind'
+            }
+        );
+    }
+
 })

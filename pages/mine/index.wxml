@@ -5,10 +5,18 @@
     <view class="page__bd" style="padding: 14px;">
         <view style="width: 100%;border-radius: 8px;box-shadow: 3px;border:1px solid #ececec;">
             <view style="padding:34px;">
-                <view style="display:inline-block;width:50%;vertical-align:top;">
+
+                <view style="display:inline-block;width:50%;vertical-align:top;" wx:if="{{userInfo}}">
                     <view style="font-size:24px;font-weight:bold;">{{userInfo.real_name}}</view>
                     <view style="color:#a6a6a6;font-size:12px;">活动身份：{{userInfo.vip_level?"高级会员":"活动会员"}}</view>
                 </view>
+
+                <view style="display:inline-block;width:50%;vertical-align:top;" wx:if="{{!userInfo}}">
+                    <view style="font-size:24px;font-weight:bold;"><button type="button" class=" " bindtap="goBind">去绑定</button></view>
+                    <view style="color:#a6a6a6;font-size:12px;">当前小程序还未关联账号</view>
+                </view>
+
+
                 <view style="display:inline-block;width:50%;vertical-align:top;">
                     <view style="width:80px;height:80px;background-color:#f8e8c2;border-radius:80px;float:right;"></view>
                 </view>
@@ -27,13 +35,13 @@
               <view class="weui-cell__bd">邀请会员</view>
               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
            </navigator>
-           <!--<navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">-->
-             <!--<view class="weui-cell__hd">-->
-                 <!--<image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>-->
-             <!--</view>-->
-             <!--<view class="weui-cell__bd">会员管理</view>-->
-             <!--<view class="weui-cell__ft weui-cell__ft_in-access"></view>-->
-          <!--</navigator>-->
+           <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type="navigate" url="/pages/mine/sub">
+             <view class="weui-cell__hd">
+                 <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+             </view>
+             <view class="weui-cell__bd">会员管理</view>
+             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
            <!--<navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">-->
                <!--<view class="weui-cell__hd">-->
                    <!--<image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>-->

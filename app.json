@@ -1,10 +1,11 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/mine/index",
+    "pages/mine/sub",
     "pages/mine/signrecord",
     "pages/health/index2",
     "pages/mine/qrcode",
-    "pages/mine/index",
     "pages/health/route",
     "pages/logs/logs",
     "pages/health/index3",
@@ -15,7 +16,9 @@
     "pages/health/success",
     "pages/logs/sign",
     "pages/mine/signdetail",
-    "pages/mine/openid"
+    "pages/mine/openid",
+    "pages/mine/bind",
+    "pages/mine/msg"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -32,6 +35,10 @@
       "pagePath": "pages/logs/logs",
       "text": "健康打卡"
     },
+      {
+        "pagePath":"pages/mine/msg",
+        "text":"消息"
+      },
       {
         "pagePath":"pages/mine/index",
         "text":"我的"
