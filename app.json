@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/report/getgoodsuccess",
+    "pages/report/getgood",
+    "pages/report/pay",
     "pages/index/index",
     "pages/mine/index",
     "pages/mine/sub",

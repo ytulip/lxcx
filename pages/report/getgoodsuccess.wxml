@@ -1,0 +1,41 @@
+<!--logs.wxml-->
+<view>
+    <view class="weui-cells weui-cells_after-title">
+        <!--logs.wxml-->
+        <view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">剩余可提货箱数:{{total}}</view>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">提货日期:{{thisMonth}}</view>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">提货方式:{{thisMonth}}</view>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">邮寄地址:{{thisMonth}}</view>
+                    </view>
+                </view>
+
+            </view>
+
+        </view>
+
+
+
+    </view>
+
+    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="pay">返回首页</button></view>
+
+</view>
