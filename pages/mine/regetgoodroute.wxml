@@ -1,0 +1,40 @@
+<!--logs.wxml-->
+<view class="content-wrapper-24-16">
+    <view>
+        <view class="navigator-line" style="padding: 24px 16px;">
+            <view class="cus-row">
+                <view class="cus-row-col-8 fs-16-fc-ffffff">报单产品可提货数量</view>
+                <view class="cus-row-col-3 fs-24-fc-ffffff-b t-al-r">{{user.get_good}}箱</view>
+            </view>
+        </view>
+        <navigator hover-class="none" style="padding: 0 24px;" open-type="navigate" url="/pages/report/getgood">
+            <view class="navigator-sub-line p-t-b-16 t-al-c">
+                <view class="fs-16-fc-099FFF">提货</view>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="m-t-24">
+        <view class="navigator-line-78CD09" style="padding: 24px 16px;">
+            <view class="cus-row">
+                <view class="cus-row-col-8 fs-16-fc-ffffff">复购产品可提货数量</view>
+                <view class="cus-row-col-3 fs-24-fc-ffffff-b t-al-r">{{user.re_get_good}}箱</view>
+            </view>
+        </view>
+        <navigator hover-class="none" style="padding: 0 24px;" open-type="navigate" url="/pages/rereport/getgood">
+            <view class="navigator-sub-line p-t-b-16 t-al-c">
+                <view class="fs-16-fc-78CD09">提货</view>
+            </view>
+        </navigator>
+    </view>
+
+
+    <view class="m-t-24">
+        <view class="navigator-line-FFB11B" style="padding: 24px 16px;">
+            <view class="cus-row">
+                <view class="cus-row-col-8 fs-16-fc-ffffff">报单产品可提货数量</view>
+                <view class="cus-row-col-3 t-al-r"><image src="/images/next-arrow.png" mode="widthFix" style="width: 9px;"></image></view>
+            </view>
+        </view>
+    </view>
+</view>

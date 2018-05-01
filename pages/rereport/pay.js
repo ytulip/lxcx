@@ -4,46 +4,22 @@ var util = require('../../utils/util.js')
 Page({
     data: {
         openid:'',
-        productAttr:{}
     },
 
 
     onLoad:function(options)
     {
         var openid = util.auth.getOpenid();
-        var that = this;
         this.setData(
             {
                 openid:openid
             }
         );
-
-        wx.request({
-            url: util.serverHost + 'activity/report-info' ,
-            success:function(requestRes)
-            {
-                console.log(requestRes);
-                // requestRes.data
-
-                that.setData(
-                    {
-                        productAttr:requestRes.data.data.product_attr
-                    }
-                );
-            }
-        })
-    },
-
-
-    bindPhoneInput: function(e){
-        this.setData({
-            immediatePhone: e.detail.value
-        })
     },
 
     pay:function () {
         var requestData = {};
-        requestData.phone = this.data.immediatePhone;
+        requestData.buy_type = 2;
         wx.request({
             url: util.serverHost + 'activity/report-pay?openid=' + this.data.openid,
             method:'get',

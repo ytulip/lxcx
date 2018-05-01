@@ -2,7 +2,7 @@
 <view class="">
 
   <view style="width: 100%;position: relative;">
-      <image src="/images/health3.png" style="width: 100%;" mode="widthFix">
+      <image src="/images/health3.png" style="width: 100%;" v>
 
       </image>
       <view style="position: absolute;bottom: 4%;left:0;right: 0;text-align: center;">

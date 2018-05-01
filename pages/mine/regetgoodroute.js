@@ -5,7 +5,7 @@ const app = getApp()
 
 Page({
     data: {
-        monthGetGood:{}
+        user:{}
 
     },
     onLoad: function(options) {
@@ -17,7 +17,7 @@ Page({
         );
         var that = this;
         wx.request({
-            url: util.serverHost + 'activity/month-get-good-info?openid=' + this.data.openid ,
+            url: util.serverHost + 'activity/user-info-new?openid=' + this.data.openid ,
             success:function(requestRes)
             {
                 console.log(requestRes);
@@ -25,20 +25,9 @@ Page({
 
                 that.setData(
                     {
-                        monthGetGood:requestRes.data.data.monthGetGood
+                        user:requestRes.data.data.user
                     }
                 );
-            }
-        })
-    },
-
-    pay:function () {
-        wx.switchTab({
-            url: '/pages/index/index',
-            success: function (e) {
-                var page = getCurrentPages().pop();
-                if (page == undefined || page == null) return;
-                page.onLoad();
             }
         })
     },

@@ -1,8 +1,13 @@
 {
   "pages":[
+    "pages/mine/regetgoodroute",
+    "pages/report/pay",
+    "pages/index/home",
+    "pages/rereport/pay",
     "pages/report/getgoodsuccess",
     "pages/report/getgood",
-    "pages/report/pay",
+    "pages/report/good",
+    "pages/report/success",
     "pages/index/index",
     "pages/mine/index",
     "pages/mine/sub",
@@ -21,7 +26,9 @@
     "pages/mine/signdetail",
     "pages/mine/openid",
     "pages/mine/bind",
-    "pages/mine/msg"
+    "pages/mine/msg",
+    "pages/rereport/getgoodsuccess",
+    "pages/rereport/getgood"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -32,19 +39,35 @@
   "tabBar": {
     "selectedColor": "#1296db",
     "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页"
+      "pagePath": "pages/index/home",
+      "text": "首页",
+      "iconPath":"/images/tarbar/home.png",
+      "selectedIconPath":"/images/tarbar/home_active.png",
+      "color":"#484848",
+      "selectedColor":"#5EC11A"
     },{
       "pagePath": "pages/logs/logs",
-      "text": "健康打卡"
+      "text": "健康打卡",
+      "iconPath":"/images/tarbar/pool.png",
+      "selectedIconPath":"/images/tarbar/pool_active.png",
+      "color":"#484848",
+      "selectedColor":"#5EC11A"
     },
       {
         "pagePath":"pages/mine/msg",
-        "text":"消息"
+        "text":"消息",
+        "iconPath":"/images/tarbar/message.png",
+        "selectedIconPath":"/images/tarbar/message_active.png",
+        "color":"#484848",
+        "selectedColor":"#5EC11A"
       },
       {
         "pagePath":"pages/mine/index",
-        "text":"我的"
+        "text":"我的",
+        "iconPath":"/images/tarbar/mine.png",
+        "selectedIconPath":"/images/tarbar/mine_active.png",
+        "color":"#484848",
+        "selectedColor":"#5EC11A"
       }]
   }
 }

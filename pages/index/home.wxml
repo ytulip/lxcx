@@ -1,0 +1,29 @@
+<view class="content-wrapper">
+    <view class="cus-row" style="background-color: #ffffff;padding: 24px 0;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 8px;">
+        <navigator class="cus-row-col-4" open-type="navigate" url="/pages/report/pay">
+            <view class="t-al-c">><image src="/images/icon2.png" mode="widthFix" class="img-icon"></image></view>
+            <view class="t-al-c fs-16-fc-484848  m-t-10">报单</view>
+        </navigator>
+        <view class="cus-row-col-4">
+            <view class="t-al-c">><image src="/images/icon1.png" mode="widthFix" class="img-icon"></image></view>
+            <view class="t-al-c fs-16-fc-484848  m-t-10">复购</view>
+        </view>
+        <view class="cus-row-col-4">
+            <view class="t-al-c">><image src="/images/icon3.png" mode="widthFix" class="img-icon"></image></view>
+            <view class="t-al-c fs-16-fc-484848 m-t-10">提货</view>
+        </view>
+    </view>
+
+    <view class="m-t-24 cus-row">
+        <view class="cus-row-col-6" style="padding-right:8px;box-sizing:border-box; ">
+            <image src="/images/home_l.png" mode="widthFix" style="width: 100%;"></image>
+        </view>
+        <view class="cus-row-col-6" style="padding-left: 8px;box-sizing:border-box;">
+            <image src="/images/home_r.png" mode="widthFix" style="width: 100%;"></image>
+        </view>
+    </view>
+
+    <view class="m-t-20">
+        <image src="/images/activity.png" mode="widthFix" style="width: 100%;"></image>
+    </view>
+</view>

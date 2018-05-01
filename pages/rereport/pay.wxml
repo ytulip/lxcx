@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<!--<web-view src="https://lamushan.com/user/essay?id=3"></web-view>-->
+<view  class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+    <view class="cus-row cus-row-v-m">
+        <view class="cus-row-col-6" style="display: inline-block;">
+            <text class="fs-24-fc-212229">￥</text><text class="fs-24-fc-212229" id="price_label">{{price}}</text>
+        </view>
+        <view class="cus-row-col-6" style="display: inline-block;">
+            <text class="btn-block1 m-t-20" bindtap="pay" style="margin-top: 0;font-size:12px;" >立即付款</text>
+        </view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+
+</view>

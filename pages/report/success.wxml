@@ -1,0 +1,41 @@
+<!--logs.wxml-->
+<view>
+    <view class="weui-cells weui-cells_after-title">
+        <!--logs.wxml-->
+        <view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">提货日期:{{monthGetGood.get_date}}</view>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">提货数量:{{monthGetGood.count}}</view>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">提货方式:{{(monthGetGood.deliver_type == 1)?'自提':'送货上门'}}</view>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view style="line-height: 48px;">邮寄地址:{{monthGetGood.address}}</view>
+                    </view>
+                </view>
+
+            </view>
+
+        </view>
+
+
+
+    </view>
+
+    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="pay">返回首页</button></view>
+
+</view>
