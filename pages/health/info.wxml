@@ -1,40 +1,65 @@
-<view class="content-wrapper-24-16">
+<view class="content-wrapper-24-16" wx:if="{{showPage}}">
     <view class="content-wrapper-ffffff">
         <view class="fs-16-fc-484848-m">基本信息</view>
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">身高</view>
-            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.tall}} cm</view>
         </view>
 
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">体重</view>
-            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.weight}} kg</view>
         </view>
 
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">腰围</view>
-            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.waistline}} cm</view>
         </view>
 
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">血压</view>
-            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.blood_press}}</view>
         </view>
 
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">血糖</view>
-            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.blood_glucose}}</view>
         </view>
 
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">
-                <image src="" mode="widthFix" style="width: 100%"/>
+                <image src="{{'https://lamushan.com'  + healthInfo.first.cover_image}}" mode="widthFix" style="width: 100%"/>
+                <view class="fs-16-fc-9A9B9C t-al-c m-t-16">正面照</view>
             </view>
             <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">
-                <image src="" mode="widthFix" style="width: 100%"/>
+                <image src="{{'https://lamushan.com'  + healthInfo.first.oppo_image}}" mode="widthFix" style="width: 100%"/>
+                <view class="fs-16-fc-9A9B9C t-al-c m-t-16">侧面照</view>
             </view>
         </view>
 
 
+    </view>
+
+    <view class="content-wrapper-ffffff m-t-33">
+        <view class="fs-16-fc-484848-m">病状情况</view>
+        <view wx:for="{{healthInfo.second}}" class="m-t-16 m-r-19">
+            {{item}}
+        </view>
+        <view class="fs-16-fc-484848-m m-t-33">饮食习惯</view>
+        <view wx:for="{{healthInfo.third[0]}}" class="fs-16-fc-484848 m-t-16">
+            {{items1[item - 1].text}}
+        </view>
+        <view class="fs-16-fc-484848-m m-t-33">作息习惯</view>
+        <view wx:for="{{healthInfo.third[1]}}" class="fs-16-fc-484848">
+            {{items2[item - 1].text}}
+        </view>
+        <view class="fs-16-fc-484848-m m-t-33">行为习惯</view>
+        <view wx:for="{{healthInfo.third[2]}}" class="fs-16-fc-484848">
+            {{items3[item - 1].text}}
+        </view>
+        <view class="fs-16-fc-484848-m m-t-33">心理习惯</view>
+        <view wx:for="{{healthInfo.third[3]}}" class="fs-16-fc-484848">
+            {{items4[item - 1].text}}
+        </view>
     </view>
 </view>

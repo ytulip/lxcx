@@ -39,6 +39,29 @@
         </navigator>
         </view>
 
+
+        <view  class="m-t-24" wx:if="{{userInfo}}">
+            <navigator open-type="navigate" url="/pages/mine/up" class="mine-list" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+                <view class="cus-row">
+                    <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">邀请码</view>
+                    <view class="cus-row-col-2 t-al-r v-a-m">
+                        <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
+                    </view>
+                </view>
+            </navigator>
+
+            <navigator open-type="navigate" url="/pages/mine/up" class="mine-list" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+                <view class="cus-row">
+                    <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">购买记录</view>
+                    <view class="cus-row-col-2 t-al-r v-a-m">
+                        <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
+                    </view>
+                </view>
+            </navigator>
+
+
+        </view>
+
        <view class="weui-cells weui-cells_after-title" style="margin-top:20px;" wx:if="{{userInfo}}">
 
 
