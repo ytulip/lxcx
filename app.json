@@ -1,6 +1,8 @@
 {
   "pages":[
+    "pages/health/info",
     "pages/index/home",
+    "pages/mine/invited_code_list",
     "pages/report/good",
     "pages/mine/index",
     "pages/report/success",

@@ -13,6 +13,8 @@
 
 .m-l-16{margin-left: 16px;}
 
+.m-t-33{margin-top: 33px;}
+
 .p-t-b-16{padding-top: 16px;padding-bottom: 16px;}
 
 .p-24-16{padding: 24px 16px;}
@@ -30,6 +32,10 @@ bottom: 0;
 
 .content-wrapper{padding: 16px;background-color: #f8f8f8;}
 .content-wrapper-24-16{padding: 24px 16px;}
+
+.content-wrapper-ffffff{
+    padding: 16px;background-color: #ffffff;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);  border-radius: 8px;
+}
 
 .cus-row{font-size: 0;line-height: 0;}
 .cus-row-col-12
@@ -106,6 +112,8 @@ width: 8.33333333%;
 .fs-12-fc-95909e{font-size: 12px;color: #95909E;line-height: 14px;}
 .fs-14-fc-A6A6A6{font-size: 14px;color: #A6A6A6;line-height: 16px;}
 
+
+
 .btn-block1{display: block;line-height: 40px;text-align: center;
 color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #81BA1F;}
 
@@ -123,6 +131,7 @@ color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #
 .img-icon{width: 32px;}
 
 .fs-16-fc-484848{font-size: 16px;color:#484848;line-height: 18px;}
+.fs-16-fc-484848-m{font-size: 16px;color:#484848;line-height: 18px;font-weight: 500;}
 
 .navigator-line{background: #099FFF;  box-shadow: 0 10px 24px 0 rgba(9,159,255,0.26);  border-radius: 8px;}
 
@@ -139,3 +148,11 @@ color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #
 }
 
 .mine-list-item{padding: 19px}
+
+
+.mine-record{
+    background: #FFFFFF;
+    box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 18px 16px;
+}

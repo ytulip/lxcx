@@ -1,0 +1,40 @@
+<view class="content-wrapper-24-16">
+    <view class="content-wrapper-ffffff">
+        <view class="fs-16-fc-484848-m">基本信息</view>
+        <view class="cus-row m-t-33">
+            <view class="cus-row-col-6 fs-16-fc-484848">身高</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+        </view>
+
+        <view class="cus-row m-t-33">
+            <view class="cus-row-col-6 fs-16-fc-484848">体重</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+        </view>
+
+        <view class="cus-row m-t-33">
+            <view class="cus-row-col-6 fs-16-fc-484848">腰围</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+        </view>
+
+        <view class="cus-row m-t-33">
+            <view class="cus-row-col-6 fs-16-fc-484848">血压</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+        </view>
+
+        <view class="cus-row m-t-33">
+            <view class="cus-row-col-6 fs-16-fc-484848">血糖</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">cm</view>
+        </view>
+
+        <view class="cus-row m-t-33">
+            <view class="cus-row-col-6 fs-16-fc-484848">
+                <image src="" mode="widthFix" style="width: 100%"/>
+            </view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">
+                <image src="" mode="widthFix" style="width: 100%"/>
+            </view>
+        </view>
+
+
+    </view>
+</view>

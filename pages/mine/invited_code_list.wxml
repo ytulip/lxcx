@@ -1,0 +1,22 @@
+<view>
+    <view class="cus-row">
+        <view class="cus-row-col-6 t-al-c">
+            <view class="fs-14-fc-212229  active-tab in-bl" style="position: relative;" bindtap="changeIndex" data-index="0">
+                未使用
+                <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{!tabIndex}}"></view>
+            </view>
+        </view>
+        <view class="cus-row-col-6 t-al-c"><view class="fs-14-fc-212229 in-bl" style="position: relative;" bindtap="changeIndex" data-index="1">已使用
+            <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{tabIndex}}"></view>
+        </view></view>
+    </view>
+
+    <view wx:if="{{!tabIndex}}">
+        <view class="mine-record"></view>
+    </view>
+
+    <view wx:if="{{tabIndex}}">
+        <view class="mine-record"></view>
+    </view>
+
+</view>
