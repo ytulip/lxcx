@@ -34,12 +34,7 @@ Page({
 
     pay:function () {
         wx.switchTab({
-            url: '/pages/index/index',
-            success: function (e) {
-                var page = getCurrentPages().pop();
-                if (page == undefined || page == null) return;
-                page.onLoad();
-            }
+            url: '/pages/index/home'
         })
     },
 

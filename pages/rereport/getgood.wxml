@@ -1,30 +1,33 @@
 <!--logs.wxml-->
-<view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                   <view style="line-height: 48px;">剩余可提货箱数:{{total}}</view>
-                </view>
-            </view>
+<view class="content-wrapper">
 
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                    <view style="line-height: 48px;">本月可提货箱数:{{thisMonth}}</view>
-                </view>
-            </view>
-
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                    <view style="line-height: 48px;">请选择提货数量:</view>
-                    <picker bindchange="bindPickerChange" value="{{quantityIndex}}" range="{{quantityArr}}" style="line-height: 44px;">
-                        <view class="picker">
-                            {{quantityArr[quantityIndex]}}
-                        </view>
-                    </picker>
-                </view>
-            </view>
+    <view class="navigator-line-FFB11B" style="padding: 24px 16px;">
+        <view class="fs-16-fc-ffffff">剩余可提货数量：{{userInfo.re_get_good}}箱</view>
+    </view>
 
 
+    <view class="m-t-24">
+        <view class="fs-16-fc-484848 m-t-24">提货数量</view>
+
+        <view class="m-t-24">
+
+        <view class="cus-row-col-1">
+            <image src="{{allImagePath}}" mode="widthFix" data-index="1" style="width: 14px;"  bindtap="numberChange"></image>
+        </view>
+        <view class="cus-row-col-5">
+            <view class="fs-16-fc-484848">一次全提</view>
+        </view>
+        <view class="cus-row-col-1">
+            <image src="/images/checkbox.png" mode="widthFix" style="width: 14px;" src="{{numberImagePath}}"  bindtap="numberChange" data-index="2"></image>
+        </view>
+        <view class="cus-row-col-5" style="vertical-align: top;">
+            <input placeholder="请输入提货数量" style="border-bottom:1px solid #ebe9e9;padding-bottom: 16px;" type="number" bindinput="bindQuantityChange"/>
+        </view>
+        </view>
+    </view>
+
+
+        <view class="weui-cells weui-cells_after-title m-t-24">
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
                     <view class="weui-label">收货方式</view>

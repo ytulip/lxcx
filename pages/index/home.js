@@ -129,5 +129,18 @@ Page({
         wx.navigateTo({
             url: '/pages/health/route'
         })
+    },
+
+    goLog:function()
+    {
+        console.log(1);
+        wx.switchTab({
+            url: '/pages/logs/logs',
+            success: function (e) {
+                var page = getCurrentPages().pop();
+                if (page == undefined || page == null) return;
+                page.onLoad();
+            }
+        })
     }
 })

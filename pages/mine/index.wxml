@@ -27,7 +27,24 @@
             </view>
         </view>
 
-       <view class="weui-cells weui-cells_after-title" style="margin-top:20px;">
+
+        <view  class="m-t-24" wx:if="{{userInfo}}">
+            <navigator open-type="navigate" url="/pages/mine/up" class="mine-list" wx:if="{{!userInfo.vip_level}}" style="padding: 19px 16px;">
+                <view class="cus-row">
+                <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">升级成为高级会员</view>
+                <view class="cus-row-col-2 t-al-r v-a-m">
+                    <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
+                </view>
+        </view>
+        </navigator>
+        </view>
+
+       <view class="weui-cells weui-cells_after-title" style="margin-top:20px;" wx:if="{{userInfo}}">
+
+
+
+
+
            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type="navigate" url="/pages/mine/qrcode">
               <view class="weui-cell__hd">
                   <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>

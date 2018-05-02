@@ -11,7 +11,12 @@
     margin-top: 24px;
 }
 
+.m-l-16{margin-left: 16px;}
+
 .p-t-b-16{padding-top: 16px;padding-bottom: 16px;}
+
+.p-24-16{padding: 24px 16px;}
+.p-13-26{padding: 13px 24px;}
 
 .fix-bottom {
 position: fixed;
@@ -90,9 +95,16 @@ width: 8.33333333%;
 
 .fs-24-fc-212229{font-size: 24px;color:#212229;line-height: 26px;}
 .fs-16-fc-ffffff{font-size: 16px;color:#ffffff;line-height: 18px;}
+.fs-18-fc-ffffff{font-size: 18px;color:#ffffff;line-height: 20px;}
 .fs-16-fc-099FFF{font-size: 16px;  color: #099FFF;  line-height: 18px;}
 .fs-16-fc-78CD09{font-size: 16px;  color: #78CD09;  line-height: 18px;}
 .fs-24-fc-ffffff-b{font-size: 24px;color:#ffffff;line-height: 26px;font-weight: bold;}
+.fs-24-fc-27282F{font-size: 24px;  color: #27282F;line-height:26px;}
+
+.fs-14-fc-212229{font-size: 14px;color: #212229;line-height:16px;}
+.fs-16-fc-212229{font-size: 16px;color: #212229;line-height:18px;}
+.fs-12-fc-95909e{font-size: 12px;color: #95909E;line-height: 14px;}
+.fs-14-fc-A6A6A6{font-size: 14px;color: #A6A6A6;line-height: 16px;}
 
 .btn-block1{display: block;line-height: 40px;text-align: center;
 color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #81BA1F;}
@@ -102,6 +114,8 @@ color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #
 .in-bl{display: inline-block}
 .in-bl-line{font-size: 0}
 .in-bl-line-item{font-size: 14px;display: inline-block;}
+.v-a-m{vertical-align: middle;}
+.v-a-b{vertical-align: bottom;}
 
 
 .l-h-48{line-height: 48px;}
@@ -117,3 +131,11 @@ color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #
 .navigator-line-FFB11B{background: #FFB11B;  box-shadow: 0 10px 24px 0 rgba(255,177,27,0.26);  border-radius: 8px;}
 
 .navigator-sub-line{background: #FFFFFF;  box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 0 0 8px 8px;}
+
+.mine-list{
+    background: #FFFFFF;
+    box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);
+    border-radius: 8px;
+}
+
+.mine-list-item{padding: 19px}

@@ -5,7 +5,7 @@ const app = getApp()
 
 Page({
     data: {
-        order:{}
+        monthGetGood:{}
 
     },
     onLoad: function(options) {
@@ -17,7 +17,7 @@ Page({
         );
         var that = this;
         wx.request({
-            url: util.serverHost + 'activity/last-payed-order?openid=' + this.data.openid ,
+            url: util.serverHost + 'activity/month-get-good-info?openid=' + this.data.openid ,
             success:function(requestRes)
             {
                 console.log(requestRes);
@@ -25,7 +25,7 @@ Page({
 
                 that.setData(
                     {
-                        order:requestRes.data.data.order
+                        monthGetGood:requestRes.data.data.monthGetGood
                     }
                 );
             }
@@ -34,20 +34,16 @@ Page({
 
     pay:function () {
         wx.switchTab({
-            url: '/pages/index/home',
-            success: function (e) {
-                var page = getCurrentPages().pop();
-                if (page == undefined || page == null) return;
-                page.onLoad();
-            }
+            url: '/pages/index/home'
         })
     },
 
     getGood:function() {
         wx.navigateTo({
-                url: '/pages/report/getgood'
+                url: '/pages/rereport/getgood'
             }
         );
     }
+
 
 })

@@ -10,15 +10,26 @@ Page({
         hasUserInfo: false,
         total:0,
         thisMonth:0,
-        quantityArr:[1,2],
-        quantityIndex:0,
         array:['送货上门','自提'],
         index:0,
         selfGetArray:[],
         selfGetIndex:0,
         openid:'',
+        allSelected:1,
+        numberSelected:0,
+        allImagePath:'/images/checkbox.png',
+        numberImagePath:'/images/checkbox2.png',
+        quantity:0
 
     },
+
+    bindQuantityChange:function(e)
+    {
+        this.setData({
+            quantity:e.detail.value
+        });
+    },
+
     onLoad: function(options) {
         var openid = util.auth.getOpenid();
         this.setData(
@@ -45,7 +56,8 @@ Page({
                         immediatePhone:requestRes.data.data.recommondPhone,
                         recommondPhone:requestRes.data.data.recommondPhone,
                         total:requestRes.data.data.total,
-                        thisMonth:requestRes.data.data.currentMonth
+                        thisMonth:requestRes.data.data.currentMonth,
+                        userInfo:requestRes.data.data.user
                     }
                 );
             }
@@ -82,8 +94,17 @@ Page({
         var requestData = {};
         console.log(this.data.index);
         requestData.deliver_type = (this.data.index == '0')?2:1;
-        requestData.quantityCount = (this.data.quantityIndex == '0')?1:2;
-        console.log(requestData.deliver_type);
+        // requestData.quantityCount = (this.data.quantityIndex == '0')?1:2;
+        requestData.get_type = 2;
+        // requestData.quantity =
+        // console.log(requestData.deliver_type);
+
+        if( this.data.allSelected )
+        {
+            requestData.quantityCount = -1;
+        } else {
+            requestData.quantityCount = this.data.quantity;
+        }
 
         if(requestData.deliver_type == 2) { //送货上门
             requestData.address = this.data.address;
@@ -96,7 +117,7 @@ Page({
             requestData.address_phone = this.data.addressList[this.data.selfGetIndex].mobile;
         }
         wx.request({
-            url: util.serverHost + 'activity/try-get-good?openid=' + this.data.openid,
+            url: util.serverHost + 'activity/try-get-re-good?openid=' + this.data.openid,
             method:'get',
             data:requestData,
             success:function(res)
@@ -106,7 +127,7 @@ Page({
                 {
                     wx.redirectTo(
                         {
-                            url:'/pages/report/getgoodsuccess'
+                            url:'/pages/rereport/getgoodsuccess'
                         }
                     );
                 } else
@@ -120,5 +141,39 @@ Page({
             }
         })
     },
+
+    numberChange:function(e)
+    {
+        console.log(e.currentTarget.dataset.index);
+        if( e.currentTarget.dataset.index == 1)
+        {
+            if( !this.data.allSelected)
+            {
+                this.setData(
+                    {
+                        allSelected:1,
+                        numberSelected:0,
+                        allImagePath:'/images/checkbox.png',
+                        numberImagePath:'/images/checkbox2.png'
+                    }
+                )
+            }
+        } else
+        {
+            console.log(this.data.numberSelected);
+            if( !this.data.numberSelected)
+            {
+                console.log(this.data.allSelected);
+                this.setData(
+                    {
+                        allSelected:0,
+                        numberSelected:1,
+                        allImagePath:'/images/checkbox2.png',
+                        numberImagePath:'/images/checkbox.png'
+                    }
+                )
+            }
+        }
+    }
 
 })

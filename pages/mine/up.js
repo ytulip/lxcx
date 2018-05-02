@@ -5,7 +5,7 @@ Page({
     data: {
         openid:'',
         product:{},
-        quantity:3,
+        quantity:'',
         price:0
     },
 
@@ -29,7 +29,6 @@ Page({
                 that.setData(
                     {
                         product:requestRes.data.data.product_attr,
-                        price:requestRes.data.data.product_attr.rebuy_price * 3
                     }
                 );
             }
@@ -41,17 +40,23 @@ Page({
         this.setData(
             {
                 quantity:e.detail.value,
-                price:this.data.product.rebuy_price * e.detail.value
             }
         );
     },
 
     pay:function () {
         var requestData = {};
-        requestData.buy_type = 2;
-        requestData.quantity = this.data.quantity;
+
+        if( !this.data.quantity )
+        {
+            util.mAlert('邀请码必填');
+            return;
+        }
+
+        requestData.invited_code = this.data.quantity;
+
         wx.request({
-            url: util.serverHost + 'activity/report-pay?openid=' + this.data.openid,
+            url: util.serverHost + 'activity/up-user?openid=' + this.data.openid,
             method:'get',
             data:requestData,
             success:function(res)
@@ -59,25 +64,12 @@ Page({
                 console.log(res);
                 if( res.data.status)
                 {
-                    var jsonData = JSON.parse(res.data.data);
-                    console.log(jsonData);
-
-                    wx.requestPayment({
-                        'timeStamp': jsonData.timeStamp,
-                        'nonceStr': jsonData.nonceStr,
-                        'package': jsonData.package,
-                        'signType': jsonData.signType,
-                        'paySign': jsonData.paySign,
-                        'success':function(res){
-                            util.mAlert('支付成功');
-                            wx.redirectTo(
-                                {
-                                    url:'/pages/rereport/success'
-                                }
-                            );
-                        },
-                        'fail':function(res){
-                            util.mAlert('支付失败，请重新支付');
+                    wx.switchTab({
+                        url: '/pages/mine/index',
+                        success: function (e) {
+                            var page = getCurrentPages().pop();
+                            if (page == undefined || page == null) return;
+                            page.onLoad();
                         }
                     });
                 } else

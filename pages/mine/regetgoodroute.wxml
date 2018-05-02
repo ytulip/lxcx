@@ -32,7 +32,7 @@
     <view class="m-t-24">
         <view class="navigator-line-FFB11B" style="padding: 24px 16px;">
             <view class="cus-row">
-                <view class="cus-row-col-8 fs-16-fc-ffffff">报单产品可提货数量</view>
+                <view class="cus-row-col-8 fs-16-fc-ffffff">提货记录</view>
                 <view class="cus-row-col-3 t-al-r"><image src="/images/next-arrow.png" mode="widthFix" style="width: 9px;"></image></view>
             </view>
         </view>

@@ -8,7 +8,9 @@ Page({
         motto: 'Hello World',
         userInfo: {},
         hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        rebuy:0,
+        src:"https://lamushan.com/user/good-detail-xcx?product_id=1"
     },
     //事件处理函数
     bindViewTap: function() {
@@ -19,6 +21,14 @@ Page({
     onLoad: function(options) {
 
         var that = this;
+
+        if( options.rebuy )
+        {
+            this.setData({
+                src:"https://lamushan.com/user/good-detail-xcx?product_id=1&rebuy=1"
+            })
+        }
+
         wx.login({
             success: function(res) {
                 if (res.code) {

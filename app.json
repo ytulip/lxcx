@@ -1,15 +1,18 @@
 {
   "pages":[
+    "pages/index/home",
+    "pages/report/good",
+    "pages/mine/index",
+    "pages/report/success",
+    "pages/rereport/getgoodsuccess",
+    "pages/rereport/success",
+    "pages/rereport/pay",
+    "pages/rereport/getgood",
     "pages/mine/regetgoodroute",
     "pages/report/pay",
-    "pages/index/home",
-    "pages/rereport/pay",
     "pages/report/getgoodsuccess",
     "pages/report/getgood",
-    "pages/report/good",
-    "pages/report/success",
     "pages/index/index",
-    "pages/mine/index",
     "pages/mine/sub",
     "pages/mine/signrecord",
     "pages/health/index2",
@@ -27,8 +30,7 @@
     "pages/mine/openid",
     "pages/mine/bind",
     "pages/mine/msg",
-    "pages/rereport/getgoodsuccess",
-    "pages/rereport/getgood"
+    "pages/mine/up"
   ],
   "window":{
     "backgroundTextStyle":"light",
