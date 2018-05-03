@@ -62,6 +62,10 @@ Page({
         })
     },
     onLoad: function(options) {
+        if( !util.auth.tryAuth() )
+        {
+            return false;
+        }
         var openid = util.auth.getOpenid();
         var that  = this;
 

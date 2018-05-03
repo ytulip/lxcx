@@ -1,4 +1,20 @@
 <!--index.wxml-->
+<view class="content-wrapper">
+    <view class="user_panel">
+       <view class="cus-row">
+           <view class="cus-row-col-4 v-a-t">
+               <view style="font-size: 14px;color: #FFFFFF;line-height: 25px;border: 1px solid #FFFFFF;border-radius: 100px;text-align: center;">活动会员</view>
+           </view>
+           <view class="cus-row-col-4 t-al-c v-a-t">
+               <image class="m-t-10" src="{{'https://lamushan.com' + userInfo.header_img}}" style="width: 75px;height: 75px;" mode="widthFix"></image>
+           </view>
+           <view class="cus-row-col-4 v-a-t"></view>
+       </view>
+
+        <view class="fs-16-fc-ffffff t-al-c m-t-16">{{userInfo.real_name}}</view>
+        <view class="fs-14-fc-ffffff t-al-c m-t-10">{{'手机' + userInfo.phone}}</view>
+    </view>
+</view>
 <view class="page">
     <!--主体-->
     <view>{{util.auth.isLogin}}</view>

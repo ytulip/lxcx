@@ -23,7 +23,7 @@ Page({
                         url: util.serverHost + '/activity/sign-list',
                         data: {
                             code: res.code,
-                            id:options.id
+                            id:options.id?options.id:''
                         },
                         success:function(requestRes)
                         {

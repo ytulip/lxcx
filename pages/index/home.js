@@ -133,7 +133,6 @@ Page({
 
     goLog:function()
     {
-        console.log(1);
         wx.switchTab({
             url: '/pages/logs/logs',
             success: function (e) {
@@ -141,6 +140,12 @@ Page({
                 if (page == undefined || page == null) return;
                 page.onLoad();
             }
+        })
+    },
+
+    goInfo:function(){
+        wx.navigateTo({
+            url: '/pages/health/info'
         })
     }
 })

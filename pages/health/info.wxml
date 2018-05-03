@@ -42,7 +42,7 @@
 
     <view class="content-wrapper-ffffff m-t-33">
         <view class="fs-16-fc-484848-m">病状情况</view>
-        <view wx:for="{{healthInfo.second}}" class="m-t-16 m-r-19">
+        <view wx:for="{{healthInfo.second}}" class="fs-16-fc-484848 m-t-16 m-r-19">
             {{item}}
         </view>
         <view class="fs-16-fc-484848-m m-t-33">饮食习惯</view>
@@ -50,15 +50,15 @@
             {{items1[item - 1].text}}
         </view>
         <view class="fs-16-fc-484848-m m-t-33">作息习惯</view>
-        <view wx:for="{{healthInfo.third[1]}}" class="fs-16-fc-484848">
+        <view wx:for="{{healthInfo.third[1]}}" class="fs-16-fc-484848 m-t-16">
             {{items2[item - 1].text}}
         </view>
         <view class="fs-16-fc-484848-m m-t-33">行为习惯</view>
-        <view wx:for="{{healthInfo.third[2]}}" class="fs-16-fc-484848">
+        <view wx:for="{{healthInfo.third[2]}}" class="fs-16-fc-484848 m-t-16">
             {{items3[item - 1].text}}
         </view>
         <view class="fs-16-fc-484848-m m-t-33">心理习惯</view>
-        <view wx:for="{{healthInfo.third[3]}}" class="fs-16-fc-484848">
+        <view wx:for="{{healthInfo.third[3]}}" class="fs-16-fc-484848 m-t-16">
             {{items4[item - 1].text}}
         </view>
     </view>

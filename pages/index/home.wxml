@@ -16,7 +16,7 @@
 
     <view class="m-t-24 cus-row">
         <view class="cus-row-col-6" style="padding-right:8px;box-sizing:border-box; ">
-            <image src="/images/home_l.png" mode="widthFix" style="width: 100%;" bindtap="goLog"></image>
+            <image src="/images/home_l.png" mode="widthFix" style="width: 100%;" bindtap="goInfo"></image>
         </view>
         <view class="cus-row-col-6" style="padding-left: 8px;box-sizing:border-box;">
             <image src="/images/home_r.png" mode="widthFix" style="width: 100%;" bindtap="goLog"></image>

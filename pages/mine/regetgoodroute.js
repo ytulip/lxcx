@@ -9,6 +9,12 @@ Page({
 
     },
     onLoad: function(options) {
+
+        if ( !util.auth.tryAuth() )
+        {
+            return;
+        }
+
         var openid = util.auth.getOpenid();
         this.setData(
             {

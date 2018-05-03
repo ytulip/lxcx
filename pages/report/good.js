@@ -20,6 +20,12 @@ Page({
     },
     onLoad: function(options) {
 
+
+        if ( !util.auth.tryAuth() )
+        {
+            return;
+        }
+
         var that = this;
 
         if( options.rebuy )
@@ -54,90 +60,5 @@ Page({
                 }
             }
         });
-
-
-        // Do some initialize when page load.
-        // wx.request({
-        //     url: util.serverHost + 'activity/take-part-in',
-        //     method:'post',
-        //     data: {},
-        //     success: function(res){
-        //         // console.log(res);
-        //
-        //         console.log(res.data);
-        //         if( res.data.status )
-        //         {
-        //
-        //         } else
-        //         {
-        //             wx.showToast({
-        //                 title:res.data.desc,
-        //                 icon:"none",
-        //                 duration:3000
-        //             });
-        //         }
-        //     }
-        // });
     },
-    getUserInfo: function(e) {
-        console.log(e)
-        app.globalData.userInfo = e.detail.userInfo
-        this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
-        })
-    },
-    pay:function () {
-        wx.request({
-            url: util.serverHost + 'activity/activity-pay?openid=o0psn4ymkQ0ad5V4nvvs3PXRADD4',
-            method:'get',
-            success:function(res)
-            {
-                console.log(res);
-                if( res.data.status)
-                {
-                    var jsonData = JSON.parse(res.data.data);
-                    console.log(jsonData);
-
-                    wx.requestPayment({
-                        'timeStamp': jsonData.timeStamp,
-                        'nonceStr': jsonData.nonceStr,
-                        'package': jsonData.package,
-                        'signType': jsonData.signType,
-                        'paySign': jsonData.paySign,
-                        'success':function(res){
-                        },
-                        'fail':function(res){
-                        }
-                    });
-                }
-
-
-                // wx.requestPayment({
-                //     'timeStamp': '',
-                //     'nonceStr': '',
-                //     'package': '',
-                //     'signType': 'MD5',
-                //     'paySign': '',
-                //     'success':function(res){
-                //     },
-                //     'fail':function(res){
-                //     }
-                // });
-
-                // requestRes.data
-                // that.setData(
-                //     {
-                //         openid:requestRes.data.data
-                //     }
-                // );
-            }
-        })
-    },
-    takePart:function()
-    {
-        wx.navigateTo({
-            url: '/pages/health/route'
-        })
-    }
 })

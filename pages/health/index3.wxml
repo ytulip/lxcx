@@ -1,33 +1,72 @@
 <!--index.wxml-->
-<view class="weui-cells weui-cells_after-title" style="padding:0 6px;padding-bottom:90px;">
 
-
-    <view>饮食习惯</view>
-    <checkbox-group bindchange="checkboxChange1">
-        <label class="checkbox" wx:for="{{items1}}" style="display: block;">
-            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-        </label>
-    </checkbox-group>
-    <view>作息习惯</view>
-    <checkbox-group bindchange="checkboxChange2">
-        <label class="checkbox" wx:for="{{items2}}" style="display: block;">
-            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-        </label>
-    </checkbox-group>
-    <view>行为习惯</view>
-    <checkbox-group bindchange="checkboxChange3">
-        <label class="checkbox" wx:for="{{items3}}" style="display: block;">
-            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-        </label>
-    </checkbox-group>
-    <view>心理习惯</view>
-    <checkbox-group bindchange="checkboxChange4">
-        <label class="checkbox" wx:for="{{items4}}" style="display: block;">
-            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-        </label>
-    </checkbox-group>
-
-    <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
-        <button class="btn-block1 m-t-20" style="margin-top: 0;" bindtap="submitBtn">提交</button>
+<view class="content-wrapper-24-16">
+    <view class="navigator-line-FFB11B p-13-26">
+        <view>
+            <image class="v-a-m in-bl" src="/images/people.png" style="width: 80px;" mode="widthFix"></image>
+            <view class="fs-16-fc-ffffff in-bl v-a-m m-l-16">
+                <view>为了更好的服务您</view>
+                <view>请选择您的日常习惯</view>
+            </view>
+        </view>
     </view>
+
+
+    <view class="cus-row" style="position: relative;margin-top: 30px;">
+        <view class="circle-point" style="position: absolute;left: 0;top:-8px;"></view>
+        <view class="circle-point" style="position: absolute;left: 50%;top:-8px;transform:translateX(-50%);"></view>
+        <view class="circle-point" style="position: absolute;right: 0;top:-8px;"></view>
+
+        <view class="cus-row-col-6" style="border-bottom: 1px solid #FFB11B;">
+
+        </view>
+
+        <view class="cus-row-col-6" style="border-bottom: 1px solid #FFB11B;">
+
+        </view>
+    </view>
+
+    <view class="cus-row m-t-16" style="padding: 0 8px;" >
+        <view class="cus-row-col-4 fs-14-fc-FFB11B v-a-m">1</view>
+        <view class="cus-row-col-4 fs-14-fc-FFB11B t-al-c v-a-m">2</view>
+        <view class="cus-row-col-4 fs-14-fc-FFB11B t-al-r v-a-m">3</view>
+    </view>
+
+    <view style="padding:0 6px;padding-bottom:90px;position: inherit;">
+
+
+        <view class="fs-16-fc-484848-m m-t-24">饮食习惯</view>
+        <checkbox-group bindchange="checkboxChange1">
+            <label class="checkbox fs-16-fc-484848 m-t-10" wx:for="{{items1}}" style="display: block;">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </checkbox-group>
+
+
+        <view class="fs-16-fc-484848-m m-t-24">作息习惯</view>
+        <checkbox-group bindchange="checkboxChange2">
+            <label class="checkbox fs-16-fc-484848 m-t-10" wx:for="{{items2}}" style="display: block;">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </checkbox-group>
+
+        <view class="fs-16-fc-484848-m m-t-24">行为习惯</view>
+        <checkbox-group bindchange="checkboxChange3">
+            <label class="checkbox fs-16-fc-484848 m-t-10" wx:for="{{items3}}" style="display: block;">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </checkbox-group>
+
+        <view class="fs-16-fc-484848-m m-t-24">心理习惯</view>
+        <checkbox-group bindchange="checkboxChange4">
+            <label class="checkbox fs-16-fc-484848 m-t-10"  wx:for="{{items4}}" style="display: block;">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </checkbox-group>
+
+        <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+            <button class="btn-block1 m-t-20" style="margin-top: 0;" bindtap="submitBtn">提交</button>
+        </view>
+    </view>
+
 </view>

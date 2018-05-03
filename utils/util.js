@@ -52,6 +52,21 @@ User.prototype.getOpenid = function()
 
 }
 
+User.prototype.tryAuth = function()
+{
+    var userToken = wx.getStorageSync("user_token");
+    if( userToken )
+    {
+        return userToken;
+    }
+    wx.redirectTo(
+        {
+            url:'/pages/mine/bind'
+        }
+    );
+    return false;
+}
+
 User.prototype.setUserData = function(date)
 {
     wx.setStorageSync('user_openid', 3);
