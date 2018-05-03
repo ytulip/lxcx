@@ -18,54 +18,8 @@ Page({
         })
     },
     onLoad: function(options) {
-
-        // var openid =
-        //第一步拿openid拿用户
         var openid = util.auth.getOpenid();
-        var userToken = util.auth.getUserToken();
-        if( false && openid && (userToken || (userToken == -1)) )
-        {
-            //算了前期次次都重新拿数据吧
-            this.setData(
-                {
-                    pageShow:1
-                }
-            );
-        } else
-        {
-            var that = this;
-            wx.login({
-                success: function(res) {
-                    if (res.code) {
-                        //发起网络请求
-                        wx.request({
-                            url: util.serverHost + 'passport/openid',
-                            data: {
-                                code: res.code
-                            },
-                            success:function(requestRes)
-                            {
-                                console.log(requestRes);
-                                // requestRes.data
-                                if(requestRes.data.status)
-                                {
-                                    util.auth.setOpenid(requestRes.data.data.openid);
-                                    util.auth.setUserToken(requestRes.data.data.user?requestRes.data.data.user.id:-1);
-                                    that.setData(
-                                        {
-                                            openid:requestRes.data.data,
-                                            pageShow:true
-                                        }
-                                    );
-                                }
-                            }
-                        })
-                    } else {
-                        console.log('登录失败！' + res.errMsg)
-                    }
-                }
-            });
-        }
+
     },
     getUserInfo: function(e) {
         console.log(e)

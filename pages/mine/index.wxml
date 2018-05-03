@@ -1,4 +1,24 @@
 <!--index.wxml-->
+
+<!--未登录状态-->
+<view class="content-wrapper">
+    <view class="user_panel">
+        <view class="cus-row">
+            <view class="cus-row-col-4 v-a-t">
+               
+            </view>
+            <view class="cus-row-col-4 t-al-c v-a-t">
+                <image class="m-t-10" src="{{'https://lamushan.com' + userInfo.header_img}}" style="width: 75px;height: 75px;" mode="widthFix"></image>
+            </view>
+            <view class="cus-row-col-4 v-a-t"></view>
+        </view>
+
+        <view class="fs-16-fc-ffffff t-al-c m-t-16">注册/登录</view>
+        <view class="fs-14-fc-ffffff t-al-c m-t-10"></view>
+    </view>
+</view>
+
+
 <view class="content-wrapper">
     <view class="user_panel">
        <view class="cus-row">
@@ -15,35 +35,12 @@
         <view class="fs-14-fc-ffffff t-al-c m-t-10">{{'手机' + userInfo.phone}}</view>
     </view>
 </view>
+
+
 <view class="page">
     <!--主体-->
     <view>{{util.auth.isLogin}}</view>
     <view class="page__bd" style="padding: 14px;">
-        <view style="width: 100%;border-radius: 8px;box-shadow: 3px;border:1px solid #ececec;">
-            <view style="padding:34px;">
-
-                <view style="display:inline-block;width:50%;vertical-align:top;" wx:if="{{userInfo}}">
-                    <view style="font-size:24px;font-weight:bold;">{{userInfo.real_name}}</view>
-                    <view style="color:#a6a6a6;font-size:12px;">活动身份：{{userInfo.vip_level?"高级会员":"活动会员"}}</view>
-                </view>
-
-                <view style="display:inline-block;width:50%;vertical-align:top;" wx:if="{{!userInfo}}">
-                    <view style="font-size:24px;font-weight:bold;"><button type="button" class=" " bindtap="goBind">去绑定</button></view>
-                    <view style="color:#a6a6a6;font-size:12px;">当前小程序还未关联账号</view>
-                </view>
-
-
-                <view style="display:inline-block;width:50%;vertical-align:top;">
-                    <view style="width:80px;height:80px;background-color:#f8e8c2;border-radius:80px;float:right;"></view>
-                </view>
-            </view>
-            <view style="border-top: 1px solid #ececec;padding: 16px 0;text-align: center; ">
-                <view>{{signScore}}</view>
-                <view>健康管理</view>
-            </view>
-        </view>
-
-
         <view  class="m-t-24" wx:if="{{userInfo}}">
             <navigator open-type="navigate" url="/pages/mine/up" class="mine-list" wx:if="{{!userInfo.vip_level}}" style="padding: 19px 16px;">
                 <view class="cus-row">

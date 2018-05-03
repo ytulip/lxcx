@@ -82,7 +82,7 @@ Page({
 
                 if( !requestRes.data.data.user.health_status )
                 {
-                    wx.navigateTo(
+                    wx.redirectTo(
                         {
                             url:'/pages/health/index'
                         }

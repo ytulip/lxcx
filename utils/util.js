@@ -37,6 +37,19 @@ User.prototype.vaildUser = function()
     //是否是有效用户
 }
 
+
+User.prototype.authCheck = function()
+{
+    var openid = wx.getStorageSync("user_openid");
+    if( openid )
+    {
+
+    } else
+    {
+
+    }
+}
+
 User.prototype.getOpenid = function()
 {
     var openid = wx.getStorageSync("user_openid");
@@ -76,6 +89,42 @@ User.prototype.setUserData = function(date)
 User.prototype.setOpenid = function($openid)
 {
     wx.setStorageSync('user_openid', $openid);
+}
+
+User.prototype.getOpenid = function()
+{
+    return wx.getStorageSync('user_openid');
+}
+
+User.prototype.setUserToken = function($token)
+{
+    wx.setStorageSync('user_token', $token);
+}
+
+User.prototype.getUserToken = function()
+{
+    return wx.getStorageSync("user_token");;
+}
+
+User.prototype.getTokenOrBind = function()
+{
+
+    var userToken = wx.getStorageSync("user_token");
+    if ( userToken )
+    {
+        return userToken;
+    }
+
+    wx.redirectTo(
+        {
+            url:'/pages/mine/bind'
+        }
+    );
+
+
+    //首先openid在进来的时候就已经获得了
+    var openid = this.getOpenid();
+
 }
 
 User.prototype.tryGetUserInfo = function()

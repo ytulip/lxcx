@@ -23,7 +23,7 @@ Page({
                             util.auth.setOpenid(requestRes.data.data.openid);
 
                             wx.switchTab({
-                                url: '/pages/mine/index'
+                                url: '/pages/index/home'
                             });
                             console.log('跳回去');
                         }

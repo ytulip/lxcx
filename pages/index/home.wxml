@@ -1,4 +1,4 @@
-<view class="content-wrapper">
+<view class="content-wrapper" wx:if="{{pageShow}}">
     <view class="cus-row" style="background-color: #ffffff;padding: 24px 0;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 8px;">
         <navigator class="cus-row-col-4" open-type="navigate" url="/pages/report/good">
             <view class="t-al-c"><image src="/images/icon2.png" mode="widthFix" class="img-icon"></image></view>
