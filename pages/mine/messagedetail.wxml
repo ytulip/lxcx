@@ -1,0 +1,6 @@
+<view wx:if="{{showPage}}">
+    <view style="padding: 39px 30px;">
+        <view class="fs-14-fc-484848">{{record.content}}</view>
+        <view class="fs-14-fc-95909E t-al-r m-t-10">{{record.created_at}}</view>
+    </view>
+</view>
