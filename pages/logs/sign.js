@@ -142,14 +142,14 @@ Page({
                     // console.log(requestRes.data.status);
                     // var page = getCurrentPages().pop();
                     // page.onLoad();
-                    wx.switchTab({
-                        url: '/pages/logs/logs',
-                        success: function (e) {
-                            var page = getCurrentPages().pop();
-                            if (page == undefined || page == null) return;
-                            page.onLoad();
-                        }
-                    });
+                    // wx.switchTab({
+                    //     url: '/pages/logs/logs',
+                    //     success: function (e) {
+                    //         var page = getCurrentPages().pop();
+                    //         if (page == undefined || page == null) return;
+                    //         page.onLoad();
+                    //     }
+                    // });
                 } else
                 {
                     util.mAlert(requestRes.data.desc);

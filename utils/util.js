@@ -177,9 +177,26 @@ User.prototype.isLogin = function()
     var userInfo = wx.getStorageSync("user_openid");
 }
 
+function Kit(){
+
+}
+
+Kit.prototype.goHome = function()
+{
+    wx.switchTab({
+        url: '/pages/index/home',
+        success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+        }
+    })
+}
+
 
 
 var auth = new User();
+var kit = new Kit();
 
 
 module.exports = {
@@ -187,5 +204,6 @@ module.exports = {
     serverHost:serverHost,
     imageHost:imageHost,
     mAlert:mAlert,
-    auth:auth
+    auth:auth,
+    kit:kit
 }

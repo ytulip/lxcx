@@ -87,6 +87,10 @@ Page({
             return;
         }
 
+
+
+        var that = this;
+
         wx.request({
             url: util.serverHost + 'activity/login-in',
             method: 'post',
@@ -96,9 +100,12 @@ Page({
 
                 console.log(res.data);
                 if (res.data.status) {
-                    // wx.redirectTo({
-                    //     url: '/pages/activity/pay?openid=' + that.data.openid
-                    // })
+
+                    //设置各种各样的东西哟
+                    util.auth.setOpenid(that.data.openid);
+                    util.auth.setUserToken(res.data.data.user.id);
+
+
                     wx.switchTab({
                         url: '/pages/mine/index',
                         success: function (e) {

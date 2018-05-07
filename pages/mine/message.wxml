@@ -1,0 +1,20 @@
+<view wx:if="{{showPage}}">
+    <view wx:for="{{messageList}}" class="message-item">
+
+        <view class="" style="padding-left: 60px;padding-right:16px;padding-bottom:24px;position: relative;box-shadow: 0 1px 0 0 rgba(0,0,0,0.10);">
+            <view style="position: absolute;left:0;top:0;">
+                <image style="width: 46px;height: 46px;" src="/images/message.png"></image>
+            </view>
+
+            <view class="fs-16-fc-484848-m">{{item.title}}</view>
+            <view class="fs-14-fc-95909E in-bl m-t-10" style="white-space:nowrap;text-overflow:ellipsis;overflow: hidden;width: 100%;">{{item.content}}</view>
+        </view>
+        <!--<view class="in-bl">-->
+            <!--<image style="width: 46px;height: 46px;" src="/images/message.png"></image>-->
+        <!--</view>-->
+        <!--<view class="in-bl" style="margin-left: 13px;">-->
+            <!--<view class="fs-16-fc-484848-m">{{item.title}}</view>-->
+            <!--<view class="fs-14-fc-95909e">{{item.content}}</view>-->
+        <!--</view>-->
+    </view>
+</view>

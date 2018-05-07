@@ -15,11 +15,13 @@
     </view>
 
     <view class="m-t-24 cus-row">
-        <view class="cus-row-col-6" style="padding-right:8px;box-sizing:border-box; ">
-            <image src="/images/home_l.png" mode="widthFix" style="width: 100%;" bindtap="goInfo"></image>
+        <view class="cus-row-col-6" style="padding-right:8px;box-sizing:border-box;position: relative; " bindtap="goInfo">
+            <image src="/images/home_l.png" mode="widthFix" style="width: 100%;"></image>
+            <view class="fs-18-fc-ffffff height-center t-al-c">健康自测表</view>
         </view>
-        <view class="cus-row-col-6" style="padding-left: 8px;box-sizing:border-box;">
-            <image src="/images/home_r.png" mode="widthFix" style="width: 100%;" bindtap="goLog"></image>
+        <view class="cus-row-col-6" style="padding-left: 8px;box-sizing:border-box;position: relative;" bindtap="goLog">
+            <view class="fs-18-fc-ffffff height-center t-al-c">健康打卡</view>
+            <image src="/images/home_r.png" mode="widthFix" style="width: 100%;"></image>
         </view>
     </view>
 

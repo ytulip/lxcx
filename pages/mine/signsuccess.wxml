@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<view class="content-wrapper-24-16">
+    <view style="background: #FFFFFF;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 8px;padding-top: 60px;padding-bottom: 40px;" class="t-al-c">
+        <image src="/images/success.png" style="width: 91px;" mode="widthFix"></image>
+        <view class="fs-24-fc-27282F t-al-c m-t-24">打卡成功</view>
+    </view>
+
+    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="goSignList">查看结果</button></view>
+
+    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="goHome">返回首页</button></view>
+
+</view>

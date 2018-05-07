@@ -1,4 +1,4 @@
-<view>
+<view wx:if="{{pageShow}}">
     <view class="cus-row">
         <view class="cus-row-col-6 t-al-c">
             <view class="fs-14-fc-212229  active-tab in-bl" style="position: relative;" bindtap="changeIndex" data-index="0">
@@ -12,11 +12,17 @@
     </view>
 
     <view wx:if="{{!tabIndex}}">
-        <view class="mine-record"></view>
+        <view class="mine-record m-t-16" wx:for="{{valid_list}}">
+            <view class="fs-20-fc-27282f">{{item.invited_code}}</view>
+            <view class="fs-14-fc-A6A6A6 m-t-10">邀请码</view>
+        </view>
     </view>
 
     <view wx:if="{{tabIndex}}">
-        <view class="mine-record"></view>
+        <view class="mine-record m-t-16" wx:for="{{used_list}}">
+            <view class="fs-16-fc-484848">{{item.real_name}}    {{item.invited_code}}</view>
+            <view class="fs-14-fc-95909E m-t-10">手机 {{item.phone}}        注册/升级时间{{item.invited_time}}</view>
+        </view>
     </view>
 
 </view>

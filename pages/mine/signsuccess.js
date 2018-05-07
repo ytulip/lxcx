@@ -5,7 +5,7 @@ const app = getApp()
 
 Page({
     data: {
-        monthGetGood:{}
+        order:{}
 
     },
     onLoad: function(options) {
@@ -17,7 +17,7 @@ Page({
         );
         var that = this;
         wx.request({
-            url: util.serverHost + 'activity/month-get-good-info?openid=' + this.data.openid ,
+            url: util.serverHost + 'activity/last-payed-order?openid=' + this.data.openid ,
             success:function(requestRes)
             {
                 console.log(requestRes);
@@ -25,7 +25,7 @@ Page({
 
                 that.setData(
                     {
-                      monthGetGood:requestRes.data.data.monthGetGood
+                        order:requestRes.data.data.order
                     }
                 );
             }
@@ -42,5 +42,21 @@ Page({
             }
         })
     },
+
+    goHome:function() {
+        util.kit.goHome();
+    },
+
+    goSignList:function()
+    {
+        //util.kit.goHome();
+        wx.navigateTo(
+            {
+                url:'/pages/health/signlist'
+            }
+        );
+    }
+
+
 
 })

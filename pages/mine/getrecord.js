@@ -8,9 +8,9 @@ Page({
         quantity:'',
         price:0,
         tabIndex:0,
-        used_list:[],
-        valid_list:[],
-        pageShow:false
+        pageShow:0,
+        selfGet:[],
+        delvierHome:[]
     },
 
 
@@ -24,7 +24,7 @@ Page({
         );
         var that = this;
         wx.request({
-            url: util.serverHost + 'activity/invited-code?openid=' + openid ,
+            url: util.serverHost + 'activity/get-good-record?openid=' + openid ,
             success:function(requestRes)
             {
                 console.log(requestRes);
@@ -32,10 +32,9 @@ Page({
 
                 that.setData(
                     {
-                        product:requestRes.data.data.product_attr,
-                        used_list:requestRes.data.data.used_list,
-                        valid_list:requestRes.data.data.valid_list,
-                        pageShow:true
+                        pageShow:1,
+                        selfGet:requestRes.data.data.selfGet,
+                        delvierHome:requestRes.data.data.delvierHome
                     }
                 );
             }

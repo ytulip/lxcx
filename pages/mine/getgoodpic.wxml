@@ -1,0 +1,5 @@
+<view wx:if="{{pageShow}}" class="content-wrapper-24-16">
+    <image style="width: 100%;" mode="widthFix" src="https://lamushan.com/activity/self-get-pic?id={{id}}"></image>
+
+    <view class="fs-14-fc-484848 m-t-24 t-al-c" wx:if="{{record.deliver_type == 1  && record.get_status}}">已使用</view>
+</view>

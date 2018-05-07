@@ -1,12 +1,16 @@
 {
   "pages":[
+    "pages/mine/message",
     "pages/index/home",
+    "pages/mine/signsuccess",
+    "pages/mine/invited_code_list",
+    "pages/mine/getrecord",
+    "pages/health/signlist",
     "pages/mine/index",
     "pages/logs/sign",
     "pages/health/index3",
     "pages/health/index2",
     "pages/health/info",
-    "pages/mine/invited_code_list",
     "pages/report/good",
     "pages/report/success",
     "pages/rereport/getgoodsuccess",
@@ -32,7 +36,8 @@
     "pages/mine/openid",
     "pages/mine/bind",
     "pages/mine/msg",
-    "pages/mine/up"
+    "pages/mine/up",
+    "pages/mine/getgoodpic"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -49,17 +54,10 @@
       "selectedIconPath":"/images/tarbar/home_active.png",
       "color":"#484848",
       "selectedColor":"#5EC11A"
-    },{
-      "pagePath": "pages/logs/logs",
-      "text": "健康打卡",
-      "iconPath":"/images/tarbar/pool.png",
-      "selectedIconPath":"/images/tarbar/pool_active.png",
-      "color":"#484848",
-      "selectedColor":"#5EC11A"
     },
       {
-        "pagePath":"pages/mine/msg",
-        "text":"消息",
+        "pagePath": "pages/mine/message",
+        "text": "消息",
         "iconPath":"/images/tarbar/message.png",
         "selectedIconPath":"/images/tarbar/message_active.png",
         "color":"#484848",

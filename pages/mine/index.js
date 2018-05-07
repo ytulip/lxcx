@@ -12,7 +12,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
       openid:'',
       signScore:'',
-      util:''
+      util:'',
+      showPage:false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -34,49 +35,14 @@ Page({
           },
           success:function(requestRes)
           {
-              // console.log(requestRes.data.user);
-              // requestRes.data
               that.setData(
                   {
-                      userInfo:requestRes.data.data.user
+                      userInfo:requestRes.data.data.user,
+                      showPage:true
                   }
               );
           }
       })
-
-
-
-        // this.setData({util:util});
-        // var that = this;
-        // util.auth.tryGetUserInfo();
-        // console.log(util.auth.isLogin);
-        // wx.login({
-        //     success: function(res) {
-        //         if (res.code) {
-        //             //发起网络请求
-        //             wx.request({
-        //                 url: util.serverHost + 'activity/user-info',
-        //                 data: {
-        //                     code: res.code
-        //                 },
-        //                 success:function(requestRes)
-        //                 {
-        //                     // console.log(requestRes.data.user);
-        //                     // requestRes.data
-        //                     that.setData(
-        //                         {
-        //                             openid:requestRes.data.data.openid,
-        //                             userInfo:requestRes.data.data.user,
-        //                             signScore:requestRes.data.data.signScore
-        //                         }
-        //                     );
-        //                 }
-        //             })
-        //         } else {
-        //             console.log('登录失败！' + res.errMsg)
-        //         }
-        //     }
-        // });
     },
   onShow: function(){
       var openid = util.auth.getOpenid();

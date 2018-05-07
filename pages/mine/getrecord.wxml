@@ -1,0 +1,37 @@
+<view wx:if="pageShow">
+
+
+    <view class="cus-row" style="background-color: #ffffff">
+        <view class="cus-row-col-6 t-al-c">
+            <view class="fs-14-fc-212229  active-tab in-bl" style="position: relative;" bindtap="changeIndex" data-index="0">
+                自提
+                <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{!tabIndex}}"></view>
+            </view>
+        </view>
+        <view class="cus-row-col-6 t-al-c"><view class="fs-14-fc-212229 in-bl" style="position: relative;" bindtap="changeIndex" data-index="1">邮寄
+            <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{tabIndex}}"></view>
+        </view></view>
+    </view>
+
+    <view class="content-wrapper">
+        <view wx:if="{{!tabIndex}}" class="m-t-24">
+            <view class="mine-record m-t-10" wx:for="{{selfGet}}">
+                <view class="fs-16-fc-484848">提货日期:{{item.created_at}}</view>
+                <view class="fs-16-fc-484848 m-t-24">提货数量:{{item.count}}箱</view>
+                <view class="fs-16-fc-484848 m-t-24">提货方式:自提</view>
+                <view class="fs-16-fc-484848 m-t-24">邮寄地址:{{item.address}}</view>
+                <navigator class="btn1 m-t-24 t-al-c" open-type="navigate" url="/pages/mine/getgoodpic?id={{item.id}}">提货二维码</navigator>
+            </view>
+        </view>
+
+        <view wx:if="{{tabIndex}}" class="m-t-24">
+            <view class="mine-record m-t-10" wx:for="{{delvierHome}}">
+                <view class="fs-16-fc-484848">提货日期:{{item.created_at}}</view>
+                <view class="fs-16-fc-484848 m-t-24">提货数量:{{item.count}}箱</view>
+                <view class="fs-16-fc-484848 m-t-24">提货方式:邮寄</view>
+                <view class="fs-16-fc-484848 m-t-24">邮寄地址:{{item.address}}</view>
+            </view>
+        </view>
+    </view>
+
+</view>

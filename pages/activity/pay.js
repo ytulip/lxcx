@@ -124,11 +124,7 @@ Page({
                         'paySign': jsonData.paySign,
                         'success':function(res){
                             util.mAlert('支付成功');
-                            wx.redirectTo(
-                                {
-                                    url:'/pages/health/route'
-                                }
-                            );
+                            util.kit.goHome();
                         },
                         'fail':function(res){
                             util.mAlert('支付失败，请重新支付');

@@ -5,27 +5,31 @@ const app = getApp()
 
 Page({
     data: {
-        monthGetGood:{}
+        order:{},
+        id:'',
+        record:{},
+        pageShow:false
 
     },
     onLoad: function(options) {
         var openid = util.auth.getOpenid();
         this.setData(
             {
-                openid:openid
+                openid:openid,
+                id:options.id
             }
         );
         var that = this;
         wx.request({
-            url: util.serverHost + 'activity/month-get-good-info?openid=' + this.data.openid ,
+            url: util.serverHost + 'activity/month-get-record?id=' + this.data.id,
             success:function(requestRes)
             {
                 console.log(requestRes);
                 // requestRes.data
-
                 that.setData(
                     {
-                      monthGetGood:requestRes.data.data.monthGetGood
+                        record:requestRes.data.data,
+                        pageShow:1
                     }
                 );
             }
@@ -42,5 +46,12 @@ Page({
             }
         })
     },
+
+    getGood:function() {
+        wx.navigateTo({
+                url: '/pages/report/getgood'
+            }
+        );
+    }
 
 })

@@ -9,7 +9,8 @@ Page({
         userInfo: {},
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
-        pageShow:false
+        pageShow:false,
+        needSignToday:0
     },
     //事件处理函数
     bindViewTap: function() {
@@ -19,6 +20,108 @@ Page({
     },
     onLoad: function(options) {
         var openid = util.auth.getOpenid();
+        var userToken = util.auth.getUserToken();
+        var that = this;
+
+        wx.request({
+            url: util.serverHost + '/activity/sign-list',
+            data: {
+                id:userToken
+            },
+            success:function(requestRes)
+            {
+                if( requestRes.data.status)
+                {
+                    var userInfo = requestRes.data.data.user;
+                    var signRecord = requestRes.data.data.signRecord;
+
+                    if( !userInfo.activity_pay )
+                    {
+                        //活动
+                        wx.redirectTo(
+                            {
+                                url:''
+                            }
+                        );
+                        return;
+                    }
+
+
+                    // if( userInfo.)
+                    if( !userInfo.health_status )
+                    {
+                        wx.redirectTo(
+                            {
+                                url:'/pages/health/info'
+                            }
+                        );
+                        return;
+                    }
+
+                    if( !signRecord.length )
+                    {
+                        wx.redirectTo(
+                            {
+                                url:'/pages/logs/sign'
+                            }
+                        );
+                        return;
+                    }
+
+                    //组装signList
+
+                    var validRecord = [];
+
+                    for( var i =0 ; i < signRecord.length; i++)
+                    {
+                        if(!signRecord[i].sign_status)
+                        {
+                            continue;
+                        }
+
+                        var signProv = JSON.parse(signRecord[i].sign_prov);
+                        var coverImage = '';
+
+                        if( signProv.imgPath1Save )
+                        {
+                            coverImage = signProv.imgPath1Save;
+                        } else
+                        {
+                            if(signProv.imgPath2Save)
+                            {
+                                coverImage = signProv.imgPath2Save;
+                            } else
+                            {
+                                coverImage = signProv.imgPath3Save;
+                            }
+                        }
+
+                        console.log(signRecord[i].date);
+                        console.log(signRecord[i].date.substr(0,2));
+
+                        validRecord.push({id:signRecord[i].id,day:signRecord[i].date.substr(8,2),month:signRecord[i].date.substr(5,2),cover_image:coverImage,quantity:parseInt(signProv.countIndex) + 1,baseInfo:signProv.baseInfo,date:signRecord[i].date});
+
+
+                    }
+
+
+                    that.setData(
+                        {
+                            openid:requestRes.data.data.openid,
+                            userInfo:requestRes.data.data.user,
+                            signList:validRecord,
+                            pageShow:true,
+                            needSignToday:requestRes.data.data.needSignToday
+                        }
+                    );
+
+                } else
+                {
+
+                }
+            }
+        })
+
 
     },
     getUserInfo: function(e) {

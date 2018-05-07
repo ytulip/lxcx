@@ -1,29 +1,29 @@
 <!--index.wxml-->
 
 <!--未登录状态-->
-<view class="content-wrapper">
-    <view class="user_panel">
+<view class="content-wrapper" wx:if="{{showPage && (!userInfo.id)}}">
+    <navigator class="user_panel" open-type="navigate" url="/pages/mine/bind">
         <view class="cus-row">
             <view class="cus-row-col-4 v-a-t">
                
             </view>
             <view class="cus-row-col-4 t-al-c v-a-t">
-                <image class="m-t-10" src="{{'https://lamushan.com' + userInfo.header_img}}" style="width: 75px;height: 75px;" mode="widthFix"></image>
+                <image class="m-t-10" src="/images/header.png" style="width: 75px;height: 75px;" mode="widthFix"></image>
             </view>
             <view class="cus-row-col-4 v-a-t"></view>
         </view>
 
         <view class="fs-16-fc-ffffff t-al-c m-t-16">注册/登录</view>
         <view class="fs-14-fc-ffffff t-al-c m-t-10"></view>
-    </view>
-</view>
+    </navigator>
+</view >
 
 
-<view class="content-wrapper">
+<view class="content-wrapper" wx:if="{{showPage && userInfo.id}}">
     <view class="user_panel">
        <view class="cus-row">
            <view class="cus-row-col-4 v-a-t">
-               <view style="font-size: 14px;color: #FFFFFF;line-height: 25px;border: 1px solid #FFFFFF;border-radius: 100px;text-align: center;">活动会员</view>
+               <view style="font-size: 14px;color: #FFFFFF;line-height: 25px;border: 1px solid #FFFFFF;border-radius: 100px;text-align: center;">{{userInfo.vip_level?'高级会员':'活动会员'}}</view>
            </view>
            <view class="cus-row-col-4 t-al-c v-a-t">
                <image class="m-t-10" src="{{'https://lamushan.com' + userInfo.header_img}}" style="width: 75px;height: 75px;" mode="widthFix"></image>
@@ -37,7 +37,7 @@
 </view>
 
 
-<view class="page">
+<view class="page" wx:if="{{showPage && userInfo.id}}">
     <!--主体-->
     <view>{{util.auth.isLogin}}</view>
     <view class="page__bd" style="padding: 14px;">
@@ -53,8 +53,8 @@
         </view>
 
 
-        <view  class="m-t-24" wx:if="{{userInfo}}">
-            <navigator open-type="navigate" url="/pages/mine/up" class="mine-list" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+        <view  class="m-t-24 mine-list" wx:if="{{userInfo}}">
+            <navigator open-type="navigate" url="/pages/mine/invited_code_list"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">邀请码</view>
                     <view class="cus-row-col-2 t-al-r v-a-m">
@@ -63,14 +63,14 @@
                 </view>
             </navigator>
 
-            <navigator open-type="navigate" url="/pages/mine/up" class="mine-list" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
-                <view class="cus-row">
-                    <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">购买记录</view>
-                    <view class="cus-row-col-2 t-al-r v-a-m">
-                        <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
-                    </view>
-                </view>
-            </navigator>
+            <!--<navigator open-type="navigate" url="/pages/mine/up" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">-->
+                <!--<view class="cus-row">-->
+                    <!--<view class="cus-row-col-10 fs-16-fc-212229 v-a-m">购买记录</view>-->
+                    <!--<view class="cus-row-col-2 t-al-r v-a-m">-->
+                        <!--<image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>-->
+                    <!--</view>-->
+                <!--</view>-->
+            <!--</navigator>-->
 
 
         </view>
@@ -102,13 +102,6 @@
                <!--<view class="weui-cell__bd">换食计划</view>-->
                <!--<view class="weui-cell__ft weui-cell__ft_in-access"></view>-->
            <!--</navigator>-->
-           <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type="navigate" url="/pages/mine/signrecord">
-               <view class="weui-cell__hd">
-                   <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-               </view>
-               <view class="weui-cell__bd">打卡记录</view>
-               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-           </navigator>
            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type="navigate" url="/pages/mine/pool">
                   <view class="weui-cell__hd">
                       <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
