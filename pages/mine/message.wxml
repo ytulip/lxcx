@@ -1,14 +1,19 @@
 <view wx:if="{{showPage}}">
     <view wx:for="{{messageList}}" class="message-item">
 
-        <view class="" style="padding-left: 60px;padding-right:16px;padding-bottom:24px;position: relative;box-shadow: 0 1px 0 0 rgba(0,0,0,0.10);">
+        <navigator class="" style="padding-left: 60px;padding-right:16px;padding-bottom:24px;position: relative;box-shadow: 0 1px 0 0 rgba(0,0,0,0.10);" type="navigate" url="/pages/mine/messagedetail?id={{item.id}}">
             <view style="position: absolute;left:0;top:0;">
                 <image style="width: 46px;height: 46px;" src="/images/message.png"></image>
+                <view style="position: absolute;width:8px;height:8px;border-radius:8px;background-color:#f43530;border:2px solid #ffffff;right:0;top:0;" wx:if="{{!item.view_status}}">
+                </view>
             </view>
 
-            <view class="fs-16-fc-484848-m">{{item.title}}</view>
+            <view class="cus-row">
+                <view  class="cus-row-col-7 fs-16-fc-484848-m v-a-m">{{item.title}}</view>
+                <view class="cus-row-col-5 fs-14-fc-95909E v-a-m">{{item.created_at_date}}</view>
+            </view>
             <view class="fs-14-fc-95909E in-bl m-t-10" style="white-space:nowrap;text-overflow:ellipsis;overflow: hidden;width: 100%;">{{item.content}}</view>
-        </view>
+        </navigator>
         <!--<view class="in-bl">-->
             <!--<image style="width: 46px;height: 46px;" src="/images/message.png"></image>-->
         <!--</view>-->

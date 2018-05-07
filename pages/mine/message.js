@@ -49,26 +49,7 @@ Page({
         })
     },
     onShow: function(){
-        var openid = util.auth.getOpenid();
-        var that  = this;
-
-
-        wx.request({
-            url: util.serverHost + 'activity/user-info-new',
-            data: {
-                openid:openid
-            },
-            success:function(requestRes)
-            {
-                // console.log(requestRes.data.user);
-                // requestRes.data
-                that.setData(
-                    {
-                        userInfo:requestRes.data.data.user
-                    }
-                );
-            }
-        })
+       this.onLoad();
     },
     getUserInfo: function(e) {
         console.log(e)

@@ -37,7 +37,8 @@
     "pages/mine/bind",
     "pages/mine/msg",
     "pages/mine/up",
-    "pages/mine/getgoodpic"
+    "pages/mine/getgoodpic",
+    "pages/mine/messagedetail"
   ],
   "window":{
     "backgroundTextStyle":"light",
