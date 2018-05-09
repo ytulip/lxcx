@@ -63,6 +63,25 @@
                 </view>
             </navigator>
 
+            <navigator open-type="navigate" url="/pages/mine/cash"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+                <view class="cus-row">
+                    <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">资产管理</view>
+                    <view class="cus-row-col-2 t-al-r v-a-m">
+                        <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
+                    </view>
+                </view>
+            </navigator>
+
+
+            <navigator open-type="navigate" url="/pages/mine/invited_code_list"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+                <view class="cus-row">
+                    <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">团队管理</view>
+                    <view class="cus-row-col-2 t-al-r v-a-m">
+                        <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
+                    </view>
+                </view>
+            </navigator>
+
             <!--<navigator open-type="navigate" url="/pages/mine/up" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">-->
                 <!--<view class="cus-row">-->
                     <!--<view class="cus-row-col-10 fs-16-fc-212229 v-a-m">购买记录</view>-->

@@ -1,12 +1,14 @@
 {
   "pages":[
+    "pages/mine/cash",
+    "pages/mine/index",
+    "pages/mine/team",
     "pages/mine/message",
     "pages/index/home",
     "pages/mine/signsuccess",
     "pages/mine/invited_code_list",
     "pages/mine/getrecord",
     "pages/health/signlist",
-    "pages/mine/index",
     "pages/logs/sign",
     "pages/health/index3",
     "pages/health/index2",

@@ -1,0 +1,38 @@
+<view wx:if="pageShow">
+
+
+    <view class="cus-row" style="background-color: #ffffff">
+        <view class="cus-row-col-6 t-al-c">
+            <view class="fs-14-fc-212229  active-tab in-bl" style="position: relative;" bindtap="changeIndex" data-index="0">
+                高级会员
+                <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{!tabIndex}}"></view>
+            </view>
+        </view>
+        <view class="cus-row-col-6 t-al-c"><view class="fs-14-fc-212229 in-bl" style="position: relative;" bindtap="changeIndex" data-index="1">活动会员
+            <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{tabIndex}}"></view>
+        </view></view>
+    </view>
+
+    <view class="content-wrapper">
+        <view wx:if="{{!tabIndex}}" class="m-t-24">
+            <view class="mine-record m-t-10" wx:for="{{selfGet}}">
+                <view class="fs-16-fc-484848">{{item.real_name}}</view>
+                <view class="cus-row">
+                    <view class="cus-row-col-6 fs-14-fc-95909E">手机 {{item.phone}}</view>
+                    <view class="cus-row-col-6 fs-14-fc-95909E">注册时间 {{item.created_at}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view wx:if="{{tabIndex}}" class="m-t-24">
+            <view class="mine-record m-t-10" wx:for="{{delvierHome}}">
+                <view class="fs-16-fc-484848">{{item.real_name}}</view>
+                <view class="cus-row">
+                    <view class="cus-row-col-6 fs-14-fc-95909E">手机 {{item.phone}}</view>
+                    <view class="cus-row-col-6 fs-14-fc-95909E">注册时间 {{item.created_at}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

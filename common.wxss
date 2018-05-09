@@ -140,6 +140,8 @@ width: 8.33333333%;
 .fs-14-fc-FFB11B{font-size: 14px;  color: #FFB11B;line-height: 16px;}
 .fs-36-fc-484848-m{font-size: 36px;  color: #484848;  line-height: 38px;font-weight: 800;}
 .fs-20-fc-27282f{font-size: 20px;color: #27282F;line-height: 22px;}
+.fs-36-fc-ffffff{font-size: 36px;color:#ffffff;line-height: 39px;}
+.fs-12-fc-ffffff{font-size: 12px;color:#ffffff;line-height: 14px;}
 
 
 
