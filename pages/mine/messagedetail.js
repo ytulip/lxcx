@@ -123,6 +123,29 @@ Page({
                 url:'/pages/mine/bind'
             }
         );
+    },
+
+    goDetail:function()
+    {
+        if( this.data.record.msg_type == 11)
+        {
+            wx.navigateTo(
+                {
+                    url:"/pages/mine/signdetail?id=" + this.data.record.refer_id
+                }
+            );
+            return;
+        }
+
+        if( this.data.record.msg_type == 12)
+        {
+            wx.navigateTo(
+                {
+                    url:"/pages/health/signlist"
+                }
+            );
+            return;
+        }
     }
 
 })

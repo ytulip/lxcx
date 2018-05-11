@@ -1,10 +1,10 @@
 {
   "pages":[
+    "pages/index/home",
+    "pages/mine/message",
     "pages/mine/cash",
     "pages/mine/index",
     "pages/mine/team",
-    "pages/mine/message",
-    "pages/index/home",
     "pages/mine/signsuccess",
     "pages/mine/invited_code_list",
     "pages/mine/getrecord",

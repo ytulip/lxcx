@@ -24,7 +24,7 @@
 
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
-                        <view style="line-height: 48px;">邮寄地址:{{monthGetGood.address}}</view>
+                        <view style="line-height: 48px;">{{(monthGetGood.deliver_type == 1)?'自提地址':'邮寄地址'}}:{{monthGetGood.address}}</view>
                     </view>
                 </view>
 
