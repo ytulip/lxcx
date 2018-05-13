@@ -4,15 +4,16 @@
         <view class="user_panel">
             <view class="cus-row">
                 <view class="cus-row-col-6 fs-14-fc-ffffff">总资产</view>
-                <view class="cus-row-col-6 fs-14-fc-ffffff t-al-r">查看账单</view>
+                <navigator class="cus-row-col-6 fs-14-fc-ffffff t-al-r" open-type="navigate" url="/pages/mine/bill">查看账单</navigator>
             </view>
-            <view class="fs-36-fc-ffffff" style="margin-top: 6px;">￥ {{user.charge}}</view>
+            <view class="fs-36-fc-ffffff" style="margin-top: 6px;">￥ {{total_cash}}</view>
             <view class="cus-row" style="margin-top: 30px;">
-                <view class="cus-row-col-6">
-
+                <view class="cus-row-col-6 v-a-m">
+                    <!--<view class="fs-12-fc-ffffff">可支配资金：¥{{user.charge}}</view>-->
+                    <!--<view class="fs-12-fc-ffffff">未结算资金：¥{{user.charge_frozen}}</view>-->
                 </view>
-                <view class="cus-row-col-6 t-al-r">
-                    <navigator class="fs-12-fc-ffffff in-bl" style="border: 1px solid #FFFFFF;border-radius: 100px;padding: 8px 24px;">提现</navigator>
+                <view class="cus-row-col-6 t-al-r v-a-m">
+                    <navigator class="fs-12-fc-ffffff in-bl" style="border: 1px solid #FFFFFF;border-radius: 100px;padding: 8px 24px;" url="/pages/mine/withdraw" open-type="navigate">提现</navigator>
                 </view>
             </view>
         </view>
@@ -23,7 +24,7 @@
                 <view class="cus-row">
                     <view class="cus-row-col-6 fs-16-fc-212229 v-a-m">本月收入</view>
                     <view class="cus-row-col-6 fs-16-fc-212229 t-al-r v-a-m">
-                        + ￥
+                        + ￥{{month_income}}
                     </view>
                 </view>
             </navigator>
@@ -32,14 +33,14 @@
 
         <view class="m-t-24 mine-list">
             <view class="cus-row" style="padding: 30px 0;">
-                <view class="cus-row-col-6 t-al-c">
-                    <view class="fs-24-fc-212229">0</view>
+                <navigator class="cus-row-col-6 t-al-c" open-type="navigate" url="/pages/mine/directlist">
+                    <view class="fs-24-fc-212229">{{direct_and_indirect_count}}</view>
                     <view class="fs-14-fc-95909E m-t-20">开发记录</view>
-                </view>
-                <view class="cus-row-col-6 t-al-c" style="box-sizing: border-box;border-left: 1px solid #D8D8D8;">
-                    <view class="fs-24-fc-212229">0</view>
+                </navigator>
+                <navigator class="cus-row-col-6 t-al-c" style="box-sizing: border-box;border-left: 1px solid #D8D8D8;" open-type="navigate" url="/pages/mine/upsuperlist">
+                    <view class="fs-24-fc-212229">{{up_and_super_count}}</view>
                     <view class="fs-14-fc-95909E m-t-20">辅导记录</view>
-                </view>
+                </navigator>
             </view>
         </view>
 

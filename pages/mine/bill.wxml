@@ -1,0 +1,12 @@
+<view wx:if="{{pageShow}}" class="content-wrapper-24-16">
+    <view class="cus-row" wx:for="{{list}}" style="margin-bottom: 24px;">
+        <view wx:if="{{item.is_month_record}}" style="text-align: left;" class="cus-row-col-12">
+            <view class="fs-36-fc-78CD09-m in-bl">{{item.month}}</view><view class="in-bl fs-14-fc-484848">月 {{item.year}}年</view>
+        </view>
+
+        <view wx:if="{{!item.is_month_record}} fs-36-fc-78CD09">
+            <view class="fs-20-fc-484848-m">{{item.price_with_char}}</view>
+            <view class="fs-14-fc-95909E" style="margin-top: 6px;">{{item.created_at_text}} {{item.cash_type_text}}</view>
+        </view>
+    </view>
+</view>

@@ -5,6 +5,7 @@ const app = getApp()
 
 Page({
     data: {
+        id:0,
         motto: 'Hello World',
         userInfo: {},
         hasUserInfo: false,
@@ -13,10 +14,18 @@ Page({
         signList:[],
         signProv:'',
         imageHost:'',
-        signData:{}
+        signData:{},
+        edit:0,
+        baseInfo:''
     },
     onLoad: function(options) {
 
+        this.setData(
+            {
+                edit:options.edit?1:0,
+                id:options.id
+            }
+        );
         var that = this;
         wx.login({
             success: function(res) {
@@ -130,5 +139,33 @@ Page({
             }
         })
     },
+
+    bindBaseInfoInput:function(e)
+    {
+        this.setData({
+            baseInfo: e.detail.value
+        })
+    },
+
+    doComment:function()
+    {
+        if( !this.data.baseInfo )
+        {
+            util.mAlert('留言内容不能为空');
+            return;
+        }
+        wx.request({
+            url: util.serverHost + 'activity/up-comment',
+            method: 'get',
+            data:{id:this.data.id,content:this.data.baseInfo},
+            success: function (res) {
+                wx.navigateTo(
+                    {
+                        url:'/pages/mine/upcommentsuccess'
+                    }
+                );
+            }
+        });
+    }
 
 })

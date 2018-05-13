@@ -1,10 +1,15 @@
 {
   "pages":[
     "pages/index/home",
-    "pages/mine/message",
+    "pages/mine/bill",
     "pages/mine/cash",
+    "pages/mine/withdrawsuccess",
+    "pages/mine/withdraw",
     "pages/mine/index",
+    "pages/mine/directlist",
     "pages/mine/team",
+    "pages/mine/sub_sign_list",
+    "pages/mine/message",
     "pages/mine/signsuccess",
     "pages/mine/invited_code_list",
     "pages/mine/getrecord",
@@ -40,7 +45,10 @@
     "pages/mine/msg",
     "pages/mine/up",
     "pages/mine/getgoodpic",
-    "pages/mine/messagedetail"
+    "pages/mine/messagedetail",
+    "pages/mine/upcommentsuccess",
+    "pages/mine/upsuperlist",
+    "pages/mine/withdrawconfirm"
   ],
   "window":{
     "backgroundTextStyle":"light",

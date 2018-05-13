@@ -10,12 +10,7 @@ Page({
         tabIndex:0,
         pageShow:0,
         selfGet:[],
-        delvierHome:[],
-        user:{},
-        total_cash:0.00,
-        direct_and_indirect_count:0,
-        up_and_super_count:0,
-        month_income:0
+        delvierHome:[]
     },
 
 
@@ -29,7 +24,7 @@ Page({
         );
         var that = this;
         wx.request({
-            url: util.serverHost + 'activity/cash-info?openid=' + openid ,
+            url: util.serverHost + 'activity/direct-list?openid=' + openid ,
             success:function(requestRes)
             {
                 console.log(requestRes);
@@ -38,13 +33,7 @@ Page({
                 that.setData(
                     {
                         pageShow:1,
-                        selfGet:requestRes.data.data.sub_user,
-                        delvierHome:requestRes.data.data.activity_user,
-                        user:requestRes.data.data.user,
-                        total_cash:requestRes.data.data.total_cash.toFixed(2),
-                        direct_and_indirect_count:requestRes.data.data.direct_and_indirect_count,
-                        up_and_super_count:requestRes.data.data.up_and_super_count,
-                        month_income:requestRes.data.data.month_income
+                        delvierHome:requestRes.data.data.orders
                     }
                 );
             }

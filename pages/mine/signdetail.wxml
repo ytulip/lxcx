@@ -96,6 +96,25 @@
                 </view>
             </view>
 
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">辅导人留言:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{(signData.up_comment === null)?'':signData.up_comment}}</view>
+                </view>
+            </view>
+
+            <view wx:if="{{edit}}" style="margin-bottom: 30px;margin-left: 16px;margin-right: 16px;">
+                <view class="m-t-24" style="overflow: hidden">
+                    <view class="fs-16-fc-484848">辅导人留言</view>
+                    <textarea class="m-t-16" style="height:96px;padding:12px 8px;font-size: 16px;color: #484848;line-height: 26px;background-color: #f6f6f6;width: 100%;border-radius: 4px;box-sizing:border-box;"  value="{{baseInfo}}" bindinput="bindBaseInfoInput" ></textarea>
+                </view>
+
+                <button class="weui-btn" type="primary" bindtap="doComment">确认发布</button>
+
+            </view>
+
 
         </view>
     </view>

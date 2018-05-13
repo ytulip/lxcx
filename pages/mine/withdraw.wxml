@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<!--<web-view src="https://lamushan.com/user/essay?id=3"></web-view>-->
+
+
+<view class="content-wrapper-24-16">
+    <view class="navigator-line-FFB11B p-13-26">
+        <view>
+            <view class="fs-18-fc-ffffff in-bl v-a-m m-l-16">可提金额 {{user.charge}}</view>
+        </view>
+    </view>
+
+
+    <view class="cus-row m-t-24" style="border-bottom: 1px solid #EBE9E9;">
+        <view class="cus-row-col-2">
+            <picker bindchange="bindCountChange" value="{{countIndex}}" range="{{countArray}}" style="line-height: 44px;">
+                <view class="picker fs-16-fc-212229" style="line-height: 48px;">
+                    {{countArray[countIndex]}}
+                </view>
+            </picker>
+        </view>
+        <view class="cus-row-col-1 v-a-m">
+            <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;transform: rotate(90deg);"></image>
+        </view>
+        <view class="cus-row-col-9">
+            <input placeholder="请输入正确的账号" type="number" class="fs-16-fc-212229" style="line-height: 48px;display: inline;" bindinput="bindAccountInput"/>
+        </view>
+    </view>
+
+    <view class="cus-row" style="border-bottom: 1px solid #EBE9E9;">
+        <view class="cus-row-col-3 fs-16-fc-212229" style="line-height: 48px;">提现金额</view>
+        <view class="cus-row-col-9 fs-16-fc-212229">
+            <input  class="fs-16-fc-212229" style="line-height: 48px;display: inline;" bindinput="bindCashInput"/>
+        </view>
+    </view>
+</view>
+
+
+<view  class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+    <view class="cus-row cus-row-v-m">
+        <view class="cus-row-col-6" style="display: inline-block;">
+            <text class="btn-block1 m-t-20" bindtap="pay" style="margin-top: 0;font-size:12px;" >下一步</text>
+        </view>
+    </view>
+</view>

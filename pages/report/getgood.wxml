@@ -61,6 +61,8 @@
 
         </view>
 
+    <view class="fs-14-fc-484848" style="margin-top: 6px;padding: 0 15px;" wx:if="{{index == 0}}">我们将采用运费到付的方式，每箱运费20元左右，根据您所在地区有所差异</view>
+
     <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="pay">提货</button></view>
 
 </view>

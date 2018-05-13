@@ -19,19 +19,19 @@
                 <view class="fs-16-fc-484848">{{item.real_name}}</view>
                 <view class="cus-row">
                     <view class="cus-row-col-6 fs-14-fc-95909E">手机 {{item.phone}}</view>
-                    <view class="cus-row-col-6 fs-14-fc-95909E">注册时间 {{item.created_at}}</view>
+                    <view class="cus-row-col-6 fs-14-fc-95909E">注册时间 {{item.created_at_day}}</view>
                 </view>
             </view>
         </view>
 
         <view wx:if="{{tabIndex}}" class="m-t-24">
-            <view class="mine-record m-t-10" wx:for="{{delvierHome}}">
+            <navigator class="mine-record m-t-10" wx:for="{{delvierHome}}" open-type="navigate" url="/pages/mine/sub_sign_list?id={{item.id}}">
                 <view class="fs-16-fc-484848">{{item.real_name}}</view>
                 <view class="cus-row">
                     <view class="cus-row-col-6 fs-14-fc-95909E">手机 {{item.phone}}</view>
-                    <view class="cus-row-col-6 fs-14-fc-95909E">注册时间 {{item.created_at}}</view>
+                    <view class="cus-row-col-6 fs-14-fc-95909E">注册时间 {{item.created_at_day}}</view>
                 </view>
-            </view>
+            </navigator>
         </view>
     </view>
 
