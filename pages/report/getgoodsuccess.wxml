@@ -18,7 +18,7 @@
 
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
-                        <view style="line-height: 48px;">提货方式:{{(monthGetGood.deliver_type == 1)?'自提':'送货上门'}}</view>
+                        <view style="line-height: 48px;">提货方式:{{(monthGetGood.deliver_type == 1)?'自提':'邮寄'}}</view>
                     </view>
                 </view>
 

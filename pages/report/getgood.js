@@ -12,7 +12,7 @@ Page({
         thisMonth:0,
         quantityArr:[1,2],
         quantityIndex:0,
-        array:['送货上门','自提'],
+        array:['邮寄','自提'],
         index:0,
         selfGetArray:[],
         selfGetIndex:0,
@@ -85,7 +85,7 @@ Page({
         requestData.quantityCount = (this.data.quantityIndex == '0')?1:2;
         console.log(requestData.deliver_type);
 
-        if(requestData.deliver_type == 2) { //送货上门
+        if(requestData.deliver_type == 2) { //邮寄
             requestData.address = this.data.address;
             requestData.address_name = this.data.real_name;
             requestData.address_phone = this.data.phone;

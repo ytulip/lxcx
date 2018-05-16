@@ -235,5 +235,40 @@ Page({
         wx.navigateTo({
             url: '/pages/health/info'
         })
+    },
+
+    goReport:function()
+    {
+        if( !this.data.userInfo )
+        {
+            wx.navigateTo(
+                {
+                    url:'/pages/mine/bind'
+                }
+            );
+            return;
+        }
+
+        wx.navigateTo({
+            url: '/pages/report/good'
+        })
+    },
+
+
+    goReReport:function()
+    {
+        if( !this.data.userInfo )
+        {
+            wx.navigateTo(
+                {
+                    url:'/pages/mine/bind'
+                }
+            );
+            return;
+        }
+
+        wx.navigateTo({
+            url: '/pages/report/good?rebuy=1'
+        })
     }
 })

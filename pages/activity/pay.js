@@ -3,7 +3,7 @@ var util = require('../../utils/util.js')
 
 Page({
     data: {
-        array:['送货上门','自提'],
+        array:['邮寄','自提'],
         selfGetArray:[],
         userInfo: {},
         logged: false,
@@ -94,7 +94,7 @@ Page({
         requestData.deliver_type = (this.data.index == '0')?2:1;
         console.log(requestData.deliver_type);
 
-        if(requestData.deliver_type == 2) { //送货上门
+        if(requestData.deliver_type == 2) { //邮寄
             requestData.address = this.data.address;
             requestData.address_name = this.data.real_name;
             requestData.address_phone = this.data.phone;

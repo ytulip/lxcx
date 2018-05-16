@@ -4,8 +4,8 @@
         <view class="m-t-24">
             <view class="mine-record m-t-10" wx:for="{{delvierHome}}">
                 <view class="fs-16-fc-484848">{{item.real_name}} {{item.phone}}</view>
-                <view class="fs-14-fc-95909E" style="margin-top: 8px;">高级会员 开发时间{{item.register_time}}</view>
-                <view class="fs-14-fc-484848" style="margin-top: 16px;">直接开发 <view class="fs-14-fc-5EC11A in-bl">获利{{item.single_direct_pay * item.quantity}}</view></view>
+                <view class="fs-14-fc-95909E" style="margin-top: 8px;">高级会员 开发时间{{item.created_at}}</view>
+                <view class="fs-14-fc-484848" style="margin-top: 16px;">直接开发 <view class="fs-14-fc-5EC11A in-bl">获利{{item.price}}</view></view>
             </view>
         </view>
     </view>

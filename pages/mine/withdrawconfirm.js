@@ -32,7 +32,7 @@ Page({
                 openid:openid,
                 withdraw_type:options.type,
                 cash:options.cash,
-                account:options.accout
+                account:options.account
             }
         );
 
