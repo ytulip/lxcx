@@ -9,7 +9,7 @@
 
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view style="line-height: 48px;">本月可提货箱数:{{thisMonth}}</view>
+                    <view style="line-height: 48px;">本月可提货箱数:{{(thisMonth > total)?total:thisMonth}}</view>
                 </view>
             </view>
 

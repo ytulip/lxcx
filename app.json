@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/mine/withdraw",
     "pages/index/home",
+    "pages/mine/withdraw",
     "pages/mine/bill",
     "pages/mine/cash",
     "pages/mine/withdrawsuccess",
