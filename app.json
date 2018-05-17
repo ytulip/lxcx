@@ -1,10 +1,10 @@
 {
   "pages":[
+    "pages/mine/withdraw",
     "pages/index/home",
     "pages/mine/bill",
     "pages/mine/cash",
     "pages/mine/withdrawsuccess",
-    "pages/mine/withdraw",
     "pages/mine/index",
     "pages/mine/directlist",
     "pages/mine/team",
