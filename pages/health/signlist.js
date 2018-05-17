@@ -10,7 +10,9 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         pageShow:false,
-        needSignToday:0
+        needSignToday:0,
+        signDays:0,
+        vaildCountSum:0
     },
     //事件处理函数
     bindViewTap: function() {
@@ -37,10 +39,10 @@ Page({
 
                     if( !userInfo.activity_pay )
                     {
-                        //活动
+                        //这里要去参见活动
                         wx.redirectTo(
                             {
-                                url:''
+                                url:'/pages/health/route'
                             }
                         );
                         return;
@@ -71,6 +73,7 @@ Page({
                     //组装signList
 
                     var validRecord = [];
+                    var vaildCountSum = 0;
 
                     for( var i =0 ; i < signRecord.length; i++)
                     {
@@ -99,6 +102,8 @@ Page({
                         console.log(signRecord[i].date);
                         console.log(signRecord[i].date.substr(0,2));
 
+                        vaildCountSum = vaildCountSum + parseInt(signProv.countIndex) + 1;
+
                         validRecord.push({id:signRecord[i].id,day:signRecord[i].date.substr(8,2),month:signRecord[i].date.substr(5,2),cover_image:coverImage,quantity:parseInt(signProv.countIndex) + 1,baseInfo:signProv.baseInfo,date:signRecord[i].date});
 
 
@@ -111,7 +116,9 @@ Page({
                             userInfo:requestRes.data.data.user,
                             signList:validRecord,
                             pageShow:true,
-                            needSignToday:requestRes.data.data.needSignToday
+                            needSignToday:requestRes.data.data.needSignToday,
+                            signDays:validRecord.length,
+                            vaildCountSum:vaildCountSum
                         }
                     );
 

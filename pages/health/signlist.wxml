@@ -1,11 +1,12 @@
-<view wx:if="{{pageShow}}" class="content-wrapper-24-16">
+<view style="line-height: 40px;background: #F3F3F3;font-size: 14px;color: #9B9B9B;" wx:if="{{pageShow}}" class="t-al-c">
+    已打卡{{signDays}}天，共计吃了{{vaildCountSum}}包代餐
+</view>
 
+<view wx:if="{{pageShow}}" class="content-wrapper-24-16">
     <view class="fix-bottom2" style="padding: 12px 16px;">
         <navigator class="btn1 t-al-c" wx:if="{{needSignToday}}" open-type="navigate" url="/pages/logs/sign">开始打卡</navigator>
         <view class="btn1-gray t-al-c" wx:if="{{!needSignToday}}">今日已打卡</view>
     </view>
-
-
 
     <navigator class="cus-row" wx:for="{{signList}}" style="padding-left:180px;position: relative; height: 80px;" open-type="navigate" url="/pages/mine/signdetail?id={{item.id}}">
 

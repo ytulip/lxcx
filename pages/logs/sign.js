@@ -139,17 +139,10 @@ Page({
                 console.log(requestRes);
                 if(requestRes.data.status)
                 {
-                    // console.log(requestRes.data.status);
-                    // var page = getCurrentPages().pop();
-                    // page.onLoad();
-                    // wx.switchTab({
-                    //     url: '/pages/logs/logs',
-                    //     success: function (e) {
-                    //         var page = getCurrentPages().pop();
-                    //         if (page == undefined || page == null) return;
-                    //         page.onLoad();
-                    //     }
-                    // });
+                    util.mAlert('打卡成功');
+                    wx.switchTab({
+                        url: '/pages/index/home'
+                    });
                 } else
                 {
                     util.mAlert(requestRes.data.desc);
