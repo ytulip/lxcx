@@ -48,7 +48,8 @@
     "pages/mine/messagedetail",
     "pages/mine/upcommentsuccess",
     "pages/mine/upsuperlist",
-    "pages/mine/withdrawconfirm"
+    "pages/mine/withdrawconfirm",
+    "pages/logs/over"
   ],
   "window":{
     "backgroundTextStyle":"light",

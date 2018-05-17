@@ -36,6 +36,7 @@ Page({
                 {
                     var userInfo = requestRes.data.data.user;
                     var signRecord = requestRes.data.data.signRecord;
+                    var order = requestRes.data.data.order;
 
                     if( !userInfo.activity_pay )
                     {
@@ -68,6 +69,18 @@ Page({
                             }
                         );
                         return;
+                    }
+
+
+
+                    //判断是否打卡完成哟
+                    if(order.sign_status == 3)
+                    {
+                        wx.redirectTo(
+                            {
+                                url:'/pages/logs/over'
+                            }
+                        );
                     }
 
                     //组装signList
