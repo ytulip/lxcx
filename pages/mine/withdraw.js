@@ -68,7 +68,7 @@ Page({
             return;
         }
 
-        var type = this.data.countIndex?2:1;
+        var type = this.data.countArray[this.data.countIndex];
 
         wx.navigateTo(
             {
