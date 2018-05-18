@@ -124,7 +124,12 @@ Page({
                         'paySign': jsonData.paySign,
                         'success':function(res){
                             util.mAlert('支付成功');
-                            util.kit.goHome();
+                            // util.kit.goHome();
+                            wx.redirectTo(
+                                {
+                                    url:'/pages/activity/success'
+                                }
+                            );
                         },
                         'fail':function(res){
                             util.mAlert('支付失败，请重新支付');

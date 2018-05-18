@@ -78,5 +78,13 @@ Page({
 
     goOn : function(){
         util.kit.goHome();
+    },
+
+    bindPreview:function()
+    {
+        wx.previewImage({
+            current: this.data.image, // 当前显示图片的http链接
+            urls: [this.data.image]
+        })
     }
 })
