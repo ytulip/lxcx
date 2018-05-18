@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/index/home",
     "pages/activity/success",
     "pages/logs/over",
-    "pages/index/home",
     "pages/mine/withdraw",
     "pages/mine/bill",
     "pages/mine/cash",
