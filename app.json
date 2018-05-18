@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/activity/success",
+    "pages/logs/over",
     "pages/index/home",
     "pages/mine/withdraw",
     "pages/mine/bill",
@@ -48,8 +50,7 @@
     "pages/mine/messagedetail",
     "pages/mine/upcommentsuccess",
     "pages/mine/upsuperlist",
-    "pages/mine/withdrawconfirm",
-    "pages/logs/over"
+    "pages/mine/withdrawconfirm"
   ],
   "window":{
     "backgroundTextStyle":"light",

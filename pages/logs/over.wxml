@@ -1,3 +1,44 @@
 <view style="text-align: center;">
-    <button class="weui-btn" type="primary" style="margin: 0 20px;margin-top: 70px;" bindtap="goOn">继续操作</button>
+
+    <view style="padding:0 30px;margin: 24px 0;">
+        <view style="border-bottom: 1px dashed #95909E;"></view>
+    </view>
+
+    <view class="cus-row">
+        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3 fs-16-fc-484848 ">打卡前</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">打卡后</view>
+    </view>
+
+    <view class="cus-row">
+        <view class="cus-row-col-3 fs-16-fc-484848">身高:</view>
+        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3"></view>
+    </view>
+
+    <view class="cus-row">
+        <view class="cus-row-col-3 fs-16-fc-484848">体重:</view>
+        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3"></view>
+    </view>
+
+    <view class="cus-row">
+        <view class="cus-row-col-3 fs-16-fc-484848">腰围:</view>
+        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3"></view>
+    </view>
+
+    <view class="cus-row">
+        <view class="cus-row-col-3 fs-16-fc-484848">血压:</view>
+        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3"></view>
+    </view>
+
+
+    <view class="cus-row">
+        <view class="cus-row-col-3 fs-16-fc-484848">血糖:</view>
+        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3"></view>
+    </view>
+
 </view>
