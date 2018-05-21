@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/report/pay",
+    "pages/rereport/getgood",
     "pages/index/home",
+    "pages/report/pay",
     "pages/index/city",
     "pages/mine/getconfirm",
     "pages/activity/success",
@@ -28,7 +29,6 @@
     "pages/rereport/getgoodsuccess",
     "pages/rereport/success",
     "pages/rereport/pay",
-    "pages/rereport/getgood",
     "pages/mine/regetgoodroute",
     "pages/report/getgoodsuccess",
     "pages/report/getgood",
