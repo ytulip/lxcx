@@ -2,14 +2,14 @@
 <view class="content-wrapper">
 
     <view class="fix-bottom2 t-al-c" wx:if="{{layerShow}}">
-        <view class="cus-row" style="padding: 0 16px;border-bottom: 1px solid #eeeeee">
-            <view class="cus-row-col-2 fs-14-fc-95909E v-a-m" style="line-height: 40px;">
+        <view class="cus-row" style="padding: 0 16px;border-bottom: 1px solid #eeeeee;border-top: 1px solid #eeeeee">
+            <view class="cus-row-col-2 fs-14-fc-95909E v-a-m" style="line-height: 40px;" bindtap="cancelPCT">
                 取消
             </view>
             <view class="cus-row-col-8">
 
             </view>
-            <view class="cus-row-col-2 fs-14-fc-5EC11A v-a-m t-al-r" style="line-height: 40px;">
+            <view class="cus-row-col-2 fs-14-fc-5EC11A v-a-m t-al-r" style="line-height: 40px;" bindtap="choosePCT">
                 确定
             </view>
         </view>
@@ -82,8 +82,8 @@
                 <view class="weui-cell__hd">
                     <view class="weui-label" style="line-height: 44px;">收货地址</view>
                 </view>
-                <view class="weui-cell__bd">
-
+                <view class="weui-cell__bd" bindtap="pctSwitch" style="height: 44px;line-height: 44px;">
+                    {{choooseText}}
                 </view>
             </view>
 

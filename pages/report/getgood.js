@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var util = require('../../utils/util.js')
+var cityData = require('../../utils/city_data');
 const app = getApp()
 
 Page({
@@ -17,6 +18,12 @@ Page({
         selfGetArray:[],
         selfGetIndex:0,
         openid:'',
+        value: [0, 0, 0],
+        years:[],
+        year: 0,
+        months: [],
+        month: 0,
+        days: []
 
     },
     onLoad: function(options) {
@@ -26,6 +33,9 @@ Page({
                 openid:openid
             }
         );
+
+
+
         var that = this;
         wx.request({
             url: util.serverHost + 'activity/get-good-info?openid=' + this.data.openid ,
@@ -131,5 +141,50 @@ Page({
             }
         })
     },
+
+    bindChange: function(e) {
+        const val = e.detail.value;
+
+        console.log(this.data.year);
+        console.log(this.data.month);
+        console.log(val);
+
+        if( this.data.year != val[0])
+        {
+            //省份更改
+            this.setData(
+                {
+                    year:val[0],
+                    months:cityData.cityData.cityList(val[0]),
+                    month:0,
+                    days:cityData.cityData.townList(val[0],0),
+                    day:0,
+                    value:[val[0],0,0]
+                }
+            );
+            return;
+        }
+
+
+        if( this.data.month != val[1] )
+        {
+            //市级更改
+            this.setData(
+                {
+                    days:cityData.cityData.townList(val[0],val[1]),
+                    day:0,
+                    value:[val[0],val[1],0]
+                }
+            );
+        }
+
+        // console.log(e.detail.value);
+        //
+        // this.setData({
+        //     year: this.data.years[val[0]],
+        //     month: this.data.months[val[1]],
+        //     day: this.data.days[val[2]]
+        // })
+    }
 
 })

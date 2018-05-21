@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var util = require('../../utils/util.js')
+var cityData = require('../../utils/city_data')
 const app = getApp()
 
 Page({
@@ -19,8 +20,13 @@ Page({
         numberSelected:0,
         allImagePath:'/images/checkbox.png',
         numberImagePath:'/images/checkbox2.png',
-        quantity:0
-
+        quantity:0,
+        layerShow:false,
+        year:0,
+        month:0,
+        day:0,
+        chooseValue:[0,0,0],
+        chooseText:''
     },
 
     bindQuantityChange:function(e)
@@ -34,7 +40,10 @@ Page({
         var openid = util.auth.getOpenid();
         this.setData(
             {
-                openid:openid
+                openid:openid,
+                years:cityData.cityData.provinces,
+                months:cityData.cityData.cityList(0),
+                days:cityData.cityData.townList(0,0)
             }
         );
         var that = this;
@@ -174,6 +183,93 @@ Page({
                 )
             }
         }
+    },
+
+    pctSwitch:function()
+    {
+        console.log(3);
+        this.setData(
+            {
+                layerShow:true,
+                months:cityData.cityData.cityList(this.data.chooseValue[0]),
+                days:cityData.cityData.townList(this.data.chooseValue[0],this.data.chooseValue[1]),
+                value:this.data.chooseValue
+            }
+        );
+    },
+
+    bindChange: function(e) {
+        const val = e.detail.value;
+
+        console.log(this.data.year);
+        console.log(this.data.month);
+        console.log(val);
+
+        if( this.data.year != val[0])
+        {
+            //省份更改
+            this.setData(
+                {
+                    year:val[0],
+                    months:cityData.cityData.cityList(val[0]),
+                    month:0,
+                    days:cityData.cityData.townList(val[0],0),
+                    day:0,
+                    value:[val[0],0,0]
+                }
+            );
+            return;
+        }
+
+
+        if( this.data.month != val[1] )
+        {
+            //市级更改
+            this.setData(
+                {
+                    month:val[1],
+                    days:cityData.cityData.townList(val[0],val[1]),
+                    day:0,
+                    value:[val[0],val[1],0]
+                }
+            );
+
+            return;
+        }
+
+        console.log(7);
+
+        this.setData({
+                value: [val[0], val[1], val[2]]
+            }
+        );
+
+        // console.log(e.detail.value);
+        //
+        // this.setData({
+        //     year: this.data.years[val[0]],
+        //     month: this.data.months[val[1]],
+        //     day: this.data.days[val[2]]
+        // })
+    },
+
+    cancelPCT:function(e){
+        this.setData(
+            {
+                layerShow:false
+            }
+        );
+    },
+
+    choosePCT:function(e)
+    {
+        this.setData(
+            {
+                choooseText:this.data.years[this.data.value[0]] + this.data.months[this.data.value[1]] + this.data.days[this.data.value[2]],
+                chooseValue:this.data.value,
+                layerShow:false
+            }
+        );
     }
 
 })
