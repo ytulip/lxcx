@@ -1,5 +1,22 @@
-<!--index.wxml-->
-<!--<web-view src="https://lamushan.com/user/essay?id=3"></web-view>-->
+<view class="layer-shadow" style="padding: 40px 24px;" wx:if="{{showSearch}}">
+
+    <view style="position: absolute;top:0;left: 0;right: 0;bottom: 0;" bindtap="closeLayer">
+
+    </view>
+
+    <view style="background-color: #f8f8f8;border-radius: 8px;padding: 12px;">
+        <view>
+            <input class="fs-16-fc-212229" value="{{quantity}}" placeholder="输入姓名手机号搜索"  bindinput="searchUser" style=";border-radius: 4px;border: 1px solid #ccc;padding: 4px 6px;"/>
+        </view>
+
+        <scroll-view style="height: 400px;" scroll-y>
+            <view wx:for="{{showList}}" class="fs-14-fc-95909E" style="line-height: 40px;" bindtap="chooseUser" data-phone="{{item.phone}}">
+                {{item.phone}}-{{item.real_name}}-{{item.id_card}}
+            </view>
+        </scroll-view>
+    </view>
+</view>
+
 <view  class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
     <view class="cus-row cus-row-v-m">
         <view class="cus-row-col-6" style="display: inline-block;">
@@ -29,11 +46,10 @@
     </view>
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-            <view class="weui-label">邀请人:</view>
+            <view class="weui-label" style="line-height: 48px;">邀请人:</view>
         </view>
-        <view class="weui-cell__bd">
-            <input wx:if="{{!recommondPhone}}" class="weui-input" value="" type="number" bindinput="bindPhoneInput" maxlength="11" placeholder="请输入上级会员手机号"/>
-            <label style="line-height: 44px;" wx:if="{{recommondPhone}}">{{recommondPhone}}</label>
+        <view class="weui-cell__bd" bindtap="doSearchUser" style="height: 48px;">
+            <label style="line-height: 44px;">{{immediatePhone}}</label>
         </view>
     </view>
 </view>

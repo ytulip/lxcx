@@ -1,6 +1,9 @@
 {
   "pages":[
+    "pages/report/pay",
     "pages/index/home",
+    "pages/index/city",
+    "pages/mine/getconfirm",
     "pages/activity/success",
     "pages/logs/over",
     "pages/mine/withdraw",
@@ -27,7 +30,6 @@
     "pages/rereport/pay",
     "pages/rereport/getgood",
     "pages/mine/regetgoodroute",
-    "pages/report/pay",
     "pages/report/getgoodsuccess",
     "pages/report/getgood",
     "pages/index/index",

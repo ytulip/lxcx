@@ -39,6 +39,16 @@ bottom: 0;
     z-index: 999;
 }
 
+.layer-shadow{
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background-color: rgba(22,22,22,.6);
+    z-index: 1000;
+}
+
 .t-al-c{text-align: center;}
 .t-al-r{text-align: right;}
 

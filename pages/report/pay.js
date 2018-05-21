@@ -4,7 +4,11 @@ var util = require('../../utils/util.js')
 Page({
     data: {
         openid:'',
-        productAttr:{}
+        productAttr:{},
+        userList:[],
+        showList:[],
+        showSearch:false,
+        immediatePhone:''
     },
 
 
@@ -31,7 +35,24 @@ Page({
                     }
                 );
             }
-        })
+        });
+
+        wx.request(
+            {
+                url:util.serverHost + 'activity/user-list' ,
+                success:function(requestRes)
+                {
+                    console.log(requestRes);
+                    // requestRes.data
+
+                    that.setData(
+                        {
+                            userList:requestRes.data.data
+                        }
+                    );
+                }
+            }
+        );
     },
 
 
@@ -85,4 +106,103 @@ Page({
             }
         })
     },
+
+    searchUser:function(e)
+    {
+        // console.log(e.detail.value);
+        var searchVal = e.detail.value;
+        if(!e.detail.value)
+        {
+            this.setData(
+                {
+                    showList:[]
+                }
+            );
+          return;
+        }
+
+
+        var userListLength = this.data.userList.length;
+        var showList = [];
+
+        console.log(userListLength);
+
+        for(var i=0 ; i < userListLength ; i++)
+        {
+            var obj = this.data.userList[i];
+            var showFlag = false;
+
+            if ( obj.phone === null || obj.phone.indexOf(searchVal) != 0 )
+            {
+
+            } else {
+                showFlag = true;
+            }
+
+
+            if ( obj.real_name === null || obj.real_name.indexOf(searchVal) != 0 )
+            {
+
+            } else {
+                showFlag = true;
+            }
+
+            if ( obj.id_card === null || obj.id_card.indexOf(searchVal) != 0 )
+            {
+
+            } else {
+                showFlag = true;
+            }
+
+            if( ! showFlag )
+            {
+                continue;
+            }
+
+            showList.push(obj);
+        }
+
+        console.log(showList);
+
+        this.setData(
+            {
+                showList:showList
+            }
+        );
+    },
+
+
+    chooseUser:function(e)
+    {
+        var phone = e.currentTarget.dataset.phone;
+        // console.log(phone);
+        this.setData(
+            {
+                showSearch:false,
+                immediatePhone:phone
+            }
+        );
+    },
+
+    doSearchUser:function(e)
+    {
+        this.setData(
+            {
+                showSearch:true,
+                showList:[]
+            }
+        );
+    },
+
+    closeLayer:function()
+    {
+        this.setData(
+            {
+                showSearch:false
+            }
+        );
+    }
+
+
+
 })
