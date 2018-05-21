@@ -1,0 +1,3 @@
+<view wx:if="{{pageShow}}" class="content-wrapper-24-16">
+    <image style="width: 100%;" mode="widthFix" src="https://lamushan.com/activity/self-get-pic?id=c{{id}}"></image>
+</view>

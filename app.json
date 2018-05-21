@@ -52,7 +52,8 @@
     "pages/mine/messagedetail",
     "pages/mine/upcommentsuccess",
     "pages/mine/upsuperlist",
-    "pages/mine/withdrawconfirm"
+    "pages/mine/withdrawconfirm",
+    "pages/report/confirm"
   ],
   "window":{
     "backgroundTextStyle":"light",
