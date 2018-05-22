@@ -23,14 +23,19 @@ Page({
         year: 0,
         months: [],
         month: 0,
-        days: []
+        days: [],
+        chooseValue:[0,0,0],
+        chooseText:''
 
     },
     onLoad: function(options) {
         var openid = util.auth.getOpenid();
         this.setData(
             {
-                openid:openid
+                openid:openid,
+                years:cityData.cityData.provinces,
+                months:cityData.cityData.cityList(0),
+                days:cityData.cityData.townList(0,0)
             }
         );
 
@@ -97,7 +102,7 @@ Page({
         console.log(requestData.deliver_type);
 
         if(requestData.deliver_type == 2) { //邮寄
-            requestData.address = this.data.address;
+            requestData.address = this.data.chooseText + this.data.address;
             requestData.address_name = this.data.real_name;
             requestData.address_phone = this.data.phone;
         } else
@@ -142,6 +147,19 @@ Page({
         })
     },
 
+    pctSwitch:function()
+    {
+        console.log(3);
+        this.setData(
+            {
+                layerShow:true,
+                months:cityData.cityData.cityList(this.data.chooseValue[0]),
+                days:cityData.cityData.townList(this.data.chooseValue[0],this.data.chooseValue[1]),
+                value:this.data.chooseValue
+            }
+        );
+    },
+
     bindChange: function(e) {
         const val = e.detail.value;
 
@@ -171,12 +189,22 @@ Page({
             //市级更改
             this.setData(
                 {
+                    month:val[1],
                     days:cityData.cityData.townList(val[0],val[1]),
                     day:0,
                     value:[val[0],val[1],0]
                 }
             );
+
+            return;
         }
+
+        console.log(7);
+
+        this.setData({
+                value: [val[0], val[1], val[2]]
+            }
+        );
 
         // console.log(e.detail.value);
         //
@@ -185,6 +213,25 @@ Page({
         //     month: this.data.months[val[1]],
         //     day: this.data.days[val[2]]
         // })
+    },
+
+    cancelPCT:function(e){
+        this.setData(
+            {
+                layerShow:false
+            }
+        );
+    },
+
+    choosePCT:function(e)
+    {
+        this.setData(
+            {
+                chooseText:this.data.years[this.data.value[0]] + this.data.months[this.data.value[1]] + this.data.days[this.data.value[2]],
+                chooseValue:this.data.value,
+                layerShow:false
+            }
+        );
     }
 
 })

@@ -83,7 +83,7 @@
                     <view class="weui-label" style="line-height: 44px;">收货地址</view>
                 </view>
                 <view class="weui-cell__bd" bindtap="pctSwitch" style="height: 44px;line-height: 44px;">
-                    {{choooseText}}
+                    {{chooseText}}
                 </view>
             </view>
 

@@ -1,5 +1,33 @@
 <!--logs.wxml-->
 <view>
+
+
+
+    <view class="fix-bottom2 t-al-c" wx:if="{{layerShow}}">
+        <view class="cus-row" style="padding: 0 16px;border-bottom: 1px solid #eeeeee;border-top: 1px solid #eeeeee">
+            <view class="cus-row-col-2 fs-14-fc-95909E v-a-m" style="line-height: 40px;" bindtap="cancelPCT">
+                取消
+            </view>
+            <view class="cus-row-col-8">
+
+            </view>
+            <view class="cus-row-col-2 fs-14-fc-5EC11A v-a-m t-al-r" style="line-height: 40px;" bindtap="choosePCT">
+                确定
+            </view>
+        </view>
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 220px;font-size: 14px;color: #484848;" value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{years}}" style="line-height: 50px">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{months}}" style="line-height: 50px">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{days}}" style="line-height: 50px">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
@@ -52,7 +80,17 @@
 
             <view class="weui-cell weui-cell_input" wx:if="{{index == 0}}">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">收货地址</view>
+                    <view class="weui-label" style="line-height: 44px;">收货地址</view>
+                </view>
+                <view class="weui-cell__bd" bindtap="pctSwitch" style="height: 44px;line-height: 44px;">
+                    {{chooseText}}
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_input" wx:if="{{index == 0}}">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">详细地址</view>
                 </view>
                 <view class="weui-cell__bd">
                     <textarea style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;" bindinput="bindAddressInput"></textarea>

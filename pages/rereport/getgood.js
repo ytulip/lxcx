@@ -116,7 +116,7 @@ Page({
         }
 
         if(requestData.deliver_type == 2) { //邮寄
-            requestData.address = this.data.address;
+            requestData.address = this.data.chooseText + this.data.address;
             requestData.address_name = this.data.real_name;
             requestData.address_phone = this.data.phone;
         } else
@@ -265,7 +265,7 @@ Page({
     {
         this.setData(
             {
-                choooseText:this.data.years[this.data.value[0]] + this.data.months[this.data.value[1]] + this.data.days[this.data.value[2]],
+                chooseText:this.data.years[this.data.value[0]] + this.data.months[this.data.value[1]] + this.data.days[this.data.value[2]],
                 chooseValue:this.data.value,
                 layerShow:false
             }
