@@ -15,7 +15,8 @@ Page({
         smsText:'获取验证码',
         smsTextLock:0,
         real_name:"",
-        id_card:""
+        id_card:"",
+        showPage:0
     },
 
 
@@ -54,7 +55,9 @@ Page({
                             // requestRes.data
                             that.setData(
                                 {
-                                    openid: requestRes.data.data.openid
+                                    openid: requestRes.data.data.openid,
+                                    showPage:1,
+                                    src:util.serverHost + 'passport/xcx-bind?type=activity&openid=' + requestRes.data.data.openid
                                 }
                             );
                         }
