@@ -60,7 +60,7 @@
     </view>
 
     <view class="t-al-c m-t-33">
-        <view class="btn1 m-0-a" style="width: 128px;">申请退款</view>
+        <view class="btn1 m-0-a" style="width: 128px;" bindtap="turnback">申请退款</view>
     </view>
 
 </view>

@@ -50,5 +50,10 @@ Page({
                 page.onLoad();
             }
         });
+    },
+
+    turnback : function()
+    {
+      util.mAlert('打卡完成30天后才可提现');
     }
 })

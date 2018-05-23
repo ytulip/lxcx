@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/logs/turnback",
+    "pages/mine/bind",
     "pages/logs/over",
+    "pages/logs/turnback",
     "pages/index/home",
     "pages/report/getgood",
     "pages/rereport/getgood",
@@ -46,7 +47,6 @@
     "pages/health/success",
     "pages/mine/signdetail",
     "pages/mine/openid",
-    "pages/mine/bind",
     "pages/mine/msg",
     "pages/mine/up",
     "pages/mine/getgoodpic",
