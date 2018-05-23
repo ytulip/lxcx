@@ -23,7 +23,8 @@ Page({
         var openid = util.auth.getOpenid();
         this.setData(
             {
-                openid:openid
+                openid:openid,
+                src:util.serverHost + 'passport/xcx-bind?openid=' + openid
             }
         )
     },

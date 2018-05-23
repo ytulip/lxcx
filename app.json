@@ -1,9 +1,9 @@
 {
   "pages":[
+    "pages/index/home",
     "pages/mine/bind",
     "pages/logs/over",
     "pages/logs/turnback",
-    "pages/index/home",
     "pages/report/getgood",
     "pages/rereport/getgood",
     "pages/report/pay",
