@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/logs/turnback",
+    "pages/logs/over",
     "pages/index/home",
     "pages/report/getgood",
     "pages/rereport/getgood",
@@ -7,7 +9,6 @@
     "pages/index/city",
     "pages/mine/getconfirm",
     "pages/activity/success",
-    "pages/logs/over",
     "pages/mine/withdraw",
     "pages/mine/bill",
     "pages/mine/cash",

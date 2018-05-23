@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<!--<web-view src="https://lamushan.com/user/essay?id=3"></web-view>-->
+
+
+<view class="content-wrapper-24-16">
+    <view class="cus-row  m-t-24" style="border-bottom: 1px solid #EBE9E9;">
+        <view class="cus-row-col-3 fs-16-fc-212229" style="line-height: 48px;">退款金额:</view>
+        <view class="cus-row-col-9 fs-16-fc-212229 t-al-r">
+            ￥1880.00
+        </view>
+    </view>
+
+
+    <view class="cus-row" style="border-bottom: 1px solid #EBE9E9;">
+
+        <view class="cus-row-col-3 fs-16-fc-212229 v-a-m">
+            退款银行:
+        </view>
+
+        <view class="cus-row-col-8 t-al-r v-a-m">
+            <picker bindchange="bindCountChange" value="{{countIndex}}" range="{{countArray}}" style="line-height: 44px;">
+                <view class="picker fs-16-fc-212229" style="line-height: 48px;">
+                    {{countArray[countIndex]}}
+                </view>
+            </picker>
+        </view>
+        <view class="cus-row-col-1 v-a-m t-al-r">
+            <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
+        </view>
+    </view>
+
+    <view class="cus-row" style="border-bottom: 1px solid #EBE9E9;">
+        <view class="cus-row-col-3 fs-16-fc-212229" style="line-height: 48px;">账户名称:</view>
+        <view class="cus-row-col-9 fs-16-fc-212229 t-al-r">
+            <input  class="fs-16-fc-212229" style="line-height: 48px;display: inline;" bindinput="bindAccountInput" placeholder="请输入"/>
+        </view>
+    </view>
+
+    <view class="cus-row" style="border-bottom: 1px solid #EBE9E9;">
+        <view class="cus-row-col-3 fs-16-fc-212229" style="line-height: 48px;">银行卡号:</view>
+        <view class="cus-row-col-9 fs-16-fc-212229 t-al-r">
+            <input  class="fs-16-fc-212229" style="line-height: 48px;display: inline;" bindinput="bindAccountInput" placeholder="请输入"/>
+        </view>
+    </view>
+</view>
+
+
+<view  class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+    <view class="cus-row cus-row-v-m">
+        <view class="cus-row-col-6" style="display: inline-block;">
+            <text class="btn-block1 m-t-20" bindtap="pay" style="margin-top: 0;font-size:12px;" >下一步</text>
+        </view>
+    </view>
+</view>

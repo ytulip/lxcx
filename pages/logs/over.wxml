@@ -1,5 +1,23 @@
 <view style="text-align: center;">
 
+
+
+    <view>
+        <view class="cus-row-col-4 t-al-c v-a-t">
+            <image class="m-t-10" src="{{imageHost + userInfo.header_img}}" style="width: 75px;height: 75px;" mode="widthFix"></image>
+        </view>
+
+        <view class="fs-16-fc-212229 t-al-c m-t-10">{{userInfo.real_name}}</view>
+
+        <view class="fs-16-fc-212229 t-al-c m-t-10">
+            健康打卡天数:{{signDays}}天
+        </view>
+
+        <view class="fs-16-fc-212229 t-al-c" style="margin-top: 4px;">
+            打卡完成率 :100%
+        </view>
+    </view>
+
     <view style="padding:0 30px;margin: 24px 0;">
         <view style="border-bottom: 1px dashed #95909E;"></view>
     </view>
@@ -10,35 +28,39 @@
         <view class="cus-row-col-3 fs-16-fc-484848">打卡后</view>
     </view>
 
-    <view class="cus-row">
+    <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">身高:</view>
-        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.tall}}cm</view>
         <view class="cus-row-col-3"></view>
     </view>
 
-    <view class="cus-row">
+    <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">体重:</view>
-        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.weight}}kg</view>
         <view class="cus-row-col-3"></view>
     </view>
 
-    <view class="cus-row">
+    <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">腰围:</view>
-        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.waistline}}</view>
         <view class="cus-row-col-3"></view>
     </view>
 
-    <view class="cus-row">
+    <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">血压:</view>
-        <view class="cus-row-col-3"></view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.blood_press}}</view>
         <view class="cus-row-col-3"></view>
     </view>
 
 
-    <view class="cus-row">
+    <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">血糖:</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.blood_glucose}}</view>
         <view class="cus-row-col-3"></view>
-        <view class="cus-row-col-3"></view>
+    </view>
+
+    <view class="t-al-c m-t-33">
+        <view class="btn1 m-0-a" style="width: 128px;">申请退款</view>
     </view>
 
 </view>
