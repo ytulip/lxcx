@@ -105,6 +105,7 @@ Page({
         requestData.deliver_type = (this.data.index == '0')?2:1;
         // requestData.quantityCount = (this.data.quantityIndex == '0')?1:2;
         requestData.get_type = 2;
+        requestData.self_get_need_scan = 1;
         // requestData.quantity =
         // console.log(requestData.deliver_type);
 
@@ -134,11 +135,21 @@ Page({
                 console.log(res);
                 if( res.data.status)
                 {
-                    wx.redirectTo(
-                        {
-                            url:'/pages/rereport/getgoodsuccess'
-                        }
-                    );
+                    if ( requestData.deliver_type == 1)
+                    {
+                        wx.redirectTo(
+                            {
+                                url:'/pages/report/confirm?id=' + res.data.data
+                            }
+                        );
+                    } else
+                    {
+                        wx.redirectTo(
+                            {
+                                url:'/pages/report/getgoodsuccess'
+                            }
+                        );
+                    }
                 } else
                 {
                     wx.showToast({
