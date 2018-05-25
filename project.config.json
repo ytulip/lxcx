@@ -37,6 +37,12 @@
 					"name": "下单",
 					"pathName": "pages/health/route",
 					"query": "scene=1"
+				},
+				{
+					"id": 1,
+					"name": "确认自提",
+					"pathName": "pages/mine/getconfirm",
+					"query": "scene=c12"
 				}
 			]
 		}

@@ -132,11 +132,16 @@ Page({
                 console.log(res);
                 if( res.data.status)
                 {
-                    wx.navigateTo(
+                    wx.redirectTo(
                         {
-                            url: '/pages/health/index2'
+                            url:'/pages/logs/over'
                         }
                     );
+                    // wx.navigateTo(
+                    //     {
+                    //         url: '/pages/health/index2'
+                    //     }
+                    // );
                 } else
                 {
                     wx.showToast({

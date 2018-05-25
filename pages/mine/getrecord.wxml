@@ -20,7 +20,6 @@
                 <view class="fs-16-fc-484848 m-t-24">提货数量:{{item.count}}箱</view>
                 <view class="fs-16-fc-484848 m-t-24">提货方式:自提</view>
                 <view class="fs-16-fc-484848 m-t-24">邮寄地址:{{item.address}}</view>
-                <navigator class="btn1 m-t-24 t-al-c" open-type="navigate" url="/pages/mine/getgoodpic?id={{item.id}}">提货二维码</navigator>
             </view>
         </view>
 
