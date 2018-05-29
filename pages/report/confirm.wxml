@@ -1,3 +1,5 @@
 <view wx:if="{{pageShow}}" class="content-wrapper-24-16">
     <image style="width: 100%;" mode="widthFix" src="https://lamushan.com/activity/self-get-pic?id=c{{id}}"></image>
+
+    <view class="fs-16-fc-212229 t-al-c m-t-16">该小程序码为您的自提时的提货码，请向管理人员出示该码，扫码后方可提货</view>
 </view>

@@ -27,7 +27,7 @@
     </view>
 
     <view class="navigator-line-FFB11B" style="padding: 24px 16px;">
-        <view class="fs-16-fc-ffffff">剩余可提货数量：{{userInfo.re_get_good}}箱</view>
+        <view class="fs-16-fc-ffffff">剩余可提货数量：{{isActivity?userInfo.activity_get_good:userInfo.re_get_good}}箱</view>
     </view>
 
 

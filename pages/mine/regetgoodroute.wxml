@@ -28,6 +28,20 @@
         </navigator>
     </view>
 
+    <view class="m-t-24">
+        <view class="navigator-line" style="padding: 24px 16px;">
+            <view class="cus-row">
+                <view class="cus-row-col-8 fs-16-fc-ffffff">活动产品可提货数量</view>
+                <view class="cus-row-col-3 fs-24-fc-ffffff-b t-al-r">{{user.activity_get_good}}箱</view>
+            </view>
+        </view>
+        <navigator hover-class="none" style="padding: 0 24px;" open-type="navigate" url="/pages/rereport/getgood?activity=1">
+            <view class="navigator-sub-line p-t-b-16 t-al-c">
+                <view class="fs-16-fc-099FFF">提货</view>
+            </view>
+        </navigator>
+    </view>
+
 
     <view class="m-t-24">
         <navigator class="navigator-line-FFB11B" style="padding: 24px 16px;" open-type="navigate" url="/pages/mine/getrecord">

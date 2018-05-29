@@ -43,6 +43,30 @@
 					"name": "确认自提",
 					"pathName": "pages/mine/getconfirm",
 					"query": "scene=c12"
+				},
+				{
+					"id": -1,
+					"name": "活动提货",
+					"pathName": "pages/rereport/getgood",
+					"query": "activity=1"
+				},
+				{
+					"id": 3,
+					"name": "活动提货",
+					"pathName": "pages/mine/getconfirm",
+					"query": "scene=c13"
+				},
+				{
+					"id": -1,
+					"name": "参见活动",
+					"pathName": "pages/activity/pay",
+					"query": "openid=o0psn4ymkQ0ad5V4nvvs3PXRADD4"
+				},
+				{
+					"id": -1,
+					"name": "提货二维码",
+					"pathName": "pages/report/confirm",
+					"query": "id=14"
 				}
 			]
 		}

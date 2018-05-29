@@ -21,7 +21,7 @@ Page({
         immediatePhone:'',
         recommond_user:0,
         items1: [
-            {name: '1', value: '《关于线下驿站1880元免费赠送活动细则》'},
+            {name: '1', value: '点击付款即表示同意《关于线下驿站1880元免费赠送活动细则》'},
         ],
         itemsArray1:[],
 
@@ -39,22 +39,13 @@ Page({
 
     onLoad:function(options)
     {
-
-        // wx.setStorage({
-        //     key:"recommond_user",
-        //     success:function()
-        //     {
-        //         recommond_user
-        //     }
-        // })
-
         var that = this;
 
 
         var recommondUser = wx.getStorageSync("recommond_user");
 
         this.setData(
-            {openid:options.openid,recommond_user:recommondUser}
+            {openid:options.openid,recommond_user:recommondUser,immediatePhone:recommondUser}
         );
         wx.request({
             url: util.serverHost + 'activity/pay-info?openid=' + this.data.openid ,
@@ -76,7 +67,23 @@ Page({
                     }
                 );
             }
-        })
+        });
+        wx.request(
+            {
+                url:util.serverHost + 'activity/user-list' ,
+                success:function(requestRes)
+                {
+                    console.log(requestRes);
+                    // requestRes.data
+
+                    that.setData(
+                        {
+                            userList:requestRes.data.data
+                        }
+                    );
+                }
+            }
+        );
     },
 
     pay:function () {
@@ -177,5 +184,101 @@ Page({
             current: util.imageHost + '/pdf/activity.jpg', // 当前显示图片的http链接
             urls: [util.imageHost + '/pdf/activity.jpg'] // 需要预览的图片http链接列表
         })
+    },
+
+    searchUser:function(e)
+    {
+        // console.log(e.detail.value);
+        var searchVal = e.detail.value;
+        if(!e.detail.value)
+        {
+            this.setData(
+                {
+                    showList:[]
+                }
+            );
+            return;
+        }
+
+
+        var userListLength = this.data.userList.length;
+        var showList = [];
+
+        console.log(userListLength);
+
+        for(var i=0 ; i < userListLength ; i++)
+        {
+            var obj = this.data.userList[i];
+            var showFlag = false;
+
+            if ( obj.phone === null || obj.phone.indexOf(searchVal) != 0 )
+            {
+
+            } else {
+                showFlag = true;
+            }
+
+
+            if ( obj.real_name === null || obj.real_name.indexOf(searchVal) != 0 )
+            {
+
+            } else {
+                showFlag = true;
+            }
+
+            if ( obj.id_card === null || obj.id_card.indexOf(searchVal) != 0 )
+            {
+
+            } else {
+                showFlag = true;
+            }
+
+            if( ! showFlag )
+            {
+                continue;
+            }
+
+            showList.push(obj);
+        }
+
+        console.log(showList);
+
+        this.setData(
+            {
+                showList:showList
+            }
+        );
+    },
+
+
+    chooseUser:function(e)
+    {
+        var phone = e.currentTarget.dataset.phone;
+        // console.log(phone);
+        this.setData(
+            {
+                showSearch:false,
+                immediatePhone:phone
+            }
+        );
+    },
+
+    doSearchUser:function(e)
+    {
+        this.setData(
+            {
+                showSearch:true,
+                showList:[]
+            }
+        );
+    },
+
+    closeLayer:function()
+    {
+        this.setData(
+            {
+                showSearch:false
+            }
+        );
     }
 })

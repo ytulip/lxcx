@@ -1,7 +1,7 @@
 <!--logs.wxml-->
 <view class="content-wrapper-24-16">
     <view style="background: #FFFFFF;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 8px;padding-top: 60px;padding-bottom: 40px;" class="t-al-c">
-        <image src="/images/success.png" style="width: 91px;" mode="widthFix"></image>
+        <image src="{{src}}" style="width: 91px;" mode="widthFix"></image>
         <view class="fs-14-fc-A6A6A6">{{desc}}</view>
     </view>
 </view>

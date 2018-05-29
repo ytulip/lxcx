@@ -26,7 +26,8 @@ Page({
                             console.log(requestRes);
                             that.setData(
                                 {
-                                    desc:requestRes.data.data.desc
+                                    desc:requestRes.data.data.desc,
+                                    src:(requestRes.data.data.code == 200)?'/images/success.png':'/images/fail.png'
                                 }
                             );
                             // requestRes.data

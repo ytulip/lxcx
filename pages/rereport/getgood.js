@@ -43,7 +43,8 @@ Page({
                 openid:openid,
                 years:cityData.cityData.provinces,
                 months:cityData.cityData.cityList(0),
-                days:cityData.cityData.townList(0,0)
+                days:cityData.cityData.townList(0,0),
+                isActivity:options.activity?1:0
             }
         );
         var that = this;
@@ -104,7 +105,7 @@ Page({
         console.log(this.data.index);
         requestData.deliver_type = (this.data.index == '0')?2:1;
         // requestData.quantityCount = (this.data.quantityIndex == '0')?1:2;
-        requestData.get_type = 2;
+        requestData.get_type = this.data.isActivity?3:2;
         requestData.self_get_need_scan = 1;
         // requestData.quantity =
         // console.log(requestData.deliver_type);
