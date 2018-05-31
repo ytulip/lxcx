@@ -5,7 +5,7 @@
             <view class="mine-record m-t-10" wx:for="{{delvierHome}}">
                 <view class="fs-16-fc-484848">{{item.real_name}} {{item.phone}}</view>
                 <view class="fs-14-fc-95909E" style="margin-top: 8px;">高级会员 辅导时间{{item.created_at}}</view>
-                <view class="fs-14-fc-484848" style="margin-top: 16px;">直接开发 <view class="fs-14-fc-5EC11A in-bl">获利{{item.price}}</view></view>
+                <view class="fs-14-fc-484848" style="margin-top: 16px;">{{(item.cash_type==303)?'一代辅导':''}}{{(item.cash_type==304)?'二代辅导':''}} <view class="fs-14-fc-5EC11A in-bl">获利{{item.price}}(提货{{item.count}}箱))</view></view>
             </view>
         </view>
     </view>

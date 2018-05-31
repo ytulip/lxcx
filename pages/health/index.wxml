@@ -11,17 +11,17 @@
     </view>
 
     <view class="cus-row m-t-33" style="box-shadow: 0 1px 0 0 #EBE9E9;">
-        <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">身高</view>
+        <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">身高(必填)</view>
         <view class="cus-row-col-5 v-a-m t-al-r">
-            <input class="weui-input fs-16-fc-484848" bindinput="bindWaterInput" value="{{water}}" type="number" placeholder=""/>
+            <input class="weui-input fs-16-fc-484848" value="{{tall}}" placeholder="请输入身高" type="digit" bindinput="bindTallInput"/>
         </view>
         <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848">cm</view>
     </view>
 
     <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;">
-        <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">体重</view>
+        <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">体重(必填)</view>
         <view class="cus-row-col-5 v-a-m t-al-r">
-            <input class="weui-input fs-16-fc-484848" bindinput="bindWaterInput" value="{{water}}" type="number" placeholder=""/>
+            <input class="weui-input fs-16-fc-484848" value="{{weight}}" placeholder="请输入体重" type="digit" bindinput="bindWeightInput"/>
         </view>
         <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848">kg</view>
     </view>
@@ -29,7 +29,7 @@
     <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;">
         <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">腰围</view>
         <view class="cus-row-col-5 v-a-m t-al-r">
-            <input class="weui-input fs-16-fc-484848" bindinput="bindWaterInput" value="{{water}}" type="number" placeholder=""/>
+            <input class="weui-input fs-16-fc-484848" value="{{waistline}}" placeholder="请输入腰围" type="digit" bindinput="bindWaistlineInput"/>
         </view>
         <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848">cm</view>
     </view>
@@ -37,7 +37,7 @@
     <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;">
         <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">血压</view>
         <view class="cus-row-col-4 v-a-m t-al-r">
-            <input class="weui-input fs-16-fc-484848" bindinput="bindWaterInput" value="{{water}}" type="number" placeholder=""/>
+            <input class="weui-input fs-16-fc-484848" value="{{blood_press}}" bindinput="bindBloodPressInput" placeholder="请输入血压" type="digit"/>
         </view>
         <view class="cus-row-col-2 v-a-m t-al-r fs-16-fc-484848">mmHg</view>
     </view>
@@ -45,62 +45,9 @@
     <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;">
         <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">血糖</view>
         <view class="cus-row-col-4 v-a-m t-al-r">
-            <input class="weui-input fs-16-fc-484848" bindinput="bindWaterInput" value="{{water}}" type="number" placeholder=""/>
+            <input class="weui-input fs-16-fc-484848" value="{{blood_glucose}}" placeholder="请输入血糖" bindinput="bindBloodGlucoseInput" type="digit"/>
         </view>
         <view class="cus-row-col-2 v-a-m t-al-r fs-16-fc-484848">mmol</view>
-    </view>
-
-
-    <view class="weui-cells weui-cells_after-title m-t-33">
-        <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-                <view class="weui-label">身高(cm)</view>
-            </view>
-            <view class="weui-cell__bd">
-                <input class="weui-input" value="{{tall}}" placeholder="请输入身高,必填" type="digit" bindinput="bindTallInput"/>
-            </view>
-        </view>
-
-        <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-                <view class="weui-label">体重(kg)</view>
-            </view>
-            <view class="weui-cell__bd">
-                <input class="weui-input" value="{{weight}}" placeholder="请输入体重，必填" type="digit" bindinput="bindWeightInput"/>
-            </view>
-        </view>
-
-        <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-                <view class="weui-label">腰围(cm)</view>
-            </view>
-            <view class="weui-cell__bd">
-                <input class="weui-input" value="{{waistline}}" placeholder="请输入腰围，选填" type="digit" bindinput="bindWaistlineInput"/>
-            </view>
-        </view>
-
-        <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-                <view class="weui-label">血压</view>
-            </view>
-            <view class="weui-cell__bd">
-                <input class="weui-input" value="{{blood_press}}" bindinput="bindBloodPressInput" placeholder="请输入血压，选填"/>
-            </view>
-        </view>
-
-
-        <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-                <view class="weui-label">血糖</view>
-            </view>
-            <view class="weui-cell__bd">
-                <input class="weui-input" value="{{blood_glucose}}" placeholder="请输入血糖，选填" bindinput="bindBloodGlucoseInput"/>
-            </view>
-        </view>
-
-        <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
-            <button class="btn-block1 m-t-20" bindtap="nextStep" style="margin-top: 0;">下一步</button>
-        </view>
     </view>
 
 
@@ -114,5 +61,9 @@
             <image src="{{imgPath2}}" style="width: 100%" mode="widthFix" bindtap="uploadImage" data-id = "2"/>
             <view class="fs-16-fc-95909E t-al-c m-t-16">上传侧面照</view>
         </view>
+    </view>
+
+    <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+        <button class="btn-block1 m-t-20" bindtap="nextStep" style="margin-top: 0;">下一步</button>
     </view>
 </view>
