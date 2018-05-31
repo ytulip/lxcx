@@ -64,30 +64,24 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "selectedColor": "#1296db",
+    "selectedColor": "#5EC11A",
     "list": [{
       "pagePath": "pages/index/home",
       "text": "首页",
       "iconPath":"/images/tarbar/home.png",
-      "selectedIconPath":"/images/tarbar/home_active.png",
-      "color":"#484848",
-      "selectedColor":"#5EC11A"
+      "selectedIconPath":"/images/tarbar/home_active.png"
     },
       {
         "pagePath": "pages/mine/message",
         "text": "消息",
         "iconPath":"/images/tarbar/message.png",
-        "selectedIconPath":"/images/tarbar/message_active.png",
-        "color":"#484848",
-        "selectedColor":"#5EC11A"
+        "selectedIconPath":"/images/tarbar/message_active.png"
       },
       {
         "pagePath":"pages/mine/index",
         "text":"我的",
         "iconPath":"/images/tarbar/mine.png",
-        "selectedIconPath":"/images/tarbar/mine_active.png",
-        "color":"#484848",
-        "selectedColor":"#5EC11A"
+        "selectedIconPath":"/images/tarbar/mine_active.png"
       }]
   }
 }

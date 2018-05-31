@@ -10,7 +10,7 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         rebuy:0,
-        src:"https://lamushan.com/user/good-detail-xcx?product_id=1"
+        src:""
     },
     //事件处理函数
     bindViewTap: function() {
@@ -32,6 +32,11 @@ Page({
         {
             this.setData({
                 src:"https://lamushan.com/user/good-detail-xcx?product_id=1&rebuy=1"
+            })
+        } else
+        {
+            this.setData({
+                src:"https://lamushan.com/user/good-detail-xcx?product_id=1"
             })
         }
 

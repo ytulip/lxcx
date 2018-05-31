@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -67,6 +67,11 @@
 					"name": "提货二维码",
 					"pathName": "pages/report/confirm",
 					"query": "id=14"
+				},
+				{
+					"id": -1,
+					"name": "健康信息",
+					"pathName": "pages/health/index"
 				}
 			]
 		}
