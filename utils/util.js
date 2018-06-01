@@ -50,6 +50,11 @@ User.prototype.authCheck = function()
     }
 }
 
+User.prototype.clearAuth = function()
+{
+
+}
+
 User.prototype.getOpenid = function()
 {
     var openid = wx.getStorageSync("user_openid");

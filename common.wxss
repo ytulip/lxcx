@@ -228,6 +228,17 @@ color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #
 
 .user_panel{background-image: linear-gradient(-137deg, #B9E77D 0%, #78CD09 50%);box-shadow: 0 8px 16px 0 rgba(139,217,75,0.46); border-radius: 8px;padding: 16px;}
 
+.lms-btn2{
+    background: #ffffff;
+    box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);
+    border-radius: 8px;
+    font-size: 16px;
+    color:#fa3f26;
+    letter-spacing: -0.39px;
+    text-align: center;
+    line-height: 44px;
+}
+
 .message-item{
     padding-top: 24px;
     padding-left:30px;
