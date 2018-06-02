@@ -1,5 +1,4 @@
 <view class="layer-shadow" style="padding: 40px 24px;" wx:if="{{showSearch}}">
-
     <view style="position: absolute;top:0;left: 0;right: 0;bottom: 0;" bindtap="closeLayer">
 
     </view>
@@ -27,29 +26,23 @@
         </view>
     </view>
 </view>
-<view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">购买方式:</view>
-        </view>
-        <view class="weui-cell__bd l-h-48">
-           报单
-        </view>
-    </view>
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">购买数量:</view>
-        </view>
-        <view class="weui-cell__bd l-h-48">
-            12箱
+
+<view class="content-wrapper-24-16">
+    <view class="navigator-line-FFB11B p-13-26">
+        <view>
+            <image class="v-a-m in-bl" src="/images/people.png" style="width: 80px;" mode="widthFix"></image>
+            <view class="fs-16-fc-ffffff in-bl v-a-m m-l-16">
+                <view class="fs-18-fc-ffffff-m">报单数量 12箱</view>
+                <view class="fs-12-fc-ffffff" style="margin-top: 6px;">类型： 基础报单</view>
+            </view>
         </view>
     </view>
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label" style="line-height: 48px;">邀请人:</view>
-        </view>
-        <view class="weui-cell__bd" bindtap="doSearchUser" style="height: 48px;">
-            <label style="line-height: 44px;">{{immediatePhone}}</label>
+
+
+    <view class="cus-row m-t-33" style="box-shadow: 0 1px 0 0 #EBE9E9;" bindtap="doSearchUser">
+        <view class="cus-row-col-6 fs-16-fc-212229 l-h-48 v-a-m">直接开发者</view>
+        <view class="cus-row-col-6 v-a-m t-al-r">
+            <label class="fs-16-fc-212229">{{immediatePhone}}</label>
         </view>
     </view>
 </view>

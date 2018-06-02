@@ -26,7 +26,8 @@ Page({
         month:0,
         day:0,
         chooseValue:[0,0,0],
-        chooseText:''
+        chooseText:'',
+        address:''
     },
 
     bindQuantityChange:function(e)

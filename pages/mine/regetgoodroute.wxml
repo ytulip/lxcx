@@ -1,5 +1,8 @@
 <!--logs.wxml-->
 <view class="content-wrapper-24-16">
+
+    <image src="/images/bag_cue.png" mode="widthFix" style="width: 100%;" bindtap="takePart"></image>
+
     <view>
         <view class="navigator-line" style="padding: 24px 16px;">
             <view class="cus-row">

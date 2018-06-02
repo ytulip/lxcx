@@ -20,6 +20,7 @@
 .p-t-b-16{padding-top: 16px;padding-bottom: 16px;}
 
 .p-24-16{padding: 24px 16px;}
+.p-30-24{padding: 30px 24px;}
 .p-13-26{padding: 13px 24px;}
 
 .m-0-a{margin: 0 auto;}
@@ -138,6 +139,7 @@ width: 8.33333333%;
 .fs-16-fc-ffffff{font-size: 16px;color:#ffffff;line-height: 18px;}
 .fs-14-fc-ffffff{font-size: 14px;color:#ffffff;line-height: 16px;}
 .fs-18-fc-ffffff{font-size: 18px;color:#ffffff;line-height: 20px;}
+.fs-18-fc-ffffff-m{font-size: 18px;color:#ffffff;line-height: 20px;font-weight: 800;}
 .fs-16-fc-099FFF{font-size: 16px;  color: #099FFF;  line-height: 18px;}
 .fs-16-fc-78CD09{font-size: 16px;  color: #78CD09;  line-height: 18px;}
 .fs-24-fc-ffffff-b{font-size: 24px;color:#ffffff;line-height: 26px;font-weight: bold;}
@@ -237,6 +239,15 @@ color: #ffffff;border-radius: 40px;background-color: #98CC3D;border: 1px solid #
     letter-spacing: -0.39px;
     text-align: center;
     line-height: 44px;
+}
+
+.lms-btn3{
+    border: 1px solid #78CD09;
+    border-radius: 100px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #78CD09;
+    background: #ffffff;
 }
 
 .message-item{

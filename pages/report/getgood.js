@@ -25,7 +25,8 @@ Page({
         month: 0,
         days: [],
         chooseValue:[0,0,0],
-        chooseText:''
+        chooseText:'',
+        address:''
 
     },
     onLoad: function(options) {

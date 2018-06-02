@@ -12,8 +12,8 @@
         <view class="fs-24-fc-27282F t-al-c m-t-24">{{order.invited_code}}</view>
     </view>
 
-    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="getGood">提货</button></view>
+    <view style="padding:20px;"><button class="btn1" type="primary" bindtap="getGood">提货</button></view>
 
-    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="pay">返回首页</button></view>
+    <view style="padding:20px;"><button class="lms-btn3" bindtap="pay">返回首页</button></view>
 
 </view>

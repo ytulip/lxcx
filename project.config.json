@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -89,7 +89,38 @@
 				{
 					"id": -1,
 					"name": "设置",
-					"pathName": "pages/mine/setting"
+					"pathName": "pages/mine/setting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报单",
+					"pathName": "pages/report/pay",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报单成功",
+					"pathName": "pages/report/success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "复购报单成功",
+					"pathName": "pages/rereport/success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提货路由",
+					"pathName": "pages/mine/regetgoodroute",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报单提货",
+					"pathName": "pages/report/getgood",
+					"query": ""
 				}
 			]
 		}

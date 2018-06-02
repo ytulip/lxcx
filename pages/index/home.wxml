@@ -8,7 +8,7 @@
             <view class="t-al-c"><image src="/images/icon1.png" mode="widthFix" class="img-icon"></image></view>
             <view class="t-al-c fs-16-fc-484848  m-t-10">复购</view>
         </view>
-        <navigator class="cus-row-col-4" open-type="navigate" url="/pages/mine/regetgoodroute">
+        <navigator class="cus-row-col-4" open-type="navigate" url="/pages/mine/regetgoodroute" hover-class="none">
             <view class="t-al-c"><image src="/images/icon3.png" mode="widthFix" class="img-icon"></image></view>
             <view class="t-al-c fs-16-fc-484848 m-t-10">提货</view>
         </navigator>

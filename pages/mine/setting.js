@@ -122,10 +122,23 @@ Page({
                 if(requestRes.data.status)
                 {
                     util.mAlert('退出成功');
+                    try {
+                        wx.removeStorageSync('user_openid')
+                    } catch (e) {
+                        // Do something when catch error
+                        console.log('user_openid remove error');
+                    }
+                    try {
+                        wx.removeStorageSync('user_token')
+                    } catch (e) {
+                        // Do something when catch error
+                        console.log('user_token remove error');
+                    }
 
-                    wx.reLaunch({
-                        url: '/pages/index/home'
-                    });
+                    console.log(123);
+                     wx.reLaunch({
+                         url: '/pages/index/home'
+                     });
                 } else {
                     util.mAlert(requestRes.data.desc);
                 }

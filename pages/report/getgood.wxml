@@ -1,6 +1,14 @@
 <!--logs.wxml-->
-<view>
+<view class="content-wrapper-24-16">
 
+    <view class="navigator-line-FFB11B p-30-24" style="background: #099FFF;border-radius: 8px;">
+        <view>
+            <view class="fs-16-fc-ffffff in-bl v-a-m m-l-16">
+                <view>剩余产品数量：{{total}}箱</view>
+                <view>本月可提产品数量：{{(thisMonth > total)?total:thisMonth}}箱</view>
+            </view>
+        </view>
+    </view>
 
 
     <view class="fix-bottom2 t-al-c" wx:if="{{layerShow}}">
@@ -28,80 +36,66 @@
         </picker-view>
     </view>
 
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                   <view style="line-height: 48px;">剩余可提货箱数:{{total}}</view>
-                </view>
-            </view>
 
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                    <view style="line-height: 48px;">本月可提货箱数:{{(thisMonth > total)?total:thisMonth}}</view>
+    <view class="cus-row m-t-33" style="box-shadow: 0 1px 0 0 #EBE9E9;">
+        <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">收货方式</view>
+        <view class="cus-row-col-5 v-a-m t-al-r" >
+            <picker bindchange="bindPickerChange2" value="{{index}}" range="{{array}}" style="line-height: 44px;">
+                <view class="picker fs-16-fc-484848">
+                    {{array[index]}}
                 </view>
-            </view>
-
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                    <view style="line-height: 48px;">请选择提货数量:</view>
-                    <picker bindchange="bindPickerChange" value="{{quantityIndex}}" range="{{quantityArr}}" style="line-height: 44px;">
-                        <view class="picker">
-                            {{quantityArr[quantityIndex]}}
-                        </view>
-                    </picker>
-                </view>
-            </view>
-
-
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">收货方式</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <picker bindchange="bindPickerChange2" value="{{index}}" range="{{array}}" style="line-height: 44px;">
-                        <view class="picker">
-                            {{array[index]}}
-                        </view>
-                    </picker>
-                </view>
-            </view>
-
-            <view class="weui-cell weui-cell_input" wx:if="{{index == 1}}">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">自提地址</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <picker bindchange="bindSelfPickerChange" value="{{index}}" range="{{selfGetArray}}">
-                        <text style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;">{{selfGetArray[selfGetIndex]}}</text>
-                    </picker>
-                </view>
-            </view>
-
-
-            <view class="weui-cell weui-cell_input" wx:if="{{index == 0}}">
-                <view class="weui-cell__hd">
-                    <view class="weui-label" style="line-height: 44px;">收货地址</view>
-                </view>
-                <view class="weui-cell__bd" bindtap="pctSwitch" style="height: 44px;line-height: 44px;">
-                    {{chooseText}}
-                </view>
-            </view>
-
-
-            <view class="weui-cell weui-cell_input" wx:if="{{index == 0}}">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">详细地址</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <textarea style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;" bindinput="bindAddressInput"></textarea>
-                </view>
-            </view>
-
+            </picker>
         </view>
+        <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848"> <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image></view>
+    </view>
+
+    <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;" wx:if="{{index == 0}}">
+        <view class="cus-row-col-3 fs-16-fc-484848 l-h-48 v-a-m">收货地址</view>
+        <view class="cus-row-col-8 v-a-m t-al-r fs-16-fc-484848" bindtap="pctSwitch" style="height: 48px;line-height: 48px;">
+            {{chooseText}}
+        </view>
+        <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848"><image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image></view>
+    </view>
+
+
+    <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;" wx:if="{{index == 0}}">
+        <view class="cus-row-col-3 fs-16-fc-484848 l-h-48 v-a-m">详细地址</view>
+        <view class="cus-row-col-8 v-a-m t-al-r fs-16-fc-484848">
+            <textarea style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;width: 100%;text-align: left;" bindinput="bindAddressInput"></textarea>
+        </view>
+        <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848"></view>
+    </view>
+
+    <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;" wx:if="{{index == 1}}">
+        <view class="cus-row-col-3 fs-16-fc-484848 l-h-48 v-a-m">自提地址</view>
+        <view class="cus-row-col-8 v-a-m t-al-r">
+            <picker bindchange="bindSelfPickerChange" value="{{index}}" range="{{selfGetArray}}">
+                <text style="height:96px;padding-top:4px;padding-bottom:4px;overflow:ellipsis;width: 100%;text-align: left;" class="fs-16-fc-484848">{{selfGetArray[selfGetIndex]}}</text>
+            </picker>
+        </view>
+        <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848"><image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image></view>
+    </view>
+
+
+
+
+    <view class="cus-row" style="box-shadow: 0 1px 0 0 #EBE9E9;">
+        <view class="cus-row-col-6 fs-16-fc-484848 l-h-48 v-a-m">提货数量</view>
+        <view class="cus-row-col-5 v-a-m t-al-r">
+            <picker bindchange="bindPickerChange" value="{{quantityIndex}}" range="{{quantityArr}}" style="line-height: 44px;">
+                <view class="picker fs-16-fc-484848">
+                    {{quantityArr[quantityIndex]}}
+                </view>
+            </picker>
+        </view>
+        <view class="cus-row-col-1 v-a-m t-al-r fs-16-fc-484848"> <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image></view>
+    </view>
+
+
 
     <view class="fs-14-fc-484848" style="margin-top: 6px;padding: 0 15px;" wx:if="{{index == 0}}">我们将采用运费到付的方式，每箱运费20元左右，根据您所在地区有所差异</view>
 
-    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="pay">提货</button></view>
+    <view style="padding:20px;"><button class="btn1" bindtap="pay">提货</button></view>
 
 </view>
 
