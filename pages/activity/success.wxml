@@ -1,5 +1,8 @@
 <view style="text-align: center;">
     <image src="{{image}}" style="width: 72%;" mode="widthFix" bindtap="bindPreview"></image>
     <view style="text-align: center;font-size: 14px;">请截屏保存后，扫一扫进群</view>
-    <button class="weui-btn" type="primary" style="margin: 0 20px;" bindtap="goOn">继续操作</button>
+
+    <view style="padding:20px;"><button class="btn1" type="primary" bindtap="getGood">立即提货</button></view>
+
+    <view style="padding:20px;"><button class="lms-btn3" bindtap="goOn">返回首页</button></view>
 </view>

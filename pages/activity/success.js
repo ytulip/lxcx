@@ -86,5 +86,14 @@ Page({
             current: this.data.image, // 当前显示图片的http链接
             urls: [this.data.image]
         })
+    },
+
+    getGood:function()
+    {
+        wx.navigateTo(
+            {
+                url:'/pages/rereport/getgood?activity=1'
+            }
+        );
     }
 })

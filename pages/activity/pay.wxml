@@ -31,7 +31,21 @@
         </view>
     </view>
 </view>
-<view class="weui-cells weui-cells_after-title">
+
+
+<view class="content-wrapper">
+
+<view class="navigator-line-FFB11B" style="padding: 35px 24px;">
+            <view>
+                <view class="fs-16-fc-ffffff in-bl v-a-m m-l-16">
+                    <view>购买类型：参加免费吃出大健康活动</view>
+                    <view class="m-t-10">购买数量：1箱</view>
+                </view>
+            </view>
+     </view>
+
+
+<view class="weui-cells weui-cells_after-title m-t-10">
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
             <view class="weui-label">上级会员</view>
@@ -45,7 +59,9 @@
 <view style="margin-top: 12px;padding: 0 12px;">
     <checkbox-group bindchange="checkboxChange1">
     <label class="checkbox" wx:for="{{items1}}" style="display: block;">
-        <checkbox value="{{item.name}}" checked="{{item.checked}}"/> <label bindtap="bindPreview">{{item.value}}</label>
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/> <label bindtap="bindPreview" class="fs-12-fc-95909e">{{item.value}}</label>
     </label>
     </checkbox-group>
+</view>
+
 </view>

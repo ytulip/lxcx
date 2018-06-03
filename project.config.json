@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 17,
 			"list": [
 				{
 					"id": -1,
@@ -121,6 +121,24 @@
 					"name": "报单提货",
 					"pathName": "pages/report/getgood",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "绑定用户",
+					"pathName": "pages/activity/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "活动报单成功",
+					"pathName": "pages/activity/success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "活动报单成功",
+					"pathName": "pages/activity/pay",
+					"query": "openid=o0psn4ymkQ0ad5V4nvvs3PXRADD4"
 				}
 			]
 		}
