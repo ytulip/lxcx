@@ -1,11 +1,11 @@
 <!--logs.wxml-->
 <view class="content-wrapper-24-16">
 
-    <view class="navigator-line-FFB11B p-30-24" style="background: #099FFF;border-radius: 8px;">
+    <view class="navigator-line-099FFF p-30-24" style="background: #099FFF;border-radius: 8px;">
         <view>
             <view class="fs-16-fc-ffffff in-bl v-a-m m-l-16">
                 <view>剩余产品数量：{{total}}箱</view>
-                <view>本月可提产品数量：{{(thisMonth > total)?total:thisMonth}}箱</view>
+                <view class="m-t-10">本月可提产品数量：{{(thisMonth > total)?total:thisMonth}}箱</view>
             </view>
         </view>
     </view>
@@ -92,10 +92,11 @@
     </view>
 
 
+    <!--<view style="padding:20px;"><button class="btn1" bindtap="pay">提货</button></view>-->
 
-    <view class="fs-14-fc-484848" style="margin-top: 6px;padding: 0 15px;" wx:if="{{index == 0}}">我们将采用运费到付的方式，每箱运费20元左右，根据您所在地区有所差异</view>
+</view>
 
-    <view style="padding:20px;"><button class="btn1" bindtap="pay">提货</button></view>
-
+<view class="fix-bottom3">
+    <view class="btn3" bindtap="pay">提交</view>
 </view>
 

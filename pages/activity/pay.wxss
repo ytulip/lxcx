@@ -1,5 +1,5 @@
 
-page{background-color: #f8f8f8;}
+page{background-color: #ffffff;}
 
 .fix-bottom {
     position: fixed;
