@@ -1,6 +1,6 @@
 <view wx:if="{{pageShow}}">
 
-    <view class="content-wrapper">
+    <view class="content-wrapper" style="">
         <view class="user_panel">
             <view class="cus-row">
                 <view class="cus-row-col-6 fs-14-fc-ffffff">总资产</view>
