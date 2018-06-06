@@ -45,16 +45,24 @@
      </view>
 
 
-<view class="weui-cells weui-cells_after-title m-t-10">
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">上级会员</view>
-        </view>
-        <view class="weui-cell__bd" bindtap="doSearchUser" style="height: 44px;">
-            <label style="line-height: 44px;">{{immediatePhone}}</label>
-        </view>
+<view class="cus-row" style="box-shadow:0 1px 0 0 #EBE9E9;">
+    <view class="cus-row-col-2 fs-16-fc-484848 l-h-48">邀请人</view>
+    <view class="cus-row-col-10" bindtap="doSearchUser">
+        <label style="line-height: 44px;">{{immediatePhone}}</label>
     </view>
+
 </view>
+
+<!--<view class="weui-cells weui-cells_after-title m-t-10">-->
+    <!--<view class="weui-cell weui-cell_input">-->
+        <!--<view class="weui-cell__hd">-->
+            <!--<view class="weui-label">上级会员</view>-->
+        <!--</view>-->
+        <!--<view class="weui-cell__bd" bindtap="doSearchUser" style="height: 44px;">-->
+            <!--<label style="line-height: 44px;">{{immediatePhone}}</label>-->
+        <!--</view>-->
+    <!--</view>-->
+<!--</view>-->
 
 <view style="margin-top: 12px;padding: 0 12px;">
     <checkbox-group bindchange="checkboxChange1">

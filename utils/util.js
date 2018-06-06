@@ -14,8 +14,8 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-var serverHost = 'https://lamushan.com/';
-var imageHost = 'https://lamushan.com';
+var serverHost = 'https://test.lamushan.com/';
+var imageHost = 'https://test.lamushan.com';
 var mAlert = function(msg)
 {
     wx.showToast({
