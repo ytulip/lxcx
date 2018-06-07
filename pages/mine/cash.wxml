@@ -4,7 +4,7 @@
         <view class="user_panel">
             <view class="cus-row">
                 <view class="cus-row-col-6 fs-14-fc-ffffff">总资产</view>
-                <navigator class="cus-row-col-6 fs-14-fc-ffffff t-al-r" open-type="navigate" url="/pages/mine/bill">查看账单</navigator>
+                <navigator hover-class="none" class="cus-row-col-6 fs-14-fc-ffffff t-al-r" open-type="navigate" url="/pages/mine/bill">查看账单</navigator>
             </view>
             <view class="fs-36-fc-ffffff" style="margin-top: 6px;">￥ {{total_cash}}</view>
             <view class="cus-row" style="margin-top: 30px;">
@@ -20,7 +20,7 @@
 
 
         <view  class="m-t-24 mine-list">
-            <navigator open-type="navigate" url="/pages/mine/invited_code_list" style="padding: 19px 16px;">
+            <navigator hover-class="none" open-type="navigate" url="/pages/mine/invited_code_list" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-6 fs-16-fc-212229 v-a-m">本月收入</view>
                     <view class="cus-row-col-6 fs-16-fc-212229 t-al-r v-a-m">
@@ -33,11 +33,11 @@
 
         <view class="m-t-24 mine-list">
             <view class="cus-row" style="padding: 30px 0;">
-                <navigator class="cus-row-col-6 t-al-c" open-type="navigate" url="/pages/mine/directlist">
+                <navigator hover-class="none" class="cus-row-col-6 t-al-c" open-type="navigate" url="/pages/mine/directlist">
                     <view class="fs-24-fc-212229">{{direct_and_indirect_count}}</view>
                     <view class="fs-14-fc-95909E m-t-20">开发记录</view>
                 </navigator>
-                <navigator class="cus-row-col-6 t-al-c" style="box-sizing: border-box;border-left: 1px solid #D8D8D8;" open-type="navigate" url="/pages/mine/upsuperlist">
+                <navigator hover-class="none" class="cus-row-col-6 t-al-c" style="box-sizing: border-box;border-left: 1px solid #D8D8D8;" open-type="navigate" url="/pages/mine/upsuperlist">
                     <view class="fs-24-fc-212229">{{up_and_super_count}}</view>
                     <view class="fs-14-fc-95909E m-t-20">辅导记录</view>
                 </navigator>

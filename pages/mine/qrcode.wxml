@@ -1,4 +1,4 @@
 <view style="text-align: center;">
     <image src="{{image}}" style="width: 72%;" mode="widthFix"></image>
-    <button class="weui-btn" type="primary" style="margin: 0 20px;" open-type="share">去分享</button>
+    <button class="btn3 m-t-10" type="primary" style="margin: 0 20px;" open-type="share">去分享</button>
 </view>

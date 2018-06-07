@@ -1,27 +1,39 @@
 <view wx:if="{{pageShow}}">
-    <view class="cus-row">
+    <view class="cus-row" style="background-color: #ffffff;padding-bottom:6px;">
         <view class="cus-row-col-6 t-al-c">
-            <view class="fs-14-fc-212229  active-tab in-bl" style="position: relative;" bindtap="changeIndex" data-index="0">
+            <view class="fs-16-fc-212229 fw-m  active-tab in-bl" style="position: relative;" bindtap="changeIndex" data-index="0">
                 未使用
-                <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{!tabIndex}}"></view>
+                <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: -17px;left: -17px;top:22px;" wx:if="{{!tabIndex}}"></view>
             </view>
         </view>
-        <view class="cus-row-col-6 t-al-c"><view class="fs-14-fc-212229 in-bl" style="position: relative;" bindtap="changeIndex" data-index="1">已使用
-            <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: 0;left: 0;top:22px;" wx:if="{{tabIndex}}"></view>
+        <view class="cus-row-col-6 t-al-c"><view class="fs-16-fc-212229 fw-m in-bl" style="position: relative;" bindtap="changeIndex" data-index="1">已使用
+            <view style="border-bottom: solid 4px #98CC3D;position: absolute;right: -17px;left: -17px;top:22px;" wx:if="{{tabIndex}}"></view>
         </view></view>
     </view>
-
-    <view wx:if="{{!tabIndex}}">
-        <view class="mine-record m-t-16" wx:for="{{valid_list}}">
-            <view class="fs-20-fc-27282f">{{item.invited_code}}</view>
-            <view class="fs-14-fc-A6A6A6 m-t-10">邀请码</view>
+    <view class="content-wrapper">
+        <view wx:if="{{!tabIndex}}">
+            <view class="mine-record m-t-16" wx:for="{{valid_list}}">
+                <view class="fs-20-fc-27282f">{{item.invited_code}}</view>
+                <view class="fs-14-fc-A6A6A6 m-t-10">邀请码</view>
+            </view>
         </view>
-    </view>
 
-    <view wx:if="{{tabIndex}}">
-        <view class="mine-record m-t-16" wx:for="{{used_list}}">
-            <view class="fs-16-fc-484848">{{item.real_name}}    {{item.invited_code}}</view>
-            <view class="fs-14-fc-95909E m-t-10">手机 {{item.phone}}        注册/升级时间{{item.invited_time}}</view>
+
+        <view wx:if="{{!tabIndex && !selfGet.length}}" class="t-al-c">
+            <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+            <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
+        </view>
+
+        <view wx:if="{{tabIndex}}">
+            <view class="mine-record m-t-16" wx:for="{{used_list}}">
+                <view class="fs-16-fc-484848">{{item.real_name}}    {{item.invited_code}}</view>
+                <view class="fs-14-fc-95909E m-t-10">手机 {{item.phone}}        注册/升级时间{{item.invited_time}}</view>
+            </view>
+        </view>
+
+        <view wx:if="{{tabIndex && !delvierHome.length}}" class="t-al-c">
+            <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+            <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
         </view>
     </view>
 

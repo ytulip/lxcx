@@ -157,6 +157,18 @@
 					"name": "提货记录",
 					"pathName": "pages/mine/getrecord",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团队管理",
+					"pathName": "pages/mine/team",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/mine/withdraw",
+					"query": ""
 				}
 			]
 		}

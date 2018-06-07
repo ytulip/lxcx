@@ -54,7 +54,7 @@
 
 
         <view  class="m-t-24 mine-list" wx:if="{{userInfo}}">
-            <navigator open-type="navigate" url="/pages/mine/invited_code_list"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+            <navigator open-type="navigate" url="/pages/mine/invited_code_list"  hover-class="none" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">邀请码</view>
                     <view class="cus-row-col-2 t-al-r v-a-m">
@@ -63,7 +63,7 @@
                 </view>
             </navigator>
 
-            <navigator open-type="navigate" url="/pages/mine/cash"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+            <navigator open-type="navigate" url="/pages/mine/cash" hover-class="none"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">资产管理</view>
                     <view class="cus-row-col-2 t-al-r v-a-m">
@@ -72,7 +72,7 @@
                 </view>
             </navigator>
 
-            <navigator open-type="navigate" url="/pages/mine/qrcode"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+            <navigator open-type="navigate" url="/pages/mine/qrcode"  hover-class="none" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">邀请会员</view>
                     <view class="cus-row-col-2 t-al-r v-a-m">
@@ -82,7 +82,7 @@
             </navigator>
 
 
-            <navigator open-type="navigate" url="/pages/mine/team"  wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
+            <navigator open-type="navigate" url="/pages/mine/team" hover-class="none" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">团队管理</view>
                     <view class="cus-row-col-2 t-al-r v-a-m">
@@ -92,7 +92,7 @@
             </navigator>
 
 
-            <navigator open-type="navigate" url="/pages/mine/setting" style="padding: 19px 16px;">
+            <navigator open-type="navigate" url="/pages/mine/setting" style="padding: 19px 16px;" hover-class="none">
                 <view class="cus-row">
                     <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">设置</view>
                     <view class="cus-row-col-2 t-al-r v-a-m">

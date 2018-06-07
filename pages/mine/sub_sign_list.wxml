@@ -1,4 +1,9 @@
 <view wx:if="{{pageShow}}" class="content-wrapper-24-16">
+
+    <view wx:if="{{!signList.length}}">
+
+    </view>
+
     <navigator class="cus-row" wx:for="{{signList}}" style="padding-left:180px;position: relative; height: 80px;" open-type="navigate" url="/pages/mine/signdetail?id={{item.id}}&edit=1">
 
 
