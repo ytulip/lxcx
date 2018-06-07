@@ -1,8 +1,7 @@
 <view wx:if="pageShow">
 
 
-    <view class="cus-row" style="background-color: #ffffff;padding-bottom:6px;
-">
+    <view class="cus-row" style="background-color: #ffffff;padding-bottom:6px;">
         <view class="cus-row-col-6 t-al-c">
             <view class="fs-16-fc-212229 fw-m  active-tab in-bl" style="position: relative;" bindtap="changeIndex" data-index="0">
                 自提
@@ -15,7 +14,7 @@
     </view>
 
     <view class="content-wrapper">
-        <view wx:if="{{!tabIndex}}" class="m-t-24">
+        <view wx:if="{{!tabIndex && selfGet}}" class="m-t-24">
             <view class="mine-record m-t-10" wx:for="{{selfGet}}">
                 <view class="fs-16-fc-484848">提货日期:{{item.created_at}}</view>
                 <view class="fs-16-fc-484848 m-t-24">提货数量:{{item.count}}箱</view>
@@ -24,7 +23,12 @@
             </view>
         </view>
 
-        <view wx:if="{{tabIndex}}" class="m-t-24">
+        <view wx:if="{{!tabIndex && !selfGet.length}}" class="t-al-c">
+            <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+            <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
+        </view>
+
+        <view wx:if="{{tabIndex && delvierHome}}" class="m-t-24">
             <view class="mine-record m-t-10" wx:for="{{delvierHome}}">
                 <view class="fs-16-fc-484848">提货日期:{{item.created_at}}</view>
                 <view class="fs-16-fc-484848 m-t-24">提货数量:{{item.count}}箱</view>
@@ -32,6 +36,12 @@
                 <view class="fs-16-fc-484848 m-t-24">邮寄地址:{{item.address}}</view>
             </view>
         </view>
+
+        <view wx:if="{{tabIndex && !delvierHome.length}}" class="t-al-c">
+            <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+            <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
+        </view>
+
     </view>
 
 </view>
