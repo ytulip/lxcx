@@ -12,26 +12,6 @@
     </view>
 
 
-    <view class="cus-row" style="position: relative;margin-top: 30px;">
-        <view class="circle-point" style="position: absolute;left: 0;top:-8px;"></view>
-        <view class="circle-point" style="position: absolute;left: 50%;top:-8px;transform:translateX(-50%);"></view>
-        <view class="circle-point" style="position: absolute;right: 0;top:-8px;"></view>
-
-        <view class="cus-row-col-6" style="border-bottom: 1px solid #FFB11B;">
-
-        </view>
-
-        <view class="cus-row-col-6" style="border-bottom: 1px solid #FFB11B;">
-
-        </view>
-    </view>
-
-    <view class="cus-row m-t-16" style="padding: 0 8px;" >
-        <view class="cus-row-col-4 fs-14-fc-FFB11B v-a-m">1</view>
-        <view class="cus-row-col-4 fs-14-fc-FFB11B t-al-c v-a-m">2</view>
-        <view class="cus-row-col-4 fs-14-fc-FFB11B t-al-r v-a-m">3</view>
-    </view>
-
     <view style="padding:0 6px;padding-bottom:90px;position: inherit;">
 
 
@@ -64,8 +44,8 @@
             </label>
         </checkbox-group>
 
-        <view class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
-            <button class="btn-block1 m-t-20" style="margin-top: 0;" bindtap="submitBtn">提交</button>
+        <view class="fix-bottom2" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
+            <view class="btn3" style="margin-top: 0;" bindtap="submitBtn">提交</view>
         </view>
     </view>
 

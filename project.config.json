@@ -169,6 +169,12 @@
 					"name": "提现",
 					"pathName": "pages/mine/withdraw",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健康信息2",
+					"pathName": "pages/health/index2",
+					"query": ""
 				}
 			]
 		}
