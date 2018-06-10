@@ -81,6 +81,7 @@ Page({
                                 url:'/pages/logs/over'
                             }
                         );
+                        return;
                     }
 
                     //组装signList

@@ -5,7 +5,7 @@ const app = getApp()
 
 Page({
     data: {
-
+        pageShow:false
     },
 
     onLoad:function()
@@ -48,7 +48,8 @@ Page({
                         openid:requestRes.data.data.openid,
                         signRecord:JSON.parse(requestRes.data.data.sign_record.sign_prov),
                         userInfo:requestRes.data.data.user,
-                        signDays:requestRes.data.data.sign_days
+                        signDays:requestRes.data.data.sign_days,
+                        pageShow:true
                     }
                 );
             }

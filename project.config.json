@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 28,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
@@ -203,7 +203,8 @@
 				{
 					"id": -1,
 					"name": "完成打卡",
-					"pathName": "pages/logs/fill_over"
+					"pathName": "pages/logs/fill_over",
+					"query": ""
 				}
 			]
 		}

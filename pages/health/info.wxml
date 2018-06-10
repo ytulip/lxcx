@@ -18,12 +18,12 @@
 
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">血压</view>
-            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.blood_press}}</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.blood_press}}mmHg</view>
         </view>
 
         <view class="cus-row m-t-33">
             <view class="cus-row-col-6 fs-16-fc-484848">血糖</view>
-            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.blood_glucose}}</view>
+            <view class="cus-row-col-6 fs-16-fc-484848 t-al-r">{{healthInfo.first.blood_glucose}}mmol</view>
         </view>
 
         <view class="cus-row m-t-33">

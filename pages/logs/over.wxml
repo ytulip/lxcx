@@ -1,4 +1,4 @@
-<view style="text-align: center;">
+<view style="text-align: center;" wx:if="{{pageShow}}">
 
 
 
