@@ -1,7 +1,8 @@
 <view wx:if="{{pageShow}}" class="content-wrapper-24-16">
 
-    <view wx:if="{{!signList.length}}">
-
+    <view wx:if="{{!signList.length}}" class="t-al-c">
+        <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+        <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
     </view>
 
     <navigator class="cus-row" wx:for="{{signList}}" style="padding-left:180px;position: relative; height: 80px;" open-type="navigate" url="/pages/mine/signdetail?id={{item.id}}&edit=1">

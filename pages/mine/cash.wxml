@@ -20,14 +20,14 @@
 
 
         <view  class="m-t-24 mine-list">
-            <navigator hover-class="none" open-type="navigate" url="/pages/mine/invited_code_list" style="padding: 19px 16px;">
+            <view hover-class="none" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-6 fs-16-fc-212229 v-a-m">本月收入</view>
                     <view class="cus-row-col-6 fs-16-fc-212229 t-al-r v-a-m">
                         + ￥{{month_income}}
                     </view>
                 </view>
-            </navigator>
+            </view>
         </view>
 
 

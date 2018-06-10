@@ -8,6 +8,12 @@
                 <view class="fs-14-fc-484848" style="margin-top: 16px;">{{(item.cash_type==303)?'一代辅导':''}}{{(item.cash_type==304)?'二代辅导':''}} <view class="fs-14-fc-5EC11A in-bl">获利{{item.price}}(提货{{item.count}}箱))</view></view>
             </view>
         </view>
+
+
+        <view wx:if="{{!delvierHome.length}}" class="t-al-c">
+            <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+            <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
+        </view>
     </view>
 
 </view>

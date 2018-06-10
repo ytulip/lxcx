@@ -9,4 +9,9 @@
             <view class="fs-14-fc-95909E" style="margin-top: 6px;">{{item.created_at_text}} {{item.cash_type_text}}</view>
         </view>
     </view>
+
+    <view wx:if="{{!list.length}}" class="t-al-c">
+        <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+        <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
+    </view>
 </view>

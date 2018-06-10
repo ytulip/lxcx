@@ -1,3 +1,9 @@
-<view style="text-align: center;">
-    <button class="weui-btn" type="primary" style="margin: 0 20px;margin-top: 70px;" bindtap="goOn">完成</button>
+<view class="content-wrapper-24-16">
+    <view style="background: #FFFFFF;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 8px;padding-top: 60px;padding-bottom: 40px;" class="t-al-c">
+        <image src="/images/success.png" style="width: 91px;" mode="widthFix"></image>
+        <view class="fs-24-fc-27282F t-al-c m-t-24">填写完成</view>
+    </view>
+
+    <view style="padding:20px;"><button class="lms-btn3" bindtap="goOn">返回首页</button></view>
+
 </view>

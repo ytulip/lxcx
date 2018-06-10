@@ -31,32 +31,32 @@
     <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">身高:</view>
         <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.tall}}cm</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.tall}}</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.tall}}cm</view>
     </view>
 
     <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">体重:</view>
         <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.weight}}kg</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.weight}}</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.weight}}cm</view>
     </view>
 
     <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">腰围:</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.waistline}}</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.waistline}}</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.waistline}}cm</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.waistline}}cm</view>
     </view>
 
     <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">血压:</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.blood_press}}</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.blood_press}}</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.blood_press}}mmHg</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.blood_press}}mmHg</view>
     </view>
 
 
     <view class="cus-row m-t-20">
         <view class="cus-row-col-3 fs-16-fc-484848">血糖:</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.blood_glucose}}</view>
-        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.blood_glucose}}</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{healthInfo.first.blood_glucose}}mmol</view>
+        <view class="cus-row-col-3 fs-16-fc-484848">{{overHealthInfo.blood_glucose}}mmol</view>
     </view>
 
     <view class="t-al-c m-t-33">

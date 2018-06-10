@@ -27,7 +27,9 @@ Page({
         day:0,
         chooseValue:[0,0,0],
         chooseText:'',
-        address:''
+        address:'',
+        quantityArr:[],
+        quantityIndex:0
     },
 
     bindQuantityChange:function(e)
@@ -48,6 +50,14 @@ Page({
                 isActivity:options.activity?1:0
             }
         );
+
+        if( this.data.isActivity )
+        {
+            this.setData({
+                array:['邮寄到付','自提'],
+            });
+        }
+
         var that = this;
         wx.request({
             url: util.serverHost + 'activity/get-good-info?openid=' + this.data.openid ,
@@ -56,6 +66,31 @@ Page({
             {
                 console.log(requestRes);
                 // requestRes.data
+
+
+                var selectQuantity = [];
+                if(that.data.isActivity)
+                {
+                    for(var i = 0;i < requestRes.data.data.user.activity_get_good;i++)
+                    {
+                        selectQuantity.push( i + 1);
+                    }
+                    that.setData({
+                        quantityArr:selectQuantity,
+                    });
+                } else
+                {
+                    for(var i = 0;i < requestRes.data.data.user.re_get_good;i++)
+                    {
+                        console.log(i);
+                        selectQuantity.push( i + 1);
+                    }
+                    that.setData({
+                        quantityArr:selectQuantity,
+                    });
+                }
+
+                console.log(selectQuantity);
 
                 that.setData(
                     {
@@ -111,12 +146,14 @@ Page({
         // requestData.quantity =
         // console.log(requestData.deliver_type);
 
-        if( this.data.allSelected )
-        {
-            requestData.quantityCount = -1;
-        } else {
-            requestData.quantityCount = this.data.quantity;
-        }
+        // if( this.data.allSelected )
+        // {
+        //     requestData.quantityCount = -1;
+        // } else {
+        //     requestData.quantityCount = this.data.quantity;
+        // }
+        requestData.quantityCount = parseInt(this.data.quantityIndex) + 1;
+
 
         if(requestData.deliver_type == 2) { //邮寄
             requestData.address = this.data.chooseText + this.data.address;
@@ -139,7 +176,7 @@ Page({
                 {
                     if ( requestData.deliver_type == 1)
                     {
-                        wx.redirectTo(
+                        wx.navigateTo(
                             {
                                 url:'/pages/report/confirm?id=' + res.data.data
                             }

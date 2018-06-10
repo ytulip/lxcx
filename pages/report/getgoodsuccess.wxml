@@ -1,41 +1,12 @@
 <!--logs.wxml-->
-<view>
-    <view class="weui-cells weui-cells_after-title">
-        <!--logs.wxml-->
-        <view>
-            <view class="weui-cells weui-cells_after-title">
-                <view class="weui-cell weui-cell_input">
-                    <view class="weui-cell__hd">
-                        <view style="line-height: 48px;">提货日期:{{monthGetGood.get_date}}</view>
-                    </view>
-                </view>
+<view class="content-wrapper-24-16">
 
-                <view class="weui-cell weui-cell_input">
-                    <view class="weui-cell__hd">
-                        <view style="line-height: 48px;">提货数量:{{monthGetGood.count}}</view>
-                    </view>
-                </view>
-
-                <view class="weui-cell weui-cell_input">
-                    <view class="weui-cell__hd">
-                        <view style="line-height: 48px;">提货方式:{{(monthGetGood.deliver_type == 1)?'自提':'邮寄'}}</view>
-                    </view>
-                </view>
-
-                <view class="weui-cell weui-cell_input">
-                    <view class="weui-cell__hd">
-                        <view style="line-height: 48px;">{{(monthGetGood.deliver_type == 1)?'自提地址':'邮寄地址'}}:{{monthGetGood.address}}</view>
-                    </view>
-                </view>
-
-            </view>
-
-        </view>
-
-
-
+    <view style="background: #FFFFFF;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 8px;padding-top: 60px;padding-bottom: 40px;" class="t-al-c">
+        <image src="/images/success.png" style="width: 91px;" mode="widthFix"></image>
+        <view class="fs-24-fc-27282F t-al-c m-t-20">提交完成</view>
+        <view class="fs-14-fc-A6A6A6 m-t-10">我们会在当天发货，请注意查收！</view>
     </view>
 
-    <view style="padding:20px;"><button class="weui-btn" type="primary" bindtap="pay">返回首页</button></view>
+    <view style="padding:20px;"><view class="btn3" type="primary" bindtap="pay">返回首页</view></view>
 
 </view>

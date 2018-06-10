@@ -22,4 +22,9 @@
             <!--<view class="fs-14-fc-95909e">{{item.content}}</view>-->
         <!--</view>-->
     </view>
+
+    <view wx:if="{{!messageList.length}}" class="t-al-c m-t-24">
+        <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
+        <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
+    </view>
 </view>
