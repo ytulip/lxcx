@@ -61,20 +61,47 @@ Page({
             return;
         }
 
-        var cash = this.data.cash;
-        if( cash <= 0 || cash > this.data.user.charge)
-        {
-            util.mAlert('请输入正确的提现金额');
-            return;
-        }
+        // var cash = this.data.cash;
+        // if( cash <= 0 || cash > this.data.user.charge)
+        // {
+        //     util.mAlert('请输入正确的提现金额');
+        //     return;
+        // }
 
         var type = this.data.countArray[this.data.countIndex];
 
-        wx.navigateTo(
+
+        //活动退款
+        wx.request({
+            url: util.serverHost + 'activity/turn-back',
+            data: {
+                openid: this.data.openid,
+                doInsert:1
+
+            },
+            success:function(requestRes)
             {
-                url:'/pages/mine/withdrawconfirm?cash=' + cash + '&account=' + account + '&type=' + type
+                // requestRes.data
+
+                if( requestRes.data.status )
+                {
+                    wx.navigateTo(
+                        {
+                            url:'/pages/logs/success'
+                        }
+                    );
+                } else
+                {
+                    util.mAlert(requestRes.data.desc);
+                }
             }
-        );
+        });
+
+        // wx.navigateTo(
+        //     {
+        //         url:'/pages/mine/withdrawconfirm?cash=' + cash + '&account=' + account + '&type=' + type
+        //     }
+        // );
     },
 
     bindCountChange:function(e)

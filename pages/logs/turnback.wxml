@@ -32,7 +32,7 @@
     <view class="cus-row" style="border-bottom: 1px solid #EBE9E9;">
         <view class="cus-row-col-3 fs-16-fc-212229" style="line-height: 48px;">账户名称:</view>
         <view class="cus-row-col-9 fs-16-fc-212229 t-al-r">
-            <input  class="fs-16-fc-212229" style="line-height: 48px;display: inline;" bindinput="bindAccountInput" placeholder="请输入"/>
+            {{user.real_name}}
         </view>
     </view>
 
@@ -45,10 +45,6 @@
 </view>
 
 
-<view  class="fix-bottom" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
-    <view class="cus-row cus-row-v-m">
-        <view class="cus-row-col-6" style="display: inline-block;">
-            <text class="btn-block1 m-t-20" bindtap="pay" style="margin-top: 0;font-size:12px;" >下一步</text>
-        </view>
-    </view>
+<view  class="fix-bottom3">
+            <view class="btn3" bindtap="pay" >下一步</view>
 </view>
