@@ -70,6 +70,54 @@ Page({
 
     turnback : function()
     {
-      util.mAlert('打卡完成30天后才可提现');
+      // util.mAlert('打卡完成30天后才可提现');
+        wx.request({
+            url: util.serverHost + 'activity/turn-back',
+            data: {
+                openid: this.data.openid,
+
+            },
+            success:function(requestRes)
+            {
+                console.log(requestRes);
+                // requestRes.data
+
+                if( requestRes.data.status )
+                {
+                    wx.navigateTo(
+                        {
+                            url:'/pages/logs/turnback'
+                        }
+                    );
+                } else
+                {
+                    util.mAlert(requestRes.data.desc);
+                }
+
+                // //这里安排跳转
+                // if( !requestRes.data.data.order.health_over_info_status )
+                // {
+                //     wx.redirectTo(
+                //         {
+                //             url:'/pages/logs/fill_over'
+                //         }
+                //     );
+                //     return;
+                // }
+                //
+                //
+                // that.setData(
+                //     {
+                //         healthInfo:JSON.parse(requestRes.data.data.user.health_info),
+                //         overHealthInfo:JSON.parse(requestRes.data.data.order.health_over_info),
+                //         openid:requestRes.data.data.openid,
+                //         signRecord:JSON.parse(requestRes.data.data.sign_record.sign_prov),
+                //         userInfo:requestRes.data.data.user,
+                //         signDays:requestRes.data.data.sign_days,
+                //         pageShow:true
+                //     }
+                // );
+            }
+        });
     }
 })
