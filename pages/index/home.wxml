@@ -26,6 +26,6 @@
     </view>
 
     <view class="m-t-20">
-        <image src="/images/activity@3x.png" mode="widthFix" style="width: 100%;" bindtap="takePart"></image>
+        <image src="/images/activity@2x.png" mode="widthFix" style="width: 100%;" bindtap="takePart"></image>
     </view>
 </view>

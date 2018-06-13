@@ -2,19 +2,20 @@
 
 <!--未登录状态-->
 <view class="content-wrapper" wx:if="{{showPage && (!userInfo.id)}}">
-    <navigator class="user_panel" open-type="navigate" url="/pages/mine/bind">
-        <view class="cus-row">
-            <view class="cus-row-col-4 v-a-t">
-               
-            </view>
-            <view class="cus-row-col-4 t-al-c v-a-t">
-                <image class="m-t-10" src="/images/header.png" style="width: 75px;height: 75px;" mode="widthFix"></image>
-            </view>
-            <view class="cus-row-col-4 v-a-t"></view>
-        </view>
+    <navigator class="" open-type="navigate" url="/pages/mine/bind">
+        <image src="" style="width: 100%" mode="widthFix"></image>
+        <!--<view class="cus-row">-->
+            <!--<view class="cus-row-col-4 v-a-t">-->
+               <!---->
+            <!--</view>-->
+            <!--<view class="cus-row-col-4 t-al-c v-a-t">-->
+                <!--<image class="m-t-10" src="/images/header.png" style="width: 75px;height: 75px;" mode="widthFix"></image>-->
+            <!--</view>-->
+            <!--<view class="cus-row-col-4 v-a-t"></view>-->
+        <!--</view>-->
 
-        <view class="fs-16-fc-ffffff t-al-c m-t-16">注册/登录</view>
-        <view class="fs-14-fc-ffffff t-al-c m-t-10"></view>
+        <!--<view class="fs-16-fc-ffffff t-al-c m-t-16">注册/登录</view>-->
+        <!--<view class="fs-14-fc-ffffff t-al-c m-t-10"></view>-->
     </navigator>
 </view >
 
@@ -42,13 +43,14 @@
     <view>{{util.auth.isLogin}}</view>
     <view class="page__bd" style="padding: 14px;">
         <view  class="m-t-24" wx:if="{{userInfo}}">
-            <navigator open-type="navigate" url="/pages/mine/up" class="mine-list" wx:if="{{!userInfo.vip_level}}" style="padding: 19px 16px;">
-                <view class="cus-row">
-                <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">升级成为高级会员</view>
-                <view class="cus-row-col-2 t-al-r v-a-m">
-                    <image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>
-                </view>
-        </view>
+            <navigator open-type="navigate" url="/pages/mine/up" class="mine-list in-bl-line" wx:if="{{!userInfo.vip_level}}">
+                <image src="/images/banner_vip_nor@2x.png" mode="widthFix" style="width: 100%;"></image>
+                <!--<view class="cus-row">-->
+                <!--<view class="cus-row-col-10 fs-16-fc-212229 v-a-m">升级成为高级会员</view>-->
+                <!--<view class="cus-row-col-2 t-al-r v-a-m">-->
+                    <!--<image src="/images/arrow2.png" mode="widthFix" style="width: 9px;"></image>-->
+                <!--</view>-->
+        <!--</view>-->
         </navigator>
         </view>
 

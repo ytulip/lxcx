@@ -63,7 +63,6 @@
         </view>
     </view>
 
-    <view class="fix-bottom2" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
-        <view class="btn3" bindtap="nextStep">下一步</view>
-    </view>
+    <view class="btn3" bindtap="nextStep">下一步</view>
+
 </view>
