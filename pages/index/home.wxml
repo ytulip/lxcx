@@ -16,16 +16,16 @@
 
     <view class="m-t-24 cus-row">
         <view class="cus-row-col-6" style="padding-right:8px;box-sizing:border-box;position: relative; " bindtap="goInfo">
-            <image src="/images/home_l.png" mode="widthFix" style="width: 100%;"></image>
+            <image src="/images/home_l_new.png" mode="widthFix" style="width: 100%;box-shadow:0 10px 24px 0 rgba(255,177,27,0.26);"></image>
             <view class="fs-18-fc-ffffff height-center t-al-c">健康自测表</view>
         </view>
         <view class="cus-row-col-6" style="padding-left: 8px;box-sizing:border-box;position: relative;" bindtap="goLog">
             <view class="fs-18-fc-ffffff height-center t-al-c">健康打卡</view>
-            <image src="/images/home_r.png" mode="widthFix" style="width: 100%;"></image>
+            <image src="/images/home_r_new.png" mode="widthFix" style="width: 100%;box-shadow:0 8px 16px 0 rgba(139,217,75,0.46);"></image>
         </view>
     </view>
 
     <view class="m-t-20">
-        <image src="/images/activity.png" mode="widthFix" style="width: 100%;" bindtap="takePart"></image>
+        <image src="/images/activity@3x.png" mode="widthFix" style="width: 100%;" bindtap="takePart"></image>
     </view>
 </view>
