@@ -56,7 +56,8 @@
     "pages/mine/upsuperlist",
     "pages/mine/withdrawconfirm",
     "pages/report/confirm",
-    "pages/mine/setting"
+    "pages/mine/setting",
+    "pages/logs/success"
   ],
   "window":{
     "backgroundTextStyle":"light",

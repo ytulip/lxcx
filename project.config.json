@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 29,
+			"current": 30,
 			"list": [
 				{
 					"id": -1,
@@ -209,7 +209,13 @@
 				{
 					"id": -1,
 					"name": "活动退款",
-					"pathName": "pages/logs/turnback"
+					"pathName": "pages/logs/turnback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "活动退款成功提醒",
+					"pathName": "pages/logs/success"
 				}
 			]
 		}
