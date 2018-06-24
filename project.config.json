@@ -217,6 +217,24 @@
 					"name": "活动退款成功提醒",
 					"pathName": "pages/logs/success",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的页面",
+					"pathName": "pages/mine/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "健康信息完成",
+					"pathName": "pages/health/success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报单完成",
+					"pathName": "pages/report/success",
+					"query": ""
 				}
 			]
 		}

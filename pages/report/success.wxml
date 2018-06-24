@@ -1,7 +1,7 @@
 <!--logs.wxml-->
 <view class="content-wrapper-24-16">
     <view style="background: #FFFFFF;box-shadow: 0 10px 24px 0 rgba(0,0,0,0.08);border-radius: 8px;padding-top: 60px;padding-bottom: 40px;" class="t-al-c" wx:if="{{order.buy_type == 4}}">
-        <image src="/images/success.png" style="width: 91px;" mode="widthFix"></image>
+        <image src="/images/winner@2x.png" style="width: 220px;" mode="widthFix"></image>
         <view class="fs-14-fc-A6A6A6">恭喜您成为辣木膳</view>
         <view class="fs-24-fc-27282F t-al-c m-t-24">高级会员</view>
     </view>

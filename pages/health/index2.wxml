@@ -20,7 +20,9 @@
         <view style="line-height:40px;background-color:#{{item.color}};border-radius:4px;text-align:center;font-size:12px;" data-index="{{index}}" bindtap="chooseTag" class="cus-tag">{{item.name}}</view>
     </view>
 
-    <view class="fix-bottom2" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">
-        <view class="btn3" style="margin-top: 0;" bindtap="nextStep">下一步</view>
-    </view>
+    <view class="btn3 m-t-48" bindtap="nextStep">下一步</view>
+
+    <!--<view class="fix-bottom2" style="background-color: #ffffff;padding: 14px;border-top:1px solid #EBE9E9 ;">-->
+        <!--<view class="btn3" style="margin-top: 0;" bindtap="nextStep">下一步</view>-->
+    <!--</view>-->
 </view>
