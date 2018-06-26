@@ -37,7 +37,7 @@ Page({
                         var tagsValue = [];
                         for(var i = 0;i < tagCount;i++)
                         {
-                            tagsValue[i] = {name:requestRes.data.data.health_tags[i],color:'efefef'};
+                            tagsValue[i] = {name:requestRes.data.data.health_tags[i],color:'f6f6f6'};
                         }
 
                         that.setData(
@@ -61,12 +61,12 @@ Page({
         var index = e.currentTarget.dataset.index;
         console.log(index);
         console.log(this.data.healthTagsValue[index]);
-        if ( this.data.healthTagsValue[index].color == "efefef" )
+        if ( this.data.healthTagsValue[index].color == "f6f6f6" )
         {
-            this.data.healthTagsValue[index].color = "98CC3D";
+            this.data.healthTagsValue[index].color = "ffffff;border:1px solid #FFB11B";
         } else
         {
-            this.data.healthTagsValue[index].color = "efefef";
+            this.data.healthTagsValue[index].color = "f6f6f6";
         }
 
         var tempArr = this.data.healthTagsValue;

@@ -18,7 +18,7 @@
 <view class="" style="padding:0 6px;margin-bottom:100px;">
     <view wx:for="{{healthTagsValue}}" style="width:33.33%;display:inline-block;padding:0 6px;box-sizing:border-box;padding-top:6px;">
         <view style="line-height:40px;background-color:#{{item.color}};border-radius:4px;text-align:center;font-size:12px;position: relative" data-index="{{index}}" bindtap="chooseTag" class="cus-tag">{{item.name}}
-            <view style="position: absolute;top:-8px;right: -8px;">
+            <view style="position: absolute;top:-8px;right: -8px;" wx:if="{{item.color != 'f6f6f6'}}">
                 <image style="width:16px;" src="/images/icon_select_nor@2x.png" mode="widthFix"></image>
             </view>
         </view>
