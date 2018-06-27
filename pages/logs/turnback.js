@@ -76,7 +76,9 @@ Page({
             url: util.serverHost + 'activity/turn-back',
             data: {
                 openid: this.data.openid,
-                doInsert:1
+                doInsert:1,
+                type:type,
+                account:account
 
             },
             success:function(requestRes)
