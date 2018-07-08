@@ -19,7 +19,7 @@
         </view>
 
 
-        <view wx:if="{{!tabIndex && !selfGet.length}}" class="t-al-c">
+        <view wx:if="{{!tabIndex && !valid_list.length}}" class="t-al-c">
             <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
             <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
         </view>
@@ -31,7 +31,7 @@
             </view>
         </view>
 
-        <view wx:if="{{tabIndex && !delvierHome.length}}" class="t-al-c">
+        <view wx:if="{{tabIndex && !used_list.length}}" class="t-al-c">
             <image src="/images/black.png" mode="widthFix" style="width: 160px;"></image>
             <view class="fs-16-fc-484848 m-t-16">暂无数据</view>
         </view>
