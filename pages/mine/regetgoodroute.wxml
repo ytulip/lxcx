@@ -87,6 +87,20 @@
 
 
     <view class="m-t-24">
+        <navigator class="navigator-line-78CD09" style="padding: 24px 16px;" open-type="navigate" url="/pages/rereport/getgood?angle=1">
+            <view class="cus-row">
+                <view class="cus-row-col-8 v-a-m">
+                    <view class="fs-16-fc-ffffff fw-m">天使报单</view>
+                    <view class="fs-14-fc-ffffff m-t-6">产品存货数量{{user.angle_get_good}}箱</view>
+                </view>
+                <view class="cus-row-col-3 t-al-r v-a-m"><image src="/images/next-arrow.png" mode="widthFix" style="width: 9px;"></image></view>
+            </view>
+        </navigator>
+
+
+    </view>
+
+    <view class="m-t-24">
         <navigator class="navigator-line-FFB11B" style="padding: 24px 16px;" open-type="navigate" url="/pages/mine/getrecord">
             <view class="cus-row">
                 <view class="cus-row-col-8 fs-16-fc-ffffff">提货记录</view>
