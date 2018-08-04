@@ -69,7 +69,7 @@
     <!--主体-->
     <view>{{util.auth.isLogin}}</view>
     <view class="page__bd" style="padding: 14px;">
-        <view  class="m-t-24" wx:if="{{userInfo}}">
+        <view  class="m-t-24" wx:if="{{userInfo && !userInfo.vip_level}}">
             <navigator open-type="navigate" url="/pages/mine/up" class="mine-list in-bl-line" wx:if="{{!userInfo.vip_level}}">
                 <image src="/images/banner_vip_nor@2x.png" mode="widthFix" style="width: 100%;"></image>
                 <!--<view class="cus-row">-->
@@ -82,7 +82,7 @@
         </view>
 
 
-        <view  class="m-t-24 mine-list" wx:if="{{userInfo}}">
+        <view  class="mine-list" wx:if="{{userInfo}}">
             <navigator open-type="navigate" url="/pages/mine/invited_code_list"  hover-class="none" wx:if="{{userInfo.vip_level}}" style="padding: 19px 16px;">
                 <view class="cus-row">
                     <view class="cus-row-col-10 fs-16-fc-212229 v-a-m">邀请码</view>

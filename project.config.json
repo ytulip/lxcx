@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 36,
+			"current": 37,
 			"list": [
 				{
 					"id": -1,
@@ -253,6 +253,12 @@
 					"name": "提货界面",
 					"pathName": "pages/rereport/getgood",
 					"query": "angle=1"
+				},
+				{
+					"id": 37,
+					"name": "天使提单",
+					"pathName": "pages/rereport/getgood",
+					"query": "angel=1"
 				}
 			]
 		}

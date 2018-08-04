@@ -47,7 +47,8 @@ Page({
                 years:cityData.cityData.provinces,
                 months:cityData.cityData.cityList(0),
                 days:cityData.cityData.townList(0,0),
-                isActivity:options.activity?1:0
+                isActivity:options.activity?1:0,
+                isAngel:options.angel?1:0
             }
         );
 
@@ -78,7 +79,15 @@ Page({
                     that.setData({
                         quantityArr:selectQuantity,
                     });
-                } else
+                } else if(that.data.isAngel){
+                    for(var i = 0;i < requestRes.data.data.user.angle_get_good;i++)
+                    {
+                        selectQuantity.push( i + 1);
+                    }
+                    that.setData({
+                        quantityArr:selectQuantity,
+                    });
+                }else
                 {
                     for(var i = 0;i < requestRes.data.data.user.re_get_good;i++)
                     {
@@ -142,6 +151,10 @@ Page({
         requestData.deliver_type = (this.data.index == '0')?2:1;
         // requestData.quantityCount = (this.data.quantityIndex == '0')?1:2;
         requestData.get_type = this.data.isActivity?3:2;
+        if( this.data.isAngel )
+        {
+            requestData.get_type = 4;
+        }
         requestData.self_get_need_scan = 1;
         // requestData.quantity =
         // console.log(requestData.deliver_type);
