@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 37,
+			"current": 39,
 			"list": [
 				{
 					"id": -1,
@@ -259,6 +259,18 @@
 					"name": "天使提单",
 					"pathName": "pages/rereport/getgood",
 					"query": "angel=1"
+				},
+				{
+					"id": -1,
+					"name": "天使报单2",
+					"pathName": "pages/rereport/getgood",
+					"query": "angle=1"
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/index",
+					"query": ""
 				}
 			]
 		}

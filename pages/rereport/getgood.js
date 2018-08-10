@@ -48,7 +48,7 @@ Page({
                 months:cityData.cityData.cityList(0),
                 days:cityData.cityData.townList(0,0),
                 isActivity:options.activity?1:0,
-                isAngel:options.angel?1:0
+                isAngel:options.angle?1:0
             }
         );
 
